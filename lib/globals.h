@@ -15,14 +15,13 @@ Message fatalerror "*** La libreria PunyInformIT necessita di Inform v6.44 o suc
 #include "abbrevs.h";
 #EndIf;
 
-Constant ARTICLE_UNA    0;
-Constant ARTICLE_UN     3;
-Constant ARTICLE_DEL    6;
-Constant ARTICLE_DE_LA  9;
-Constant ARTICLE_DE     12;
-Constant ARTICLE_UNA_   15;
-Constant ARTICLE_UN_    18;
-Constant ARTICLE_DE_L   21;
+Constant ARTICLE_UN     0;
+Constant ARTICLE_UNO    3;
+Constant ARTICLE_UNA    6;
+Constant ARTICLE_DEL    9;
+Constant ARTICLE_DEGLI  12;
+Constant ARTICLE_DELLE  15;
+Constant ARTICLE_DEI    18;
 
 #IfDef STATUSLINE_TIME;
 #IfDef STATUSLINE_SCORE;
@@ -89,7 +88,7 @@ Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 
 ! Isolating words and punctuation for reuse and potential translation
 Constant SOMETHING_STR = "qualcosa";
-Constant SOMEONE_STR = "qualcuni";
+Constant SOMEONE_STR = "qualcun@";
 Constant SOMEDIRECTION_STR = "(una direzione)";
 Constant IS_STR = "è ";
 Constant ARE_STR = "sono ";
@@ -241,7 +240,7 @@ Constant FAKE_OUT_OBJ = 10012;
 Array _direction_dict_words static --> 'n//' 's//' 'e//' 'o//' 'ne' 'no' 'se' 'so' 'u//' 'g//' 0 0
 	'nord' 'sud' 'est' 'ovest' 'nordest' 'nordovest' 'sudest' 'sudovest' 'su' 'giu' 'entra' 'esci';
 #Ifdef OPTIONAL_SHIP_DIRECTIONS;
-Array _ship_direction_dict_words static --> 'pr//' 'po//' 'tr' 'ba//' 0 0 0 0 'u//' 'g//' 0 0
+Array _ship_direction_dict_words static --> 'pr' 'po' 'tr' 'ba' 0 0 0 0 'u//' 'g//' 0 0
 	'prua' 'poppa' 'tribordo' 'babordo' 0 0 0 0 'su' 'giu' 'entra' 'esci';
 #Endif;
 #Endif;
@@ -259,7 +258,7 @@ Constant FAKE_OUT_OBJ = 10008;
 Array _direction_dict_words static --> 'n//' 's//' 'e//' 'o//' 'u//' 'g//' 0 0
 	'nord' 'sud' 'est' 'ovest' 'su' 'giu' 'entra' 'esci';
 #Ifdef OPTIONAL_SHIP_DIRECTIONS;
-Array _ship_direction_dict_words static --> 'pr//' 'po//' 'tr' 'ba//' 'u//' 'g//' 0 0
+Array _ship_direction_dict_words static --> 'pr' 'po' 'tr' 'ba' 'u//' 'g//' 0 0
 	'prua' 'poppa' 'tribordo' 'babordo' 'su' 'giu' 'entra' 'esci';
 #Endif;
 #Endif;
@@ -299,7 +298,7 @@ Array LanguageNumberStrings static -->
 	"sei"
 	"sette"
 	"otto"
-	"novee"
+	"nove"
 	"dieci"
 	"undici"
 	"dodici"
@@ -509,10 +508,10 @@ Global react_after_in_scope;
 Global each_turn_in_scope;
 #Endif;
 
-Global el_obj  =   0;
-Global la_obj  =   0;
-Global los_obj =  0;
-Global las_obj =  0;
+Global lo_obj =  0;
+Global la_obj =  0;
+Global li_obj =  0;
+Global le_obj =  0;
 
 Global dict_start;
 Global dict_entry_size;
@@ -740,7 +739,7 @@ Object Directions
 
 			if(normal_directions_enabled) {
 #Ifndef OPTIONAL_SHIP_DIRECTIONS;
-				@je _w 'fueri' ?_matched_out;
+				@je _w 'fuori' ?_matched_out;
 				@je _w 'dentro' ?_matched_in;
 				@je _w 'g//' 'giu' ?_matched_d;
 				@je _w 'suolo' 'terra' ?_matched_d;
@@ -769,9 +768,9 @@ Object Directions
 
 			if(ship_directions_enabled) {
 				@je _w 'pr' 'prua' ?_matched_e;
-				@je _w 'po//' 'poppa' ?_matched_w;
-				@je _w 'tr//' 'tribordo' ?_matched_s;
-				@je _w 'ba//' 'babordo' ?_matched_n;
+				@je _w 'po' 'poppa' ?_matched_w;
+				@je _w 'tr' 'tribordo' ?_matched_s;
+				@je _w 'ba' 'babordo' ?_matched_n;
 			}
 
 #Endif; ! OPTIONAL_SHIP_DIRECTIONS
