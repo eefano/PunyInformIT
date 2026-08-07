@@ -1102,7 +1102,7 @@ Verb 'si'
 ! Base meta verbs
 ! ---------------------
 
-Verb meta 'ripeti' 'rifai' 'ancora' 'g//'
+Verb meta 'ripeti' 'rifai' 'ancora' 'r//'
 	*                                           -> Again;
 
 Verb meta 'breve' 'normal'
@@ -1552,8 +1552,7 @@ Array _GotoSubBuffer --> (1 + (GOTOSUB_BUFFER_SIZE + 1)/2); ! Add an extra word 
 ];
 
 [ PronounsSub;
-	print "el: ", (name) el_obj, "^la: ", (name) la_obj, "^los: ", (name) los_obj, "^las: ", (name) las_obj, "^";
-!	, "^un: ", (name) un_obj, "^una: ", (name) una_obj, "^unos: ", (name) unos_obj, "^unas: ", (name) unas_obj, "^";
+	print "lo: ", (name) lo_obj, "^la: ", (name) la_obj, "^li: ", (name) li_obj, "^le: ", (name) le_obj, "^";
 ];
 
 [ PurloinSub;
@@ -2187,7 +2186,7 @@ Constant _REAL_LOCATION_TEXT " *** real_location ***";
 
 #Iftrue #version_number < 4;
 	switch(p_v) {
-		'g//': print "ripeti"; return;
+		'r//': print "ripeti"; return;
 		'i//', 'inv': print "inventario"; return;
 		'l//': print "guarda"; return;
 		'q//': print "termina"; return;
@@ -2224,7 +2223,7 @@ Constant _REAL_LOCATION_TEXT " *** real_location ***";
 #Ifnot; ! This is z4+
 	switch(p_v) {
 		'superbrief': print "superbrief"; return;
-		'g//': print "ripeti"; return;
+		'r//': print "ripeti"; return;
 		'i//': print (address) 'inventario'; return;
 		'l//': print "guarda"; return;
 		'q//': print "termina"; return;
