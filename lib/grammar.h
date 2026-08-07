@@ -8,7 +8,7 @@ Verb 'rispondi'
 	* topic 'a//' creature			-> Answer
 	* 'a//' creature topic			-> Answer reverse;
 !!
-Verb 'chiedi' 'domanda' 'interroga'
+Verb 'chiedi' 'domanda'
     * creature 'su'/'di' topic      		-> Ask
     * 'a//' creature 'su'/'di' topic 		-> Ask
     * 'su'/'di' topic 'a//' creature 		-> Ask reverse
@@ -29,7 +29,7 @@ Verb 'attacca' 'rompi' 'crepa' 'distruggi'
 	* 'con' held noun			-> Attack
 	* noun 'con' held                          -> Attack;
 !!
-Verb 'sali' 'scala' 'arrampica' 'arrampicati'
+Verb 'sali' 'scala' 'arrampica'
 	* 'su' noun            				-> Climb
 	*  noun                                		-> Climb
 	* 'dentro'/'in' noun                    	-> Enter
@@ -53,11 +53,18 @@ Verb 'scava'
 Verb 'bevi' 'sorseggia' 'tracanna'
     * noun                               		-> Drink;
 !!
-Verb 'scarta' 'abbandona' 'lancia' 'lascia' 'scaglia'
+Verb 'scarta' 'lancia' 'scaglia'
     * multiheld                          		-> Drop
-    * multiexcept 'in'/'dentro' noun         		-> Insert
-    * held 'contro'/'a' noun     			-> ThrowAt
-    * multiexcept 'su'/'sopra' noun           		-> PutOn;
+    * multiexcept 'in'/'dentro' noun        -> Insert
+    * held 'contro'/'a' noun     						-> ThrowAt
+    * multiexcept 'su'/'sopra' noun         -> PutOn;
+Verb 'abbandona' 'lascia'
+    * multiheld                          		-> Drop
+    * multiexcept 'in'/'dentro' noun        -> Insert
+    * held 'contro'/'a' noun     						-> ThrowAt
+    * multiexcept 'su'/'sopra' noun          -> PutOn
+		*                                   -> Exit
+		* noun                              -> Exit;
 !!
 Verb 'mangia' 'ingoia'
     * held                -> Eat;
@@ -74,15 +81,19 @@ Verb 'entra'
 Verb 'esamina' 'x//'
 	* noun -> Examine;
 !!
-Verb 'esci' 'abbandona' 'scappa'
+Verb 'esci' 'scappa'
 	*                                   -> Exit
 	* noun                              -> Exit;
 !!
 Verb 'riempi'
-	* noun                                      -> Fill;
+	* noun                              -> Fill;
 !!
 Verb 'prendi'
-	* multi                                 -> Take
+	* multi                                 -> Take;
+[ GoDownSub;
+	! shortcut to <<Go down>>
+	<Go FAKE_D_OBJ>;
+];
 Verb 'scendi'
 	*					-> GoDown
 	* 'da' noun				-> GetOff;
@@ -106,7 +117,7 @@ Verb 'vai'
     * noun=ADirection                   -> Go
     * 'a//' noun=ADirection           	-> Go
     * noun                              -> Enter
-    * 'a//'/'in' noun                   -> Enter
+    * 'a//'/'in' noun                   -> Enter;
 !!
 Verb 'inserisci'
 	* multiexcept 'in'/'dentro' noun              -> Insert;
@@ -147,14 +158,14 @@ Verb 'apri' 'schiudi'
 !Verb 'pick'
 !unused 
 !!
-!Verb 'tira' 'trascina'
+Verb 'tira' 'trascina'
 	* noun                                      -> Pull;
 !!
 Verb 'spingi' 'sgombra' 'muovi' 'premi' 'sposta'
     * noun                               	-> Push
     * noun 'verso' noun=ADirection              -> PushDir
     * noun noun=ADirection                      -> PushDir
-    * noun 'a//'/'su'/'in'/verso noun           -> Transfer;
+    * noun 'a//'/'su'/'in'/'verso' noun         -> Transfer;
 !!
 Verb 'metti' 'piazza' 'posiziona' 'colloca'
 	* multiexcept 'in'/'dentro' noun	-> Insert
@@ -214,7 +225,7 @@ Verb 'imposta'
     * noun 'su'/'a//' 'on'                      -> SwitchOn
     * noun 'su'/'a//' 'off'                     -> SwitchOff;
 #Endif;
-Verb 'attiva' "accendi'
+Verb 'attiva' 'accendi'
 	* noun -> SwitchOn;
 Verb 'disattiva' 'spegni'
 	* noun -> SwitchOff;
@@ -225,14 +236,24 @@ Verb 'disattiva' 'spegni'
 !	* multiinside 'from'/'off' noun             -> Remove
 !	* 'inventory'                               -> Inv;
 !!
-Verb 'informa' 'narra' 'spiega' 'parla' 'comunica' 'rivela' 'dì'
-    * creature 'su'/'di' topic        			-> Tell
-    * creature topic                       		-> Tell
-    * 'a//'/'con' creature 'su'/'di' topic 		-> Tell
-    * 'a//'/'con' creature  topic        		-> Tell
-    * 'su'/'di' topic 'a//'/'con' creature    		-> Tell reverse
-    * topic 'a//'/'con' creature        		-> Tell reverse
-    * 'a//' creature 'di' topic				-> AskTo;
+#Ifndef EXT_TALK_MENU;
+Verb 'informa' 'narra' 'spiega' 'rivela' 'parla' 'comunica' 'conversa'
+    * creature 'su'/'di' topic        			 -> Tell
+    * creature topic                       	 -> Tell
+    * 'a//'/'con' creature 'su'/'di' topic 	 -> Tell
+    * 'a//'/'con' creature  topic        		 -> Tell
+    * 'su'/'di' topic 'a//'/'con' creature   -> Tell reverse
+    * topic 'a//'/'con' creature        		 -> Tell reverse;
+#Endif;
+#Ifdef EXT_TALK_MENU;
+Verb 'informa' 'narra' 'spiega' 'rivela'
+    * creature 'su'/'di' topic        			 -> Tell
+    * creature topic                       	 -> Tell
+    * 'a//'/'con' creature 'su'/'di' topic 	 -> Tell
+    * 'a//'/'con' creature  topic        		 -> Tell
+    * 'su'/'di' topic 'a//'/'con' creature   -> Tell reverse
+    * topic 'a//'/'con' creature        		 -> Tell reverse;
+#Endif;
 !!
 Verb 'lega' 'appiccica' 'avvita' 'ripara' 'incolla' 'salda' 'unisci' 'collega'
     * noun                               		-> Tie
@@ -242,15 +263,11 @@ Verb 'tocca' 'tasta' 'palpa' 'saggia'
     * noun                               		-> Touch;
 !!
 Verb 'gira' 'ruota'
-    * noun                       	-> Turn;
-    * 'su' 'on'	noun		 	-> SwitchOn;
-    * 'su' 'off' noun                   -> SwitchOff;
-    * noun 'su' 'on'			-> SwitchOn;
-    * noun 'su' 'off'           	-> SwitchOff;
-Verb 'avvita'
-    * noun				-> SwitchOn;
-Verb 'svita'
-    * noun				-> SwitchOff;
+    * noun                -> Turn
+    * 'su' 'on'	noun		 	-> SwitchOn
+    * 'su' 'off' noun     -> SwitchOff
+    * noun 'su' 'on'			-> SwitchOn
+    * noun 'su' 'off'     -> SwitchOff;
 !!
 Verb 'disserra' 'scassina'
 	* noun 'con' held                          -> Unlock;
@@ -888,7 +905,7 @@ Verb 'sbuccia' 'scortica' 'spella' 'strappa'
 Verb 'prega'
 	*                                           -> Pray;
 !!
-Verb 'scassina' 'forza' 'divella' "sradica'
+Verb 'scassina' 'forza' 'divella' 'sradica'
 	* noun 'con' held                          -> Unlock;
 !!
 Verb 'imposta' 'regola'
@@ -990,11 +1007,6 @@ Verb 'si'
 		}
 	}
 	run_after_routines_msg = 1;
-];
-
- GoDownSub;
-	! shortcut to <<Go down>>
-	<Go FAKE_D_OBJ>;
 ];
 
 [ GoUpSub;
@@ -1128,13 +1140,13 @@ Verb meta 'oops' 'ops'
 	*                                           -> Oops
 	* special                                   -> OopsCorrection;
 
-Verb meta 'ricomincia' 'ricominciare'
+Verb meta 'ricominciare'
 	*                                           -> Restart;
 
-Verb meta 'carica' 'caricare'
+Verb meta 'caricare'
 	*                                           -> Restore;
 
-Verb meta 'salva' 'salvare'
+Verb meta 'salvare'
 	*                                           -> Save;
 
 #Ifndef OPTIONAL_FULL_SCORE;
@@ -1151,7 +1163,7 @@ Verb meta 'verbose' 'lungo'
 Verb meta 'versione'
 	*                                           -> Version;
 
-Verb meta 'quit' 'q//' 'termina' 'terminare'
+Verb meta 'quit' 'q//' 'terminare'
 	*                                           -> Quit;
 
 [ AgainSub;
@@ -1423,7 +1435,7 @@ Verb meta 'verify' 'verifica'
 		else print "(perso)";
 		new_line;
 	}
-	if(_f == 0) "niente.";
+	if(_f == 0) "nulla.";
 ];
 #Endif; ! NO_PLACES
 

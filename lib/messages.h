@@ -18,7 +18,7 @@ Constant MSG_TAKE_NO_CAPACITY "Stai portando già troppe cose.";
 Constant MSG_TAKE_DEFAULT "Fatto.";
 #EndIf;
 #Ifndef MSG_DRINK_NOTHING_SUITABLE;
-Constant MSG_DRINK_NOTHING_SUITABLE "Non c'è niente di bevibile qui.";
+Constant MSG_DRINK_NOTHING_SUITABLE "Non c'è nulla di bevibile qui.";
 #EndIf;
 #Ifndef MSG_DROP_DROPPED;
 Constant MSG_DROP_DROPPED "Fatto.";
@@ -30,10 +30,10 @@ Constant MSG_THROW_ANIMATE "Inutile.";
 Constant MSG_THROW_DEFAULT "Ti manca il coraggio proprio nel momento cruciale.";
 #Endif;
 #Ifndef MSG_SMELL_DEFAULT;
-Constant MSG_SMELL_DEFAULT "Non odori niente di particolare.";
+Constant MSG_SMELL_DEFAULT "Non odori nulla di particolare.";
 #Endif;
 #Ifndef MSG_LISTEN_DEFAULT;
-Constant MSG_LISTEN_DEFAULT "Non ascolti niente di particolare.";
+Constant MSG_LISTEN_DEFAULT "Non ascolti nulla di particolare.";
 #Endif;
 #Ifndef MSG_TELL_PLAYER;
 Constant MSG_TELL_PLAYER "Parli da solo per un pò.";
@@ -321,7 +321,7 @@ Default MSG_SHOUT_NOSUCHTHING 149;
 
 #IfDef OPTIONAL_PROVIDE_UNDO_FINAL;
 #Ifndef MSG_UNDO_NOTHING_DONE;
-Constant MSG_UNDO_NOTHING_DONE "[Non c'è niente da rimediare!]";
+Constant MSG_UNDO_NOTHING_DONE "[Non c'è nulla da rimediare!]";
 #EndIf;
 #Ifndef MSG_UNDO_NOT_PROVIDED;
 Constant MSG_UNDO_NOT_PROVIDED "[L'interprete che usi non può rimediare.]";
@@ -350,7 +350,7 @@ Constant MSG_COMMENT_NO_TRANSCRIPT "[Commento non registrato. Questo gioco non c
 Constant MSG_BURN_DEFAULT "Questo atto pericoloso non porterebbe a nulla.";
 #EndIf;
 #Ifndef MSG_BUY_DEFAULT;
-Constant MSG_BUY_DEFAULT "Non c'è niente in vendita.";
+Constant MSG_BUY_DEFAULT "Non c'è nulla in vendita.";
 #EndIf;
 #Ifndef MSG_EMPTY_WOULDNT_ACHIEVE;
 Constant MSG_EMPTY_WOULDNT_ACHIEVE "Non svuoterebbe granchè.";
@@ -739,7 +739,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #IfTrue MSG_EXAMINE_NOTHING_SPECIAL < 1000;
 	MSG_EXAMINE_NOTHING_SPECIAL:
-		"Non c'è niente di speciale ", (InPrep) noun, ".";
+		"Non c'è nulla di speciale ", (InPrep) noun, ".";
 #EndIf;
 #Ifndef SKIP_MSG_PUSH_ANIMATE;
 	MSG_PUSH_ANIMATE, MSG_PULL_ANIMATE, MSG_TURN_ANIMATE, MSG_CLIMB_ANIMATE:
@@ -900,7 +900,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 				"Non stai portando nulla.";
 			if(TryNumber(verb_wordnum + 1) > 0) "In mano non ne hai.";
 		}
-		print "Non hai niente che combaci con ~";
+		print "Non hai nulla che combaci con ~";
 		_PrintPartialMatch(verb_wordnum, p_arg_1 - 1);
 		"~.";
 #EndIf;
@@ -967,7 +967,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #IfTrue MSG_CONSULT_NOTHING_INTERESTING < 1000;
 	MSG_CONSULT_NOTHING_INTERESTING:
-		"Non scopri niente di interessante ", (ImPrep) noun, ".";
+		"Non scopri nulla di interessante ", (InPrep) noun, ".";
 #EndIf;
 #Ifndef SKIP_MSG_CUT_NO_USE;
 	MSG_CUT_NO_USE, MSG_JUMP_OVER, MSG_TIE_DEFAULT, MSG_CLIMB_DEFAULT:
@@ -1016,7 +1016,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #IfTrue MSG_SEARCH_NOTHING_ON < 1000;
 	MSG_SEARCH_NOTHING_ON:
-		"Non c'è niente ", (SuPrep) noun, ".";
+		"Non c'è nulla ", (SuPrep) noun, ".";
 #EndIf;
 #IfTrue MSG_SEARCH_CANT_SEE_CLOSED < 1000;
 	MSG_SEARCH_CANT_SEE_CLOSED:

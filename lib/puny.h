@@ -568,7 +568,7 @@ Constant ONE_SPACE_STRING = " ";
 		caps_mode = true;
 	else 
 		caps_mode = false;
-	if (o == 0) { print "niente"; rtrue; }
+	if (o == 0) { print "nulla"; rtrue; }
 	switch (metaclass(o)) {
 	  Routine:  print "<routine ", o, ">"; rtrue;
 	  String:   print "<string ~", (string) o, "~>"; rtrue;

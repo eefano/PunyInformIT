@@ -88,7 +88,7 @@ Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 
 ! Isolating words and punctuation for reuse and potential translation
 Constant SOMETHING_STR = "qualcosa";
-Constant SOMEONE_STR = "qualcun@";
+Constant SOMEONE_STR = "qualcun*";
 Constant SOMEDIRECTION_STR = "(una direzione)";
 Constant IS_STR = "è ";
 Constant ARE_STR = "sono ";

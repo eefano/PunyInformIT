@@ -811,8 +811,8 @@ Array _TMLines --> 10;
 ];
 
 #Ifndef NAIL_MAJOR_VERSION;
-Verb 'parla' 'conversa' 'intervista' 'interroga'
-	* 'a'/'con' creature                      ->Talk
+Verb 'parla' 'comunica' 'conversa' 'intervista' 'interroga'
+	* 'a//'/'con' creature                      ->Talk
 	* creature                                  ->Talk;
 #Endif;
 

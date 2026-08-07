@@ -500,7 +500,7 @@ System_file;
 	return _score;
 ];
 
-[_IsArticle text
+[_IsArticle text;
 	if (text=='un' or 'uno' or 'una' or 'il' or 'lo' or 'la' or 'i' or 'gli' or 'le') rtrue;
 	rfalse;
 ];
