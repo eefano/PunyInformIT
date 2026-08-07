@@ -499,11 +499,6 @@ System_file;
 
 	return _score;
 ];
-
-[_IsArticle text;
-	if (text=='un' or 'uno' or 'una' or 'il' or 'lo' or 'la' or 'i' or 'gli' or 'le') rtrue;
-	rfalse;
-];
 	
 Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 
@@ -832,15 +827,15 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 	! special rule to avoid "all in"
 	! (since 'in' in this combination is usually
 	! a preposition but also matches a direction noun)
-	if(p_parse_pointer-->0 == ALL_WORD &&
+	if(_IsAllWord(p_parse_pointer-->0) &&
 		p_parse_pointer-->2 == 'in') {
 		++wn;
 		return 0;
 	}
 
 	! skip 'all' etc
-	while(p_parse_pointer --> 0 == ALL_WORD or EXCEPT_WORD1 or EXCEPT_WORD2) {
-		if(p_parse_pointer --> 0 == ALL_WORD) {
+	while(_IsAllOrExceptWord(p_parse_pointer --> 0)) {
+		if(_IsAllWord(p_parse_pointer --> 0)) {
 			parser_all_found = true;
 			_all_found = true;
 		}
@@ -1251,7 +1246,7 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 		}
 
 		if(_token_data == NOUN_OBJECT or HELD_OBJECT or CREATURE_OBJECT) {
-			if(_PeekAtNextWord() == ALL_WORD or EXCEPT_WORD1 or EXCEPT_WORD2) {
+			if(_IsAllOrExceptWord(_PeekAtNextWord())) {
 				! we don't accept all/all-but with held or creature
 				_noun = parse-->((wn+1)*2 - 1);
 				if(_noun == 'but') {
@@ -1402,7 +1397,7 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 							return _i;
 						return GPR_MULTIPLE;
 					}
-					if(p_parse_pointer-->0 == ALL_WORD) {
+					if(_IsAllWord(p_parse_pointer-->0)) {
 						! take all etc.
 						! note that 'all' has already updated
 						! wn in GetNextNoun
@@ -1852,7 +1847,7 @@ Array guess_object-->5;
 						}
 						if(inp1 ~= -1) {
 							PrintMsg(MSG_PARSER_NO_NEED_REFER_TO);
-						} else if(_word == ALL_WORD || 
+						} else if(_IsAllWord(_word) || 
                                   parser_action ==  ##PluralFound) {
 							PrintMsg(MSG_PARSER_NOT_MULTIPLE_VERB);
 						} else {
@@ -2350,7 +2345,7 @@ Array guess_object-->5;
 				PrintMsg(MSG_PARSER_DONT_UNDERSTAND_WORD);
 			} else if(_i == TT_END) {
 				! the sentence matched the pattern
-				if(parse-->(wn + wn - 1) == ALL_WORD) {
+				if(_IsAllWord(parse-->(wn + wn - 1))) {
 					PrintMsg(MSG_PARSER_NOT_MULTIPLE_VERB);
 				} else {
 					PrintMsg(MSG_PARSER_NOSUCHTHING);

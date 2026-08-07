@@ -1,0 +1,161 @@
+
+> i.i
+Sei a mani vuote.
+
+Sei a mani vuote.
+
+> prendi la rossa
+Intendi dire la palla mini rossa o la moneta rossa?
+
+> i
+Sei a mani vuote.
+
+> prendi la rossa 
+Intendi dire la palla mini rossa o la moneta rossa?
+
+> rossa
+Ancora non capisco a cosa ti riferisci.
+
+> prendi rossa
+Intendi dire la palla mini rossa o la moneta rossa?
+
+> palla
+Presa.
+
+> lascia tutto
+palla mini rossa: Lasciata.
+
+> prendi tutte le rosse
+palla mini rossa: Presa.
+moneta rossa: Presa.
+
+> prendi la palla blu
+Presa.
+
+> prendi la moneta blu
+Ti ho capito solo fino a "prendi la moneta" poi però ti ho perso.
+
+> prendi palla blu e moneta blu
+Ti ho capito solo fino a "prendi palla blu e moneta" poi però ti ho perso.
+
+> lascia tutto
+palla mini blu: Lasciata.
+moneta rossa: Lasciata.
+palla mini rossa: Lasciata.
+
+> prendi palla
+Intendi dire la palla mini blu, la palla mini rossa o la palla mini verde?
+
+> rossa
+Presa.
+
+> prendi tutte le palle
+palla mini blu: Presa.
+palla mini verde: Presa.
+
+> prendi monete
+moneta rossa: Presa.
+moneta nera: Presa.
+
+> lascia la moneta nera
+Lasciata.
+
+> lascia le monete
+Lasciata.
+
+> lascia monete
+Nulla di disponibile combacia con "lascia monete".
+
+> prendi palla nera
+Presa.
+
+> s
+Stanza Bianca
+È tutta bianca. La stanza delle palle sta a nord.
+
+Puoi vedere una scatola rossa (che è aperta ma vuota) e una scatola trasparente
+(che è aperta ma vuota) qui.
+
+> metti tutte le palle tranne la rossa nella scatola rossa
+palla mini nera: Hai messo la palla mini nera nella scatola rossa.
+palla mini verde: Hai messo la palla mini verde nella scatola rossa.
+palla mini blu: Hai messo la palla mini blu nella scatola rossa.
+
+> metti tutto nella trasparente
+palla mini rossa: Hai messo la palla mini rossa nella scatola trasparente.
+
+> prendi tutte le palle da trasparente
+palla mini rossa: Rimossa.
+
+> prendi tutto dalla trasparente
+Nulla di disponibile combacia con "prendi tutto dalla trasparente".
+
+> lascia palla rossa
+Lasciata.
+
+> prendi -la
+Presa.
+
+> prendi tutto dalla scatola rossa
+palla mini blu: Rimossa.
+palla mini verde: Rimossa.
+palla mini nera: Rimossa.
+
+> lascia tutto
+palla mini nera: Lasciata.
+palla mini verde: Lasciata.
+palla mini blu: Lasciata.
+palla mini rossa: Lasciata.
+
+> prendi tutte le scatole
+scatola rossa: Presa.
+scatola trasparente: Presa.
+
+> n
+Stanza Delle Palle
+
+C'è un tavolo nero nel mezzo della stanza.
+
+Puoi vedere anche una moneta rossa e una moneta nera qui.
+
+> metti tutto sul tavolo
+scatola trasparente: Hai messo la scatola trasparente sul tavolo.
+scatola rossa: Hai messo la scatola rossa sul tavolo.
+
+> metti scatola trasparente nella scatola rossa
+(prendendo prima la scatola trasparente)
+Hai messo la scatola trasparente nella scatola rossa.
+
+> entra nella scatola trasparente
+Prima devi entrare nella scatola rossa.
+
+> entra scatola rossa
+Prima devi entrare nel tavolo.
+
+> entra tavolo
+Sei entrato nel tavolo.
+
+> entra scatola trasparente
+Prima devi entrare nella scatola rossa.
+
+> entra scatola rossa
+Sei entrato nella scatola rossa.
+
+> entra nella scatola trasparente
+Sei entrato nella scatola trasparente.
+
+> entra nel tavolo
+Prima devi uscire dalla scatola trasparente.
+
+> esci
+Sei uscito dalla scatola trasparente.
+
+> esci
+Sei uscito dalla scatola rossa.
+
+> esci
+Sei uscito dal tavolo.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

@@ -14,15 +14,15 @@ Constant MSG_TAKE_YOURSELF "Già ti possiedi.";
 #Ifndef MSG_TAKE_NO_CAPACITY;
 Constant MSG_TAKE_NO_CAPACITY "Stai portando già troppe cose.";
 #EndIf;
-#Ifndef MSG_TAKE_DEFAULT;
-Constant MSG_TAKE_DEFAULT "Fatto.";
-#EndIf;
+!#Ifndef MSG_TAKE_DEFAULT;
+!Constant MSG_TAKE_DEFAULT "Fatto.";
+!#EndIf;
 #Ifndef MSG_DRINK_NOTHING_SUITABLE;
 Constant MSG_DRINK_NOTHING_SUITABLE "Non c'è nulla di bevibile qui.";
 #EndIf;
-#Ifndef MSG_DROP_DROPPED;
-Constant MSG_DROP_DROPPED "Fatto.";
-#EndIf;
+!#Ifndef MSG_DROP_DROPPED;
+!Constant MSG_DROP_DROPPED "Fatto.";
+!#EndIf;
 #Ifndef MSG_THROW_ANIMATE;
 Constant MSG_THROW_ANIMATE "Inutile.";
 #Endif;
@@ -89,9 +89,9 @@ Constant MSG_PUSHDIR_DEFAULT "È questa l'idea migliore che hai?";
 #Ifndef MSG_JUMP;
 Constant MSG_JUMP "Salti sul posto, inutilmente.";
 #EndIf;
-#Ifndef MSG_REMOVE_DEFAULT;
-Constant MSG_REMOVE_DEFAULT "Fatto.";
-#EndIf;
+!#Ifndef MSG_REMOVE_DEFAULT;
+!Constant MSG_REMOVE_DEFAULT "Fatto.";
+!#EndIf;
 #Ifndef MSG_SEARCH_NOTHING_SPECIAL;
 Constant MSG_SEARCH_NOTHING_SPECIAL "Non trovi nulla di speciale.";
 #EndIf;
@@ -120,7 +120,7 @@ Constant MSG_PARSER_UNKNOWN_SENTENCE "Non capisco questa frase.";
 Constant MSG_PARSER_UNKNOWN_VERB "Non riconosco questo verbo.";
 #EndIf;
 #Ifndef MSG_PARSER_CANT_DISAMBIGUATE;
-Constant MSG_PARSER_CANT_DISAMBIGUATE "Non capisco cosa intendi di preciso.";
+Constant MSG_PARSER_CANT_DISAMBIGUATE "Ancora non capisco a cosa ti riferisci.";
 #EndIf;
 #Ifndef MSG_PARSER_UNKNOWN_PERSON;
 Constant MSG_PARSER_UNKNOWN_PERSON "Non vedo a chi ti stai riferendo.";
@@ -318,6 +318,10 @@ Default MSG_NOTIFY_OFF = 146;
 Default MSG_ENTER_HELD 147;
 Default MSG_PARSER_NOSUCHTHING 148;
 Default MSG_SHOUT_NOSUCHTHING 149;
+
+Default MSG_TAKE_DEFAULT 150;
+Default MSG_DROP_DROPPED 151;
+Default MSG_REMOVE_DEFAULT 152;
 
 #IfDef OPTIONAL_PROVIDE_UNDO_FINAL;
 #Ifndef MSG_UNDO_NOTHING_DONE;
@@ -699,6 +703,20 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 		! add a newline, but default is to write nothing.
 		!@new_line;
 #Endif;
+
+#Iftrue MSG_TAKE_DEFAULT < 1000;
+	MSG_TAKE_DEFAULT:
+		"Pres", (_o) noun, ".";
+#Endif;
+#Iftrue MSG_DROP_DROPPED < 1000;
+	MSG_DROP_DROPPED:
+		"Lasciat", (_o) noun, ".";
+#Endif;
+#Iftrue MSG_REMOVE_DEFAULT < 1000;
+	MSG_REMOVE_DEFAULT:
+		"Rimoss", (_o) noun, ".";
+#Endif;
+
 #Iftrue MSG_TAKE_SCENERY < 1000;
 	MSG_TAKE_SCENERY:
 		print_ret (CTheyreorThats) noun, " difficilmente trasportabile.";
@@ -779,7 +797,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #Iftrue MSG_OPEN_DEFAULT < 1000;
 	MSG_OPEN_DEFAULT:
-		print "Apri ", (the) noun;
+		print "Hai aperto ", (the) noun;
 		if(noun has container && noun hasnt transparent &&
 				~~IndirectlyContains(noun, player)) {
 			print ", rivelando ";
@@ -790,15 +808,15 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Ifndef SKIP_MSG_CLOSE_DEFAULT;
 	!p_arg_1 = the base verb for this action ('open', 'close' etc).
     MSG_CLOSE_DEFAULT:
-        "Chiudi ", (the) noun, ".";
+        "Hai chiuso ", (the) noun, ".";
     MSG_LOCK_DEFAULT:
-        "Serri ", (the) noun, ".";
+        "Hai serrato ", (the) noun, ".";
     MSG_UNLOCK_DEFAULT:
-        "Disserri ", (the) noun, ".";
+        "Hai disserrato ", (the) noun, ".";
     MSG_ENTER_DEFAULT:
-        "Entri ", (the) noun, ".";
+        "Sei entrato ", (InPrep) noun, ".";
     MSG_EXIT_DEFAULT:
-        "Esci ", (the) noun, ".";
+        "Sei uscito ", (DaPrep) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_GIVE_DEFAULT;
 	MSG_GIVE_DEFAULT, MSG_SHOW_DEFAULT:
@@ -837,11 +855,11 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #IfTrue MSG_INSERT_DEFAULT < 1000;
 	MSG_INSERT_DEFAULT:
-		"Metti ", (the) noun, " ", (InPrep) second, ".";
+		"Hai messo ", (the) noun, " ", (InPrep) second, ".";
 #EndIf;
 #IfTrue MSG_PUTON_DEFAULT < 1000;
 	MSG_PUTON_DEFAULT:
-		"Metti ", (the) noun, " ", (SuPrep) second, ".";
+		"Hai messo ", (the) noun, " ", (SuPrep) second, ".";
 #EndIf;
 #Ifndef SKIP_MSG_ASK_DEFAULT;
 	MSG_ASK_DEFAULT, MSG_ANSWER_DEFAULT, MSG_SHOUT_DEFAULT, MSG_SHOUTAT_DEFAULT:
@@ -873,9 +891,9 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #Ifndef SKIP_MSG_SWITCH_ON_DEFAULT;
 	MSG_SWITCH_ON_DEFAULT:
-        "Accendi ", (the) noun, ".";
+        "Hai acceso ", (the) noun, ".";
 	MSG_SWITCH_OFF_DEFAULT:
-        "Spegni ", (the) noun, ".";
+        "Hai spento ", (the) noun, ".";
 #Endif;
 #Iftrue MSG_AUTO_TAKE < 1000;
 	MSG_AUTO_TAKE:
@@ -896,11 +914,11 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 	MSG_PARSER_NOTHING_TO_VERB:
 	! p_arg_1 = the last word in player input + 1.
 		if(action == ##Drop or ##Insert) {
-			if((parse + 2 + (p_arg_1 - 2) *4) --> 0 == ALL_WORD)
+			if(_IsAllWord((parse + 2 + (p_arg_1 - 2) *4) --> 0))
 				"Non stai portando nulla.";
 			if(TryNumber(verb_wordnum + 1) > 0) "In mano non ne hai.";
 		}
-		print "Non hai nulla che combaci con ~";
+		print "Nulla di disponibile combacia con ~";
 		_PrintPartialMatch(verb_wordnum, p_arg_1 - 1);
 		"~.";
 #EndIf;
@@ -1028,11 +1046,11 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #IfTrue MSG_EAT_DEFAULT < 1000;
 	MSG_EAT_DEFAULT:
-		"Mangi ", (the) noun, ". Niente male.";
+		"Hai mangiato ", (the) noun, ". Niente male.";
 #EndIf;
 #Ifndef SKIP_MSG_RUB_DEFAULT;
 MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
-	"Non ottieni nulla facendolo.";
+	"Non hai ottenuto nulla facendolo.";
 #Endif;
 #IfTrue MSG_TAKE_NOT_AVAILABLE < 1000;
 	MSG_TAKE_NOT_AVAILABLE:
@@ -1101,7 +1119,7 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #EndIf;
 #IfTrue MSG_WAVE_DEFAULT < 1000;
 	MSG_WAVE_DEFAULT:
-		"Ti senti ridicolo mentre saluti ", (the) noun, ".";
+		"Ti senti in imbarazzo mentre saluti ", (the) noun, ".";
 #EndIf;
 #EndIf; ! Extended verbset
 
@@ -1175,14 +1193,14 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #Endif;
 #IfTrue MSG_RESTART_RESTORE_OR_QUIT < 1000;
 	MSG_RESTART_RESTORE_OR_QUIT:
-		print "^Vorresti RICOMINCIARE, CARICARE";
+		print "^Comanda RICOMINCIA, CARICA";
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
 	#Ifdef DEATH_MENTION_UNDO;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0)
-				print ", RIMEDIARE all'ultima mossa"
+				print ", RIMEDIA all'ultima mossa"
 	#Ifnot;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0 && deadflag ~= GS_WIN)
-				print ", RIMEDIARE all'ultima mossa";
+				print ", RIMEDIA all'ultima mossa";
 	#Endif;
 #Endif;
 #IfDef OPTIONAL_FULL_SCORE;
@@ -1192,7 +1210,7 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 		if(AMUSING_PROVIDED == 0 && deadflag == GS_WIN) 
 			print ", avere consigli per altro SPASSO";
 #Endif;
-		print " o TERMINARE il gioco? ";
+		print " o TERMINA il gioco? ";
 		rtrue;
 #EndIf;
 #IfTrue MSG_AREYOUSUREQUIT < 1000;
@@ -1334,7 +1352,7 @@ default:
 		if (p_obj has female) print "della";
 		else print "del";
 	}
-	print " ", noun;
+	print " ", (name) p_obj;
 	return;
 ];
 
@@ -1346,7 +1364,7 @@ default:
 		if (p_obj has female) print "alla";
 		else print "al";
 	}
-	print " ", noun;
+	print " ", (name) p_obj;
 	return;
 ];
 
@@ -1358,7 +1376,7 @@ default:
 		if (p_obj has female) print "dalla";
 		else print "dal";
 	}
-	print " ", noun;
+	print " ", (name) p_obj;
 	return;
 ];
 
@@ -1370,7 +1388,7 @@ default:
 		if (p_obj has female) print "nella";
 		else print "nel";
 	}
-	print " ", noun;
+	print " ", (name) p_obj;
 	return;
 ];
 
@@ -1382,7 +1400,7 @@ default:
 		if (p_obj has female) print "sulla";
 		else print "sul";
 	}
-	print " ", noun;
+	print " ", (name) p_obj;
 	return;
 ];
 

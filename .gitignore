@@ -1,2 +1,8 @@
 *.z?
 *.Z?
+tests/.z?
+tests/.Z?
+tests/*.messages
+tests/*.output
+tests/*.scr
+

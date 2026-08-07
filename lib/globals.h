@@ -78,10 +78,24 @@ Constant PHASE2_SCOPE           = 3;
 
 !Constant WORDSIZE 2; ! set by the compiler from Inform 6.30
 
-Constant ALL_WORD     = 'tutto';
+[_IsArticle text;
+	if (text=='un' or 'uno' or 'una' or 'il' or 'lo' or 'la' or 'i' or 'gli' or 'le') rtrue;
+	rfalse;
+];
+
+[_IsAllWord text;
+	if (text=='tutto' or 'tutta' or 'tutte' or 'tutti') rtrue;
+	rfalse;
+];
+
+[_IsAllOrExceptWord text;
+	if (_IsAllWord(text) || text == EXCEPT_WORD1 or EXCEPT_WORD2) rtrue;
+	rfalse;
+];
+
 Constant EXCEPT_WORD1 = 'tranne';
 Constant EXCEPT_WORD2 = 'eccetto';
-Constant AND_WORD     = 'e';
+Constant AND_WORD     = 'e//';
 Constant THEN1__WD    = 'quindi';
 Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 								   ! for commas in parse buffers

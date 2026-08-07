@@ -1,26 +1,54 @@
 ! ######################### Grammar + Actions
 
+[ DiGpr; 
+	if (NextWord() == 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle') return GPR_PREPOSITION;
+  return GPR_FAIL;
+];
+[ AGpr; 
+	if (NextWord() == 'a//' or 'al' or 'allo' or 'alla' or 'ai' or 'agli' or 'alle') return GPR_PREPOSITION;
+  return GPR_FAIL;
+];
+[ DaGpr; 
+	if (NextWord() == 'da' or 'dal' or 'dallo' or 'dalla' or 'dai' or 'dagli' or 'dalle') return GPR_PREPOSITION;
+  return GPR_FAIL;
+];
+[ InGpr;
+  if (NextWord() == 'in' or 'nel' or 'nello' or 'nella' or 'nei' or 'negli' or 'nelle' or 'dentro') return GPR_PREPOSITION;
+  return GPR_FAIL;
+];
+[ SuGpr; 
+	if (NextWord() == 'su' or 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sopra') return GPR_PREPOSITION;
+  return GPR_FAIL;
+];
+[ SuDiGpr; 
+	if (NextWord() == 'su' or 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sopra'
+	               or 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle') return GPR_PREPOSITION;
+  return GPR_FAIL;
+];
 ! ---------------------
 ! Base verbs
 ! ---------------------
 
 Verb 'rispondi'
-	* topic 'a//' creature			-> Answer
-	* 'a//' creature topic			-> Answer reverse;
+	* topic AGpr creature				-> Answer
+	* AGpr creature topic				-> Answer reverse;
 !!
 Verb 'chiedi' 'domanda'
-    * creature 'su'/'di' topic      		-> Ask
-    * 'a//' creature 'su'/'di' topic 		-> Ask
-    * 'su'/'di' topic 'a//' creature 		-> Ask reverse
-    * topic 'a//' creature        		-> Ask reverse;
+    * creature  SuDiGpr topic      		-> Ask
+    * AGpr creature  SuDiGpr topic 		-> Ask
+    *  SuDiGpr topic AGpr creature 		-> Ask reverse
+    * topic AGpr creature        				-> Ask reverse;
 Verb 'ordina' 'comanda' 'impartisci' 
     * creature 'di' topic      			-> AskTo
-    * 'a//' creature 'di' topic 		-> AskTo
-    * 'di' topic 'a//' creature 		-> AskTo reverse
-    * topic 'a//' creature        		-> AskTo reverse;
-Verb 'richiedi' 'esigi' 'estorci' 
-    * 'a//'/'da' creature noun        		-> AskFor
-    * noun 'a//'/'da' creature        		-> AskFor reverse;
+    * AGpr creature 'di' topic 			-> AskTo
+    * 'di' topic AGpr creature 			-> AskTo reverse
+    * topic AGpr creature        		-> AskTo reverse;
+Verb 'estorci' 
+    * AGpr creature noun        		-> AskFor
+    * noun AGpr creature        		-> AskFor reverse;
+Verb 'richiedi' 'esigi'
+    * DaGpr creature noun        		-> AskFor
+    * noun DaGpr creature        		-> AskFor reverse;
 !!
 Verb 'attacca' 'rompi' 'crepa' 'distruggi'
 		'affronta' 'colpisci' 'uccidi' 'ammazza' 'assassina'
@@ -30,15 +58,15 @@ Verb 'attacca' 'rompi' 'crepa' 'distruggi'
 	* noun 'con' held                          -> Attack;
 !!
 Verb 'sali' 'scala' 'arrampica'
-	* 'su' noun            				-> Climb
-	*  noun                                		-> Climb
-	* 'dentro'/'in' noun                    	-> Enter
-	* 'fuori' 'da' noun				-> Exit;
+	* SuGpr noun            					-> Climb
+	*  noun                           -> Climb
+	* InGpr noun                    	-> Enter
+	* 'fuori' DaGpr noun							-> Exit;
 !!
 Verb 'chiudi'
-    * noun                               		-> Close
+    * noun                            -> Close
     * 'a//' 'chiave' noun      				-> Lock
-    * noun 'con' held                    		-> Lock;
+    * noun 'con' held                 -> Lock;
 Verb 'copri' 'richiudi'
 	* noun						-> Close;
 !!
@@ -54,17 +82,19 @@ Verb 'bevi' 'sorseggia' 'tracanna'
     * noun                               		-> Drink;
 !!
 Verb 'scarta' 'lancia' 'scaglia'
-    * multiheld                          		-> Drop
-    * multiexcept 'in'/'dentro' noun        -> Insert
-    * held 'contro'/'a' noun     						-> ThrowAt
-    * multiexcept 'su'/'sopra' noun         -> PutOn;
+    * multiheld                     -> Drop
+    * multiexcept InGpr noun        -> Insert
+    * held 'contro' noun     				-> ThrowAt
+    * held AGpr noun     						-> ThrowAt
+    * multiexcept SuGpr noun        -> PutOn;
 Verb 'abbandona' 'lascia'
-    * multiheld                          		-> Drop
-    * multiexcept 'in'/'dentro' noun        -> Insert
-    * held 'contro'/'a' noun     						-> ThrowAt
-    * multiexcept 'su'/'sopra' noun          -> PutOn
-		*                                   -> Exit
-		* noun                              -> Exit;
+    * multiheld                     -> Drop
+    * multiexcept InGpr noun        -> Insert
+    * held 'contro' noun     				-> ThrowAt
+    * held AGpr noun     						-> ThrowAt
+    * multiexcept SuGpr noun        -> PutOn
+		*                               -> Exit
+		* noun                          -> Exit;
 !!
 Verb 'mangia' 'ingoia'
     * held                -> Eat;
@@ -72,10 +102,12 @@ Verb 'mangia' 'ingoia'
 #IfDef OPTIONAL_EXTENDED_VERBSET;
 Verb 'entra'
 	*                                           -> GoIn
-	* noun                                      -> Enter;
+	* noun                                      -> Enter
+	* InGpr noun                                -> Enter;
 #IfNot;
 Verb 'entra'
-	* noun                                      -> Enter;
+	* noun                                      -> Enter
+	* InGpr noun                                -> Enter;
 #Endif;
 !!
 Verb 'esamina' 'x//'
@@ -88,24 +120,20 @@ Verb 'esci' 'scappa'
 Verb 'riempi'
 	* noun                              -> Fill;
 !!
-Verb 'prendi'
-	* multi                                 -> Take;
 [ GoDownSub;
 	! shortcut to <<Go down>>
 	<Go FAKE_D_OBJ>;
 ];
 Verb 'scendi'
 	*					-> GoDown
-	* 'da' noun				-> GetOff;
-
-Verb 'coge' 'toma' 'recoge'
-  * multi                             	-> Take
-  * 'a//' creature                    	-> Take
-  * multiinside 'de' noun             	-> Remove;
+	* DaGpr noun				-> GetOff;
+Verb 'prendi'
+	* multi                             -> Take
+	* multiinside DaGpr noun						-> Remove;
 !!
 Verb 'dai' 'sfama' 'offri' 'dona' 'paga'
-    * held 'a//' creature        		-> Give
-    * 'a//' creature held        		-> Give reverse
+    * held AGpr creature        		-> Give
+    * AGpr creature held        		-> Give reverse
     * creature held            			-> Give reverse;
 
 [ ADirection;
@@ -115,12 +143,13 @@ Verb 'dai' 'sfama' 'offri' 'dona' 'paga'
 !!
 Verb 'vai' 
     * noun=ADirection                   -> Go
-    * 'a//' noun=ADirection           	-> Go
+    * AGpr noun=ADirection           		-> Go
     * noun                              -> Enter
-    * 'a//'/'in' noun                   -> Enter;
+    * AGpr noun                   			-> Enter
+    * InGpr noun                   			-> Enter;
 !!
 Verb 'inserisci'
-	* multiexcept 'in'/'dentro' noun              -> Insert;
+	* multiexcept InGpr noun              -> Insert;
 !!
 #Ifdef OPTIONAL_FLEXIBLE_INVENTORY;
 Verb 'inventario' 'i//' 
@@ -134,8 +163,9 @@ Verb 'inventario' 'i//'
 Verb 'salta'
     *                                    		-> Jump
     * noun                               		-> JumpOver
-    * 'dentro'/'in' noun                      		-> Enter
-    * 'sopra'/'su'/'oltre' noun              		-> JumpOver;
+    * InGpr noun                      		  -> Enter
+    * SuGpr noun              							-> JumpOver
+    * 'oltre' noun              						-> JumpOver;
 Verb 'scavalca'
     * noun						-> JumpOver;
 !!
@@ -149,7 +179,8 @@ Verb 'serra'
 Verb 'guarda' 'vedi' 'osserva' 'v//'
     *                                    		-> Look
     * noun                               		-> Examine
-    * 'dentro'/'sopra'/'in'/'su' noun         		-> Search;
+    * InGpr noun         										-> Search
+    * SuGpr noun         										-> Search;
 !!
 Verb 'apri' 'schiudi'
 	* noun                                      -> Open
@@ -163,53 +194,57 @@ Verb 'tira' 'trascina'
 !!
 Verb 'spingi' 'sgombra' 'muovi' 'premi' 'sposta'
     * noun                               	-> Push
-    * noun 'verso' noun=ADirection              -> PushDir
-    * noun noun=ADirection                      -> PushDir
-    * noun 'a//'/'su'/'in'/'verso' noun         -> Transfer;
+    * noun 'verso' noun=ADirection        -> PushDir
+    * noun noun=ADirection                -> PushDir
+    * noun AGpr noun         							-> Transfer
+    * noun SuGpr noun         						-> Transfer
+    * noun InGpr noun         						-> Transfer
+    * noun 'verso' noun                   -> Transfer;
 !!
 Verb 'metti' 'piazza' 'posiziona' 'colloca'
-	* multiexcept 'in'/'dentro' noun	-> Insert
-	* multiexcept 'su'/'sopra' noun		-> PutOn
-	* 'su' held                            	-> Wear;
+	* multiexcept InGpr noun								-> Insert
+	* multiexcept SuGpr noun								-> PutOn
+	* SuGpr held                            -> Wear;
 !!
 Verb 'leggi'
     * noun                               	-> Examine
-    * 'su'/'di' topic 'in'/'dentro' noun        -> Consult reverse
-    * topic 'in'/'dentro' noun                	-> Consult reverse
-    * 'in'/'dentro' noun 'su'/'di' topic       	-> Consult
-    * 'in'/'dentro' noun topic            	-> Consult;
+    *  SuDiGpr topic InGpr noun          -> Consult reverse
+    * topic InGpr noun            				-> Consult reverse
+    * InGpr noun  SuDiGpr topic       		-> Consult
+    * InGpr noun topic            				-> Consult;
 !!
 Verb 'togli'
 	* worn                        		-> Disrobe
 	* multi                                 -> Take
-	* multiinside 'da' noun			-> Remove;
+	* multiinside DaGpr noun			-> Remove;
 !!
 Verb 'sfrega' 'pulisci' 'spolvera' 'lucida' 'strofina' 'smacchia' 'spazza'
 	* noun                                  -> Rub;
 !!
 Verb 'cerca'
     * noun                          		-> Search
-    * 'su'/'di' topic 'in'/'dentro' noun        -> Consult reverse
-    * topic 'in'/'dentro' noun                	-> Consult reverse
-    * 'in'/'dentro' noun 'su'/'di' topic       	-> Consult
-    * 'in'/'dentro' noun topic            	-> Consult;
+    *  SuDiGpr topic InGpr noun        -> Consult reverse
+    * topic InGpr noun                	-> Consult reverse
+    * InGpr noun  SuDiGpr topic       	-> Consult
+    * InGpr noun topic            			-> Consult;
 !!
 Verb 'svestiti' 'spogliati'
-	* 'di' held                             -> Disrobe;
+	* DiGpr held                             -> Disrobe;
 !!
 Verb 'grida' 'urla' 'sbraita'
-	* topic 'a//' creature               	-> Answer
-	* 'a//' noun                         	-> ShoutAt
-	* topic                                     -> Shout
-	*                                           -> Shout;
+	* topic AGpr creature               	-> Answer
+	* AGpr noun                         	-> ShoutAt
+	* topic                               -> Shout
+	*                                     -> Shout;
 !!
 Verb 'mostra' 'presenta' 'sfoggia'
-    * creature held                     		-> Show reverse
-    * 'a//' creature held        				-> Show reverse
-    * held 'a//' creature        				-> Show;
+    * creature held                     -> Show reverse
+    * AGpr creature held        				-> Show reverse
+    * held AGpr creature        				-> Show;
 !!
 Verb 'siedi' 'siediti' 'sdraiati' 'accomodati'
-    * 'su'/'in'/'dentro'/'sopra' noun             	-> Enter;
+    * SuGpr noun             	-> Enter
+    * InGpr noun             	-> Enter;
 !!
 Verb 'annusa' 'odora'
     *                                    		-> Smell
@@ -238,26 +273,30 @@ Verb 'disattiva' 'spegni'
 !!
 #Ifndef EXT_TALK_MENU;
 Verb 'informa' 'narra' 'spiega' 'rivela' 'parla' 'comunica' 'conversa'
-    * creature 'su'/'di' topic        			 -> Tell
-    * creature topic                       	 -> Tell
-    * 'a//'/'con' creature 'su'/'di' topic 	 -> Tell
-    * 'a//'/'con' creature  topic        		 -> Tell
-    * 'su'/'di' topic 'a//'/'con' creature   -> Tell reverse
-    * topic 'a//'/'con' creature        		 -> Tell reverse;
+    * creature SuDiGpr topic        			-> Tell
+    * creature topic                      -> Tell
+    * 'con' creature SuDiGpr topic 	 	    -> Tell
+    * 'con' creature topic        		    -> Tell
+    * SuDiGpr topic 'con' creature		    -> Tell reverse
+    * topic 'con' creature		            -> Tell reverse
+    * AGpr creature SuDiGpr topic 	 	    -> Tell
+    * AGpr creature topic        		      -> Tell
+    * SuDiGpr topic AGpr creature		      -> Tell reverse
+    * topic AGpr creature                 -> Tell reverse;
 #Endif;
 #Ifdef EXT_TALK_MENU;
 Verb 'informa' 'narra' 'spiega' 'rivela'
-    * creature 'su'/'di' topic        			 -> Tell
-    * creature topic                       	 -> Tell
-    * 'a//'/'con' creature 'su'/'di' topic 	 -> Tell
-    * 'a//'/'con' creature  topic        		 -> Tell
-    * 'su'/'di' topic 'a//'/'con' creature   -> Tell reverse
-    * topic 'a//'/'con' creature        		 -> Tell reverse;
+    * creature SuDiGpr topic        			-> Tell
+    * creature topic                      -> Tell
+    * AGpr creature SuDiGpr topic 	 	    -> Tell
+    * AGpr creature topic        		      -> Tell
+    * SuDiGpr topic AGpr creature		      -> Tell reverse
+    * topic AGpr creature                 -> Tell reverse;
 #Endif;
 !!
 Verb 'lega' 'appiccica' 'avvita' 'ripara' 'incolla' 'salda' 'unisci' 'collega'
     * noun                               		-> Tie
-    * noun 'a//' noun                      		-> Tie;
+    * noun AGpr noun                     		-> Tie;
 !!
 Verb 'tocca' 'tasta' 'palpa' 'saggia'
     * noun                               		-> Touch;
@@ -351,7 +390,8 @@ Verb 'indossa'
 	if(location == thedark)
 		scope_modified = true;
 #Endif;
-	PrintMsg(MSG_DROP_DROPPED, noun); rtrue;
+	run_after_routines_msg = MSG_DROP_DROPPED;
+	!PrintMsg(MSG_DROP_DROPPED, noun); rtrue;
 ];
 
 [ EatSub;
@@ -697,6 +737,7 @@ Array _PutOnMessages static -->
 	action = ##Remove; if (AfterRoutines()) rtrue;
 	action = ##Take;
 	run_after_routines_msg = MSG_REMOVE_DEFAULT;
+	!PrintMsg(MSG_REMOVE_DEFAULT, noun); rtrue;
 ];
 
 [ RubSub;
@@ -766,7 +807,8 @@ Array _PutOnMessages static -->
 
 [ TakeSub;
 	if(TryToTakeNoun(true) ~= false) rtrue;
-	PrintMsg(MSG_TAKE_DEFAULT); rtrue;
+	run_after_routines_msg = MSG_TAKE_DEFAULT;
+	!PrintMsg(MSG_TAKE_DEFAULT); rtrue;
 ];
 
 [ TieSub;
@@ -875,19 +917,20 @@ Verb 'compra' 'acquista'
     * noun                               		-> Buy;
 !!
 Verb 'consulta'
-    * creature 'su'/'di' topic      		-> Ask
-    * 'a//' creature 'su'/'di' topic 		-> Ask
-    * 'su'/'di' topic 'a//' creature 		-> Ask reverse
-    * topic 'a//' creature        		-> Ask reverse
-    * 'su'/'di' topic 'in'/'dentro' noun        -> Consult reverse
-    * topic 'in'/'dentro' noun                	-> Consult reverse
-    * 'in'/'dentro' noun 'su'/'di' topic       	-> Consult
-    * 'in'/'dentro' noun topic            	-> Consult;
+    * creature  SuDiGpr topic      	-> Ask
+    * AGpr creature  SuDiGpr topic 	-> Ask
+    *  SuDiGpr topic AGpr creature 	-> Ask reverse
+    * topic AGpr creature        			-> Ask reverse
+    *  SuDiGpr topic InGpr noun      -> Consult reverse
+    * topic InGpr noun                -> Consult reverse
+    * InGpr noun  SuDiGpr topic      -> Consult
+    * InGpr noun topic            		-> Consult;
 
 !!
 Verb 'svuota' 'vuota' 'versa' 'riversa'
-    * noun                               	-> Empty
-    * noun 'su'/'sopra'/'in'/'dentro' noun 	-> EmptyT;
+    * noun              							-> Empty
+    * noun SuGpr noun 								-> EmptyT;
+    * noun InGpr noun 								-> EmptyT;
 !!
 Verb 'penetra' 'dentro'
 	*                                           -> GoIn;
@@ -937,7 +980,8 @@ Verb 'nuota' 'tuffati'
     *                                    		-> Swim;
 !!
 Verb 'dondola' 'bilanciati' 'aggrappati'
-    * 'su'/'con' noun                          		-> Swing;
+    * 'con' noun     			                  -> Swing;
+    * SuGpr noun                       			-> Swing;
 !!
 Verb 'assaggia' 'degusta' 'assapora' 'lecca'
     * noun                               		-> Taste;
@@ -946,7 +990,10 @@ Verb 'pensa' 'rifletti' 'rimugina'
     *                                    		-> Think;
 !!
 Verb 'trasferisci' 'trasporta' 'travasa'
-   * noun 'a//'/'su'/'in'/verso noun           -> Transfer;
+   * noun AGpr noun           							-> Transfer;
+   * noun SuGpr noun 							          -> Transfer;
+   * noun InGpr noun           							-> Transfer;
+   * noun 'verso' noun           						-> Transfer;
 !!
 Verb 'svegliati' 'rinvieniti'
     * -> Wake;
@@ -1140,13 +1187,13 @@ Verb meta 'oops' 'ops'
 	*                                           -> Oops
 	* special                                   -> OopsCorrection;
 
-Verb meta 'ricominciare'
+Verb meta 'ricomincia'
 	*                                           -> Restart;
 
-Verb meta 'caricare'
+Verb meta 'carica'
 	*                                           -> Restore;
 
-Verb meta 'salvare'
+Verb meta 'salva'
 	*                                           -> Save;
 
 #Ifndef OPTIONAL_FULL_SCORE;
@@ -1163,7 +1210,7 @@ Verb meta 'verbose' 'lungo'
 Verb meta 'versione'
 	*                                           -> Version;
 
-Verb meta 'quit' 'q//' 'terminare'
+Verb meta 'quit' 'q//' 'termina'
 	*                                           -> Quit;
 
 [ AgainSub;
@@ -1267,7 +1314,7 @@ Verb meta 'quit' 'q//' 'terminare'
 #Iftrue #version_number < 4;
 [ RestoreSub;
 	@restore ?_restore_was_successful; ! can't use @restore because of compiler test
-	verb_word = 'caricare';
+	verb_word = 'carica';
 	return MSG_RESTORE_FAILED;
 ._restore_was_successful; ! This is never reached, since a successful restore continues after save opcode.
 #Ifnot;

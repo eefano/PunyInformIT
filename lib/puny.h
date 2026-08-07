@@ -647,7 +647,7 @@ Constant ONE_SPACE_STRING = " ";
 				1: print "ma";
 				2: print "e";
 				}
-				print "vuot", (_o) p_obj, ")";
+				print " vuot", (_o) p_obj, ")";
 				if(_newline) new_line;
 			} else {
 				if(_newline == 0) {
@@ -2902,17 +2902,17 @@ Object thedark "Buio"
 		_ReadPlayerInput(true);
 		verb_word = parse-->1;
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
-		if(verb_word == 'undo' or verb_word == 'rimediare') {
+		if(verb_word == 'undo' or verb_word == 'rimedia') {
 			PerformUndo();
 		}
 #Endif;
-		if(verb_word == 'ricominciare') @restart;
-		if(verb_word == 'caricare') <Restore>;
+		if(verb_word == 'ricomincia') @restart;
+		if(verb_word == 'carica') <Restore>;
 #Ifdef Amusing;
 		if(AMUSING_PROVIDED == 0 && deadflag == GS_WIN && verb_word == 'spasso') 
 			Amusing();
 #Endif;
-		if(verb_word == 'terminare') @quit;
+		if(verb_word == 'termina') @quit;
 #IfDef OPTIONAL_FULL_SCORE;
 		if(verb_word == 'totale') <FullScore>;
 #EndIf;
