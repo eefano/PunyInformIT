@@ -1,0 +1,20 @@
+
+> guarda
+Stanza
+Sei in una stanza piena di cose.
+Puoi vedere un'ancora, uno pneumatico, un angelo e degli stecchi qui.
+
+> esamina l' ancora
+Non c'è nulla di speciale nell'ancora.
+
+> esamina l' angelo
+Non c'è nulla di speciale nell'angelo.
+
+> esamina gli stecchi
+Non c'è nulla di speciale negli stecchi.
+
+> esamina lo pneumatico
+Non c'è nulla di speciale nello pneumatico.
+
+> termina
+Sei sicuro di voler terminare il gioco? si

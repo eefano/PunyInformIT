@@ -848,14 +848,20 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 
 	! check for pronouns
 	_k = p_parse_pointer --> 0;
-	if(_k == '-lo' or '-la' or '-li' or '-le' or '-ti') { 
+	if(_k == '-lo' or 'quello' or '-la' or 'quella' or '-li' or 'quelli' or 'quegli' or '-le' or 'quelle' or '-ti' or 'te') { 
 		p_parse_pointer = p_parse_pointer + 4;
 		switch(_k) {
 		'-lo': _noun = lo_obj;
+		'quello': _noun = lo_obj;
 		'-la': _noun = la_obj;
+		'quella': _noun = la_obj;
 		'-li': _noun = li_obj;
+		'quelli': _noun = li_obj;
+		'quegli': _noun = li_obj;
 		'-le': _noun = le_obj;
+		'quelle': _noun = le_obj;
 		'-ti': _noun = player;
+		'te': _noun = player;
 		}
 		if(_noun == 0) {
 			phase2_necessary = PHASE2_ERROR;

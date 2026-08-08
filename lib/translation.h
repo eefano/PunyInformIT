@@ -38,6 +38,9 @@ System_file;
 ];
 
 [ Translation w x length change cx cx1;
+  
+	ProcessApostrofi();
+
 	for (w=parse->1:w>=1:w--) {
 		length = parse->(4*w);
 		if (parse-->(w*2-1) == 0 && length >= 3) {
@@ -55,12 +58,21 @@ System_file;
 			}
 		}
 	}
-	if (change) {
-		Tokenise__(buffer, parse);
-	}
+	if (change) Tokenise__(buffer, parse);
 ];
 
 [ Insert_Suffix pos len;
 	LTI_Insert(pos-len, '-');
 	LTI_Insert(pos-len, ' ');
+];
+
+[ ProcessApostrofi change i b;
+	b = buffer;
+	for(i=0 : i < b ->1 : i++) {
+		if(b->(i+2) == '@@39') {
+			LTI_Insert(i+3, ' ');
+			change = true;
+		}
+	}
+	if (change)	Tokenise__(buffer, parse);
 ];

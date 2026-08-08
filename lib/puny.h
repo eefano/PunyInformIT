@@ -586,18 +586,42 @@ Constant ONE_SPACE_STRING = " ";
 		if(p_form == FORM_CDEF) {
 			if (p_obj has pluralname) {
 				if (p_obj has female) print "Le ";
-				else print "I ";
+				else {
+					if (p_obj has logli) print "Gli ";
+					else print "I ";
+				} 
 			} else {
-				if (p_obj has female) print "La ";
-				else print "Il ";
+				if (p_obj has female) {
+					if (p_obj has apostrofo) print "L'";
+					else print "La ";
+				} 
+				else {
+					if (p_obj has logli) {
+						if (p_obj has apostrofo) print "L'";
+						else print "Lo ";
+					}
+					else print "Il ";
+				}
 			}
 		} else if(p_form == FORM_DEF) {
 			if (p_obj has pluralname) {
 				if (p_obj has female) print "le ";
-				else print "i ";
+				else {
+					if (p_obj has logli) print "gli ";
+					else print "i ";
+				}
 			} else {
-				if (p_obj has female) print "la ";
-				else print "il ";
+				if (p_obj has female) {
+					if (p_obj has apostrofo) print "l'";
+					else print "la ";
+				} 
+				else {
+					if (p_obj has logli) {
+						if (p_obj has apostrofo) print "l'";
+						else print "lo ";
+					}
+					else print "il ";
+				}
 			}
 		} else if(p_form == FORM_INDEF) {
 			if(p_obj.&article) {
@@ -606,10 +630,22 @@ Constant ONE_SPACE_STRING = " ";
 			}
 			else if(p_obj has pluralname) {
 				if (p_obj has female) print "delle ";
-				else print "dei ";
+				else {
+					if (p_obj has logli) print "degli ";
+					else print "dei ";
+				}
 			} else {
-				if (p_obj has female) print "una ";
-				else print "un ";
+				if (p_obj has female) {
+					if(p_obj has apostrofo) print "un'";
+					else print "una ";
+				}
+				else {
+					if (p_obj has logli) {
+						if (p_obj has apostrofo) print "un ";
+						else print "uno ";
+					} 
+					else print "un ";
+				}
 			}
 		}
 	}
@@ -2902,14 +2938,14 @@ Object thedark "Buio"
 		_ReadPlayerInput(true);
 		verb_word = parse-->1;
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
-		if(verb_word == 'undo' or verb_word == 'rimedia') {
+		if(verb_word == 'rimedia') {
 			PerformUndo();
 		}
 #Endif;
 		if(verb_word == 'ricomincia') @restart;
 		if(verb_word == 'carica') <Restore>;
 #Ifdef Amusing;
-		if(AMUSING_PROVIDED == 0 && deadflag == GS_WIN && verb_word == 'spasso') 
+		if(AMUSING_PROVIDED == 0 && deadflag == GS_WIN && verb_word == 'retroscena') 
 			Amusing();
 #Endif;
 		if(verb_word == 'termina') @quit;

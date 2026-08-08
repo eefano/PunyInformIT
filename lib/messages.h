@@ -1193,7 +1193,7 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #Endif;
 #IfTrue MSG_RESTART_RESTORE_OR_QUIT < 1000;
 	MSG_RESTART_RESTORE_OR_QUIT:
-		print "^Comanda RICOMINCIA, CARICA";
+		print "^Ora RICOMINCIA il gioco, CARICA una partita";
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
 	#Ifdef DEATH_MENTION_UNDO;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0)
@@ -1204,13 +1204,13 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 	#Endif;
 #Endif;
 #IfDef OPTIONAL_FULL_SCORE;
-		print ", vedere il punteggio TOTALE per questo gioco";
+		print ", guarda il punteggio TOTALE";
 #EndIf;
 #Ifdef Amusing;
 		if(AMUSING_PROVIDED == 0 && deadflag == GS_WIN) 
-			print ", avere consigli per altro SPASSO";
+			print ", leggi i RETROSCENA";
 #Endif;
-		print " o TERMINA il gioco? ";
+		print " o TERMINA il gioco.";
 		rtrue;
 #EndIf;
 #IfTrue MSG_AREYOUSUREQUIT < 1000;
@@ -1346,61 +1346,121 @@ default:
 
 [DiPrep p_obj;
 	if (p_obj has pluralname) {
-		if (p_obj has female) print "delle";
-		else print "dei";
+		if (p_obj has female) print "delle ";
+		else {
+			if (p_obj has logli) print "degli ";
+			else print "dei ";
+		}
 	} else {
-		if (p_obj has female) print "della";
-		else print "del";
+		if (p_obj has female) {
+			if (p_obj has apostrofo) print "dell'";
+			else print "della ";
+		} 
+		else {
+			if (p_obj has logli) { 
+				if (p_obj has apostrofo) print "dell'"; 
+				else print "dello ";
+			}
+			else print "del ";
+		}
 	}
-	print " ", (name) p_obj;
+	print (name) p_obj;
 	return;
 ];
 
 [APrep p_obj;
 	if (p_obj has pluralname) {
-		if (p_obj has female) print "alle";
-		else print "ai";
+		if (p_obj has female) print "alle ";
+		else {
+			if (p_obj has logli) print "agli ";
+			else print "ai ";
+		}
 	} else {
-		if (p_obj has female) print "alla";
-		else print "al";
+		if (p_obj has female) {
+			if (p_obj has apostrofo) print "all'";
+			else print "alla ";
+		} 
+		else {
+			if (p_obj has logli) { 
+				if (p_obj has apostrofo) print "all'"; 
+				else print "allo ";
+			}
+			else print "al ";
+		}
 	}
-	print " ", (name) p_obj;
+	print (name) p_obj;
 	return;
 ];
 
 [DaPrep p_obj;
 	if (p_obj has pluralname) {
-		if (p_obj has female) print "dalle";
-		else print "dai";
+		if (p_obj has female) print "dalle ";
+		else {
+			if (p_obj has logli) print "dagli ";
+			else print "dai ";
+		}
 	} else {
-		if (p_obj has female) print "dalla";
-		else print "dal";
+		if (p_obj has female) {
+			if (p_obj has apostrofo) print "dall'";
+			else print "dalla ";
+		} 
+		else {
+			if (p_obj has logli) { 
+				if (p_obj has apostrofo) print "dall'"; 
+				else print "dallo ";
+			}
+			else print "dal ";
+		}
 	}
-	print " ", (name) p_obj;
+	print (name) p_obj;
 	return;
 ];
 
 [InPrep p_obj;
 	if (p_obj has pluralname) {
-		if (p_obj has female) print "nelle";
-		else print "nei";
+		if (p_obj has female) print "nelle ";
+		else {
+			if (p_obj has logli) print "negli ";
+			else print "nei ";
+		}
 	} else {
-		if (p_obj has female) print "nella";
-		else print "nel";
+		if (p_obj has female) {
+			if (p_obj has apostrofo) print "nell'";
+			else print "nella ";
+		} 
+		else {
+			if (p_obj has logli) { 
+				if (p_obj has apostrofo) print "nell'"; 
+				else print "nello ";
+			}
+			else print "nel ";
+		}
 	}
-	print " ", (name) p_obj;
+	print (name) p_obj;
 	return;
 ];
 
 [SuPrep p_obj;
 	if (p_obj has pluralname) {
-		if (p_obj has female) print "sulle";
-		else print "sui";
+		if (p_obj has female) print "sulle ";
+		else {
+			if (p_obj has logli) print "sugli ";
+			else print "sui ";
+		}
 	} else {
-		if (p_obj has female) print "sulla";
-		else print "sul";
+		if (p_obj has female) {
+			if (p_obj has apostrofo) print "sull'";
+			else print "sulla ";
+		} 
+		else {
+			if (p_obj has logli) { 
+				if (p_obj has apostrofo) print "sull'"; 
+				else print "sullo ";
+			}
+			else print "sul ";
+		}
 	}
-	print " ", (name) p_obj;
+	print (name) p_obj;
 	return;
 ];
 

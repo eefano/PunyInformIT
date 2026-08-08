@@ -40,4 +40,4 @@ test-panels:
 	frotz test-panels.z3
 
 clean:
-	rm -f *.z3 *.z5 *.z8 *.scr *.output *.messages
+	rm -f *.z? *.scr *.output *.messages

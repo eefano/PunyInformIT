@@ -538,7 +538,7 @@ Property individual cheap_scenery;
 
 Object CheapScenery "oggetto"
 	with
-		article ARTICLE_UN,
+		article "un",
 		parse_name [ _ret _pronoun;
 			cs_match_id = 0;
 			CSData-->CSDATA_MATCH_LENGTH = 0;

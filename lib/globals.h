@@ -15,14 +15,6 @@ Message fatalerror "*** La libreria PunyInformIT necessita di Inform v6.44 o suc
 #include "abbrevs.h";
 #EndIf;
 
-Constant ARTICLE_UN     0;
-Constant ARTICLE_UNO    3;
-Constant ARTICLE_UNA    6;
-Constant ARTICLE_DEL    9;
-Constant ARTICLE_DEGLI  12;
-Constant ARTICLE_DELLE  15;
-Constant ARTICLE_DEI    18;
-
 #IfDef STATUSLINE_TIME;
 #IfDef STATUSLINE_SCORE;
 Message fatalerror "Non si possono definire STATUSLINE_TIME e STATUSLINE_SCORE assieme."
@@ -79,7 +71,7 @@ Constant PHASE2_SCOPE           = 3;
 !Constant WORDSIZE 2; ! set by the compiler from Inform 6.30
 
 [_IsArticle text;
-	if (text=='un' or 'uno' or 'una' or 'il' or 'lo' or 'la' or 'i' or 'gli' or 'le') rtrue;
+	if (text=='un' or 'uno' or 'una' or 'un@@39' or 'il' or 'lo' or 'la' or 'i//' or 'gli' or 'le' or 'l@@39') rtrue;
 	rfalse;
 ];
 
@@ -102,7 +94,7 @@ Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 
 ! Isolating words and punctuation for reuse and potential translation
 Constant SOMETHING_STR = "qualcosa";
-Constant SOMEONE_STR = "qualcun*";
+Constant SOMEONE_STR = "qualcuno/a";
 Constant SOMEDIRECTION_STR = "(una direzione)";
 Constant IS_STR = "è ";
 Constant ARE_STR = "sono ";
@@ -142,7 +134,8 @@ Attribute clothing;
 Attribute worn;
 Attribute pluralname;
 Attribute female;
-Attribute neuter;
+Attribute apostrofo;
+Attribute logli;
 Attribute general;
 Attribute switchable;
 Attribute on;

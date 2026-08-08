@@ -25,7 +25,7 @@ def runtest(filename, version, inform_args)
         specific_template = "#{basename}.z#{version}.txt"
         template_file = specific_template if File.exist? specific_template
         inform_cmd = $inform_compiler + " +.  +../lib -v#{version} -Cu #{inform_args} #{filename}"
-        frotz_cmd = "frotz -w 80 -h 200 #{basename}.z#{version} < #{command_file}"
+        frotz_cmd = "dfrotz -w 80 -h 200 #{basename}.z#{version} < #{command_file}"
 #        prune_cmd = "tail -n +6 #{transcript_file} | grep -v PunyInform > #{output_file}"
 		#prune_cmd = "tail -n +6 #{transcript_file} | grep -v PunyInform | gawk \"/qzl/ {print;next} {print gensub(/^(Default is \\\".+)\\\"/, \\\"\\\\\\1.qzl\\\\\\\"\\\", \\\"g\\\"); } \" > #{output_file}"
 		prune_cmd = "tail -n +6 #{transcript_file} | grep -v 'PunyInform v' | gawk \"/qzl/ {print;next} {print gensub(/^(Default is \\\".+)\\\"/, \\\"\\\\\\1.qzl\\\\\\\"\\\", \\\"g\\\"); } \" > #{output_file}"

@@ -1,28 +1,28 @@
 ! ######################### Grammar + Actions
 
 [ DiGpr; 
-	if (NextWord() == 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle') return GPR_PREPOSITION;
+	if (NextWord() == 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle' or 'dell@@39') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
 [ AGpr; 
-	if (NextWord() == 'a//' or 'al' or 'allo' or 'alla' or 'ai' or 'agli' or 'alle') return GPR_PREPOSITION;
+	if (NextWord() == 'a//' or 'al' or 'allo' or 'alla' or 'ai' or 'agli' or 'alle' or 'all@@39') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
 [ DaGpr; 
-	if (NextWord() == 'da' or 'dal' or 'dallo' or 'dalla' or 'dai' or 'dagli' or 'dalle') return GPR_PREPOSITION;
+	if (NextWord() == 'da' or 'dal' or 'dallo' or 'dalla' or 'dai' or 'dagli' or 'dalle' or 'dall@@39') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
 [ InGpr;
-  if (NextWord() == 'in' or 'nel' or 'nello' or 'nella' or 'nei' or 'negli' or 'nelle' or 'dentro') return GPR_PREPOSITION;
+  if (NextWord() == 'in' or 'nel' or 'nello' or 'nella' or 'nei' or 'negli' or 'nelle' or 'nell@@39' or 'dentro') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
 [ SuGpr; 
-	if (NextWord() == 'su' or 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sopra') return GPR_PREPOSITION;
+	if (NextWord() == 'su' or 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sull@@39' or 'sopra') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
 [ SuDiGpr; 
-	if (NextWord() == 'su' or 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sopra'
-	               or 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle') return GPR_PREPOSITION;
+	if (NextWord() == 'su' or 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sull@@39' or 'sopra'
+	               or 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle' or 'dell@@39') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
 ! ---------------------
@@ -1210,7 +1210,7 @@ Verb meta 'verbose' 'lungo'
 Verb meta 'versione'
 	*                                           -> Version;
 
-Verb meta 'quit' 'q//' 'termina'
+Verb meta 'termina' 'q//'
 	*                                           -> Quit;
 
 [ AgainSub;
