@@ -133,28 +133,28 @@ Prima devi entrare nella scatola rossa.
 Prima devi entrare nel tavolo.
 
 > entra tavolo
-Sei entrato nel tavolo.
+Sei sul tavolo.
 
 > entra scatola trasparente
 Prima devi entrare nella scatola rossa.
 
 > entra scatola rossa
-Sei entrato nella scatola rossa.
+Sei nella scatola rossa.
 
 > entra nella scatola trasparente
-Sei entrato nella scatola trasparente.
+Sei nella scatola trasparente.
 
 > entra nel tavolo
 Prima devi uscire dalla scatola trasparente.
 
 > esci
-Sei uscito dalla scatola trasparente.
+Sei fuori dalla scatola trasparente.
 
 > esci
-Sei uscito dalla scatola rossa.
+Sei fuori dalla scatola rossa.
 
 > esci
-Sei uscito dal tavolo.
+Hai disceso il tavolo.
 
 > termina
 Sei sicuro di voler terminare il gioco? si

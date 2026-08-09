@@ -120,13 +120,10 @@ Verb 'esci' 'scappa'
 Verb 'riempi'
 	* noun                              -> Fill;
 !!
-[ GoDownSub;
-	! shortcut to <<Go down>>
-	<Go FAKE_D_OBJ>;
-];
 Verb 'scendi'
-	*					-> GoDown
-	* DaGpr noun				-> GetOff;
+	*																		-> GetOff
+	* noun															-> Exit
+	* DaGpr noun												-> Exit;
 Verb 'prendi'
 	* multi                             -> Take
 	* multiinside DaGpr noun						-> Remove;
@@ -204,7 +201,7 @@ Verb 'spingi' 'sgombra' 'muovi' 'premi' 'sposta'
 Verb 'metti' 'piazza' 'posiziona' 'colloca'
 	* multiexcept InGpr noun								-> Insert
 	* multiexcept SuGpr noun								-> PutOn
-	* SuGpr held                            -> Wear;
+	* 'su' held                            -> Wear;
 !!
 Verb 'leggi'
     * noun                               	-> Examine
@@ -499,9 +496,14 @@ Verb 'indossa'
 	return MSG_FILL_NO_WATER;
 ];
 
-[ GetOffSub;
-	if (parent(player) == noun) <<Exit noun>>;
-	return MSG_EXIT_NOT_ON;
+[ GetOffSub _p;
+	_p = parent(player);
+	if(parent(_p) == 0) {
+		! player not inside, standing in the room
+		if(_p.out_to && noun == 0) <<Go FAKE_D_OBJ>>;
+		return MSG_EXIT_ALREADY;
+	}
+  ExitSub();
 ];
 
 [ GiveSub;

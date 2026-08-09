@@ -1,0 +1,27 @@
+
+> chiedi alla scala di me
+Lo puoi fare solo con qualcosa di animato.
+
+> chiedi a john di me
+Non ricevi risposta.
+
+> metti john sulla scatola
+(prendendo prima John)
+Non credo che John gradirebbe.
+
+> apri la scatola
+Hai aperto la scatola, rivelando un libro rosso.
+
+> prendi la scala
+Presa.
+
+> lascia la scala
+Lasciata.
+
+> prendi la scala e il rosso dalla scatola
+scala: Ma la scala non è qui ora.
+libro rosso: Iuppi, mi sono liberato del libro rosso!
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

@@ -1,0 +1,46 @@
+! This test checks issue 21. "held" grammar
+! https://github.com/johanberntsson/PunyInform/issues/21
+
+Constant Story      "Minimale";
+Constant Headline   "^Un gioco esempio che usa PunyInformIT.^";
+
+Constant INITIAL_LOCATION_VALUE = example_room;
+
+Constant OPTIONAL_EXTENDED_METAVERBS;
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+Include "globals.h";
+Include "puny.h";
+
+Object example_room "Stanza Esempio"
+	with description "Sei in una stanza esempio, per fare i test.",
+	has light;
+
+Object weight "peso di piombo" example_room
+	with name 'peso' 'piombo',
+		before [;
+			Take: print_ret (The) self, " è troppo pesante da sollevare.";
+	]
+;
+
+Object table "tavolo" example_room
+	with name 'tavolo';
+
+[Initialise;
+	return 2;
+];
+
+!Verb 'piazza' = 'metti';
+
+Extend 'metti'
+	*	held 'sotto' AGpr noun		-> PutUnder;
+
+[PutUnderSub;
+	remove noun;
+        if (AfterRoutines()) return;
+	"Hai messo ", (the) noun, " sotto ", (APrep) second, ".^^", (The) noun, " sparisce all'improvviso!";
+];

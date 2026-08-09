@@ -1,0 +1,109 @@
+! testing 'get red book and ladder from box'
+! and 'put john on box' response
+
+Constant Story      "Minimale";
+Constant Headline   "^Un gioco esempio che usa PunyInformIt.^";
+
+Constant INITIAL_LOCATION_VALUE = example_room;
+
+Constant OPTIONAL_EXTENDED_METAVERBS;
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+Include "globals.h";
+Include "puny.h";
+
+Class Book
+	with
+		name 'libri//p',
+		description [;
+			print "Quello è ", self, "^";
+			if(self provides hello) {
+				print (The) self, " has a Hello value of ", self.hello, ". ^";
+			}
+			rfalse;
+		],
+		hello 0,
+		party [a;
+			print "Self is ", self, "^";
+			print "a is ", a, "^";
+!			print "b is ", b, "^";
+!			print "c is ", c, "^";
+		],
+		before [;
+			Open:
+				"Non sei mai stato un gran lettore.";
+		],
+	has openable;
+
+
+Object example_room "Stanza Esempio"
+	with description "Sei in una stanza esempio, per fare i test.",
+	has light;
+
+Object -> LargeBox "La scatola" ! imposta quello che vogliamo vedere nella status line quando siamo nella scatola. short_name verrà usato negli altri casi.
+	with
+		short_name "scatola",
+		name 'scatola',
+		inside_description "La scatola sembra grande vista da fuori, ma ti sentirai parecchio alle strette qui.",
+		description "È una scatola larga. Potresti farci stare parecchia gente qua dentro.",
+        time_out [;
+            print "^La scatola esplode!^";
+        ],
+		before [;
+!			LetGo:
+!				"Non si può fare!";
+		],
+        after [;
+			LetGo:
+				"Iuppi, mi sono liberato ", (DiPrep) noun, "!";
+			Open:
+#IfDef OPTIONAL_FULL_SCORE;
+        	Achieved(0); ! opening the box is an achievement
+#EndIf;
+        Receive:
+        	++score;
+        	! win if you put two things in the box
+        	if(score >= MAX_SCORE) deadflag = 2;
+       	],
+		time_left 0,
+	has female container openable enterable static;
+
+Book -> -> RedBook "libro rosso"
+		with
+			name 'libro' 'rosso',
+			initial "Sul fondo della scatola c'è un libro rosso.",
+			description "Il libro è vecchio e consunto.",
+			before [;
+	 			Take:
+	 				if(player in LargeBox) {
+	 					"È troppo complicato prenderlo da dentro la scatola.";
+	 				}
+			];
+
+Object -> Ladder "scala"
+	with
+		name 'scala',
+		description [;
+			print "È molto robusta. ";
+			<Search self>;
+!			if(_PrintContents(" (che contiene ", p_obj)) print ")";
+		],
+		after [;
+			Receive: "Uau, hai messo ",(a) noun," ", (SuPrep) self, "...";
+		],
+		inside_description "È proprio una buona scala, tiene bene il peso.",
+	has female supporter enterable;
+
+Object -> John "John"
+    with
+        name 'john'
+    has proper animate;
+
+
+[Initialise;
+	return 2;
+];

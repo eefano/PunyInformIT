@@ -499,7 +499,7 @@ System_file;
 
 	return _score;
 ];
-	
+
 Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 
 #Ifdef ParseNoun;
@@ -848,8 +848,7 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 
 	! check for pronouns
 	_k = p_parse_pointer --> 0;
-	if(_k == '-lo' or 'quello' or '-la' or 'quella' or '-li' or 'quelli' or 'quegli' or '-le' or 'quelle' or '-ti' or 'te') { 
-		p_parse_pointer = p_parse_pointer + 4;
+	if(_k == '-lo' or 'quello' or '-la' or 'quella' or '-li' or 'quelli' or 'quegli' or '-le' or 'quelle' or '-ti' or 'te' or '-mi' or 'me') { 
 		switch(_k) {
 		'-lo': _noun = lo_obj;
 		'quello': _noun = lo_obj;
@@ -862,6 +861,8 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 		'quelle': _noun = le_obj;
 		'-ti': _noun = player;
 		'te': _noun = player;
+		'-mi': _noun = player;
+		'me': _noun = player;
 		}
 		if(_noun == 0) {
 			phase2_necessary = PHASE2_ERROR;
@@ -1069,7 +1070,7 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 	! check if current parse block, indicated by p_parse_pointer,
 	! is a period or other sentence divider
 	p_parse_pointer = p_parse_pointer --> 0; ! Just keep the value we're interested in
-	if(p_parse_pointer == './/' or ',//' or AND_WORD or THEN1__WD) rtrue;
+	if(p_parse_pointer == './/' or ',//' or AND_WORD or THEN1__WD or THEN2__WD or THEN3__WD) rtrue;
 	rfalse;
 ];
 
@@ -1942,7 +1943,7 @@ Array guess_object-->5;
 	pattern_pointer = pattern_pointer + 2;
 	_next_word = _parse_pointer-->2;
 	if(_IsSentenceDivider(_parse_pointer)) {
-		if(_parse_pointer-->0 == './/' or THEN1__WD) {
+		if(_parse_pointer-->0 == './/' or THEN1__WD or THEN2__WD or THEN3__WD) {
 			wn++;
 			return 100; ! A full stop means the command always ends
 		! check if dictionary word after sentence divider
@@ -2095,7 +2096,7 @@ Array guess_object-->5;
 			! check if separator or end of line
 			_i = wn - 1; ! keep for error message since wn changed by NextWord
 			_pattern = NextWord();
-			if(_pattern == 0 or comma_word or THEN1__WD) {
+			if(_pattern == 0 or comma_word or THEN1__WD or THEN2__WD or THEN3__WD) {
 				action = ##Go;
 				action_to_be = action;
 				noun = Directions;

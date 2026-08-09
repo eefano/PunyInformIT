@@ -1,0 +1,6 @@
+> metti il peso sotto al tavolo
+(prendendo prima il peso di piombo)
+Il peso di piombo è troppo pesante da sollevare.
+
+> termina
+Sei sicuro di voler terminare il gioco? si

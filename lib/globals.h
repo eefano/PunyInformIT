@@ -88,7 +88,9 @@ Constant PHASE2_SCOPE           = 3;
 Constant EXCEPT_WORD1 = 'tranne';
 Constant EXCEPT_WORD2 = 'eccetto';
 Constant AND_WORD     = 'e//';
-Constant THEN1__WD    = 'quindi';
+Constant THEN1__WD    = 'poi';
+Constant THEN2__WD    = 'dopo';
+Constant THEN3__WD    = 'quindi';
 Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 								   ! for commas in parse buffers
 

@@ -814,9 +814,9 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
     MSG_UNLOCK_DEFAULT:
         "Hai disserrato ", (the) noun, ".";
     MSG_ENTER_DEFAULT:
-        "Sei entrato ", (InPrep) noun, ".";
+        "", (EnterSupp) noun, ".";
     MSG_EXIT_DEFAULT:
-        "Sei uscito ", (DaPrep) noun, ".";
+        "", (ExitSupp) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_GIVE_DEFAULT;
 	MSG_GIVE_DEFAULT, MSG_SHOW_DEFAULT:
@@ -843,7 +843,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #Ifndef SKIP_MSG_INSERT_ALREADY;
 	MSG_INSERT_ALREADY, MSG_PUTON_ALREADY, MSG_TRANSFER_ALREADY:
-		"Ci stai già.";
+		"Ci ", (IsOrAre) noun, " già.";
 #Endif;
 #Ifndef SKIP_MSG_INSERT_ANIMATE;
 	MSG_INSERT_ANIMATE, MSG_PUTON_ANIMATE:
@@ -1461,6 +1461,18 @@ default:
 		}
 	}
 	print (name) p_obj;
+	return;
+];
+
+[EnterSupp p_obj;
+	if (p_obj has supporter) print "Sei ", (SuPrep) p_obj;
+	else print "Sei ", (InPrep) p_obj;
+	return;
+];
+
+[ExitSupp p_obj;
+	if (p_obj has supporter) print "Hai disceso ", (the) p_obj;
+	else print "Sei fuori ", (DaPrep) p_obj;
 	return;
 ];
 
