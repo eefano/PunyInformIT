@@ -25,6 +25,12 @@
 	               or 'di' or 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle' or 'dell@@39') return GPR_PREPOSITION;
   return GPR_FAIL;
 ];
+
+[ SelfGpr;
+	if (NextWord() == '-mi' or 'me' or '-ti' or 'te') return GPR_PREPOSITION;
+	return GPR_FAIL;
+];
+
 ! ---------------------
 ! Base verbs
 ! ---------------------
@@ -58,6 +64,7 @@ Verb 'attacca' 'rompi' 'crepa' 'distruggi'
 	* noun 'con' held                          -> Attack;
 !!
 Verb 'sali' 'scala' 'arrampica'
+  *                                 -> GoUp
 	* SuGpr noun            					-> Climb
 	*  noun                           -> Climb
 	* InGpr noun                    	-> Enter
@@ -125,6 +132,10 @@ Verb 'scendi'
 	* noun															-> Exit
 	* DaGpr noun												-> Exit;
 Verb 'prendi'
+	* multi                             -> Take
+	* multiinside DaGpr noun						-> Remove;
+Verb 'alza' 'solleva'
+	* SelfGpr                           -> Exit
 	* multi                             -> Take
 	* multiinside DaGpr noun						-> Remove;
 !!
@@ -225,8 +236,9 @@ Verb 'cerca'
     * InGpr noun  SuDiGpr topic       	-> Consult
     * InGpr noun topic            			-> Consult;
 !!
-Verb 'svestiti' 'spogliati'
-	* DiGpr held                             -> Disrobe;
+Verb 'svesti' 'spoglia'
+	* DiGpr held                           -> Disrobe
+	* SelfGpr DiGpr held                   -> Disrobe;
 !!
 Verb 'grida' 'urla' 'sbraita'
 	* topic AGpr creature               	-> Answer
@@ -239,7 +251,9 @@ Verb 'mostra' 'presenta' 'sfoggia'
     * AGpr creature held        				-> Show reverse
     * held AGpr creature        				-> Show;
 !!
-Verb 'siedi' 'siediti' 'sdraiati' 'accomodati'
+Verb 'siedi' 'sdraia' 'accomoda'
+    * SelfGpr SuGpr noun      -> Enter
+    * SelfGpr InGpr noun      -> Enter
     * SuGpr noun             	-> Enter
     * InGpr noun             	-> Enter;
 !!
@@ -247,8 +261,6 @@ Verb 'annusa' 'odora'
     *                                    		-> Smell
     * noun                               		-> Smell;
 !!
-Verb 'alzati' 'sollevati'
-	*                                           -> Exit;
 !!
 #Ifndef OPTIONAL_EXTENDED_VERBSET;
 Verb 'imposta'
@@ -305,8 +317,13 @@ Verb 'gira' 'ruota'
     * noun 'su' 'on'			-> SwitchOn
     * noun 'su' 'off'     -> SwitchOff;
 !!
+#Ifdef OPTIONAL_EXTENDED_VERBSET;
+Verb 'disserra'
+	* noun 'con' held                          -> Unlock;
+#Ifnot;
 Verb 'disserra' 'scassina'
 	* noun 'con' held                          -> Unlock;
+#Endif;
 !!
 Verb 'aspetta' 'attendi' 'z//'
 	*                                           -> Wait;
@@ -897,6 +914,10 @@ Array _PutOnMessages static -->
 	run_after_routines_msg = MSG_WEAR_DEFAULT;
 ];
 
+[ GoUpSub;
+	! shortcut to <<Go up>>
+	<Go FAKE_U_OBJ>;
+];
 
 ! ---------------------
 ! Extended verbs
@@ -931,7 +952,7 @@ Verb 'consulta'
 !!
 Verb 'svuota' 'vuota' 'versa' 'riversa'
     * noun              							-> Empty
-    * noun SuGpr noun 								-> EmptyT;
+    * noun SuGpr noun 								-> EmptyT
     * noun InGpr noun 								-> EmptyT;
 !!
 Verb 'penetra' 'dentro'
@@ -969,21 +990,29 @@ Verb 'merda' 'cazzo' 'figa' 'porco' 'porca' 'puttana' 'bastardo' 'stronzo' 'mann
 Verb 'canta'
     *                  -> Sing;
 !!
-Verb 'dormi' 'pisola' 'russa' 'addormentati' 'svieni'
-    *                    				-> Sleep;
+Verb 'dormi' 'pisola' 'russa' 'svieni' 'addormenta'
+    *                    				-> Sleep
+    * SelfGpr										-> Sleep;
 !!
-Verb 'scusa' 'perdono' 'scusami' 'perdonami'
-    *                                   		-> Sorry;
+Verb 'scusa' 'perdona'
+    *                                   		-> Sorry
+    * SelfGpr                            		-> Sorry;
 !!
 Verb 'schiaccia' 'spremi' 'comprimi' 'pressa'
     * noun                               		-> Squeeze;
 !!
-Verb 'nuota' 'tuffati'
+Verb 'nuota'
     *                                    		-> Swim;
+Verb 'tuffa'
+    *                                    		-> Swim
+    * SelfGpr                            		-> Swim;
 !!
-Verb 'dondola' 'bilanciati' 'aggrappati'
-    * 'con' noun     			                  -> Swing;
-    * SuGpr noun                       			-> Swing;
+Verb 'dondola' 'bilancia' 'aggrappa'
+    * noun     			                  			-> Swing
+    * 'con' noun     			                  -> Swing
+    * SuGpr noun                       			-> Swing
+    * SelfGpr 'con' noun     			          -> Swing
+    * SelfGpr SuGpr noun                    -> Swing;
 !!
 Verb 'assaggia' 'degusta' 'assapora' 'lecca'
     * noun                               		-> Taste;
@@ -992,20 +1021,19 @@ Verb 'pensa' 'rifletti' 'rimugina'
     *                                    		-> Think;
 !!
 Verb 'trasferisci' 'trasporta' 'travasa'
-   * noun AGpr noun           							-> Transfer;
-   * noun SuGpr noun 							          -> Transfer;
-   * noun InGpr noun           							-> Transfer;
+   * noun AGpr noun           							-> Transfer
+   * noun SuGpr noun 							          -> Transfer
+   * noun InGpr noun           							-> Transfer
    * noun 'verso' noun           						-> Transfer;
 !!
-Verb 'svegliati' 'rinvieniti'
-    * -> Wake;
 Verb 'sveglia' 'rinvieni'
-    *                                    		-> Wake
+    *                                   		-> Wake
+    * SelfGpr                           		-> Wake
     * creature                           		-> WakeOther;
 !!
 Verb 'saluta'
 	*                               -> WaveHands
-	* 'con' 'la' 'mano'            	-> WaveHands;
+	* 'con' 'la' 'mano'            	-> WaveHands
 	* noun                          -> Wave
 	* noun 'con' 'la' 'mano'        -> Wave;
 !!
@@ -1056,11 +1084,6 @@ Verb 'si'
 		}
 	}
 	run_after_routines_msg = 1;
-];
-
-[ GoUpSub;
-	! shortcut to <<Go up>>
-	<Go FAKE_U_OBJ>;
 ];
 
 [ GoInSub;

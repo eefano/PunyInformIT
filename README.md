@@ -45,6 +45,14 @@ PRENDI LA SCATOLA E APRI QUELLA
 ```
 I formati ```.z5``` e superiori supportano invece tutte le varianti.
 
+Per coerenza, anche i verbi riflessivi in ```.z3``` o ```.z4``` si scrivono così:
+```
+ALZA -TI / ALZA TE / SOLLEVA -TI / SOLLEVA TE
+PERDONA -MI / PERDONA ME
+AGGRAPPA -TI ALLA FUNE / AGGRAPPA LA FUNE 
+```
+Per brevità, i pronomi riflessivi si possono in genere omettere, tranne per i verbi ```ALZA``` e ```SOLLEVA``` perchè possono essere usati anche con oggetti.
+
 L'apostrofo nei formati ```.z3``` e ```.z4``` non può essere attaccato alla parola successiva (scrivere invece ```L' APOSTROFO``` con lo spazio). I formati ```.z5``` e superiori lo separano in automatico.
 
 ### Per gli autori
