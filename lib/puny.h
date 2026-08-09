@@ -720,7 +720,7 @@ Constant ONE_SPACE_STRING = " ";
 				if(_newline == 0) {
 					if(_started) print " e";
 					else print " (che";
-					if (noun has pluralname) print " contengono ";
+					if (p_obj has pluralname) print " contengono ";
 					else print " contiene ";
 				} else {
 					if(_started) print (char) ')';
