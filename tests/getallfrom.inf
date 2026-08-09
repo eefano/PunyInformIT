@@ -1,0 +1,114 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+
+#Iftrue (#version_number == 8);
+Constant USEINFORM;
+#Endif;
+
+Constant Story      "Prendi Tutto Da";
+Constant Headline   "^Test per PunyInformIT.^";
+
+#IfnDef USEINFORM;
+Constant INITIAL_LOCATION_VALUE = Room1;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+
+Include "globals.h";
+
+Include "puny.h";
+#IfNot;
+Include "Parser";
+Include "VerbLib";
+#EndIf;
+
+Object Room2 "Scatola nascosta"
+	with
+		description "La stanza con la scatola nascosta. Uscita a sud.",
+		s_to Room1,
+	has light;
+
+Object -> Box2 "scatola"
+	with
+		initial [;
+			print "C'è una scatola qui. ";
+#Ifndef USEINFORM;
+			if(PrintContents("Nella scatola c'è ", self)) print ".";
+#EndIf;
+			"";
+		],
+		name 'scatola',
+	has female open container concealed;
+
+Object -> -> Bag2 "borsa"
+	with
+		name 'borsa',
+	has female open container;
+
+Object -> -> -> Rock2 "sasso"
+	with
+		name 'sasso' 'sassi//p';
+
+Object Room3 "Scatola statica"
+	with
+		description "La stanza con la scatola statica e la borsa statica. Uscita a nord.",
+		n_to Room1,
+	has light;
+
+Object -> Box3 "scatola"
+	with
+		initial [;
+			print "C'è una scatola qui. ";
+#Ifndef USEINFORM;
+			if(PrintContents("Nella scatola c'è ", self)) print ".";
+#EndIf;
+			"";
+		],
+		name 'scatola',
+	has female open container static;
+
+Object -> -> Bag3 "borsa"
+	with
+		name 'borsa',
+	has female open container static;
+
+Object -> -> -> Rock3 "sasso"
+	with
+		name 'sasso' 'sassi//p';
+
+Object Room1 "Scatola normale"
+	with
+		number 0,
+		description "La stanza con la scatola normale. Uscite a n,s.",
+		n_to Room2,
+		s_to Room3,
+	has light;
+
+Object -> Box1 "scatola"
+	with
+		initial [;
+			print "C'è una scatola qui. ";
+#Ifndef USEINFORM;
+			if(PrintContents("Nella scatola c'è ", self)) print ".";
+#EndIf;
+			"";
+		],
+		name 'scatola',
+	has female open container;
+
+Object -> -> Bag1 "borsa"
+	with
+		name 'borsa',
+	has female open container;
+
+Object -> -> -> Rock1 "sasso"
+	with
+		name 'sasso' 'sassi//p';
+
+[Initialise;
+    location = Room1;
+	print "^^prova 'PRENDI TUTTO DALLA BORSA'^^";
+];
+
+#Ifdef USEINFORM;
+Include "Grammar";
+#Endif;
+

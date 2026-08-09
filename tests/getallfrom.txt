@@ -1,0 +1,48 @@
+
+> prendi tutto tranne la scatola
+Nulla di disponibile combacia con "prendi tutto tranne la scatola".
+
+> prendi tutto dalla borsa
+sasso: Rimosso.
+
+> lascia tutto
+sasso: Lasciato.
+
+> prendi tutti i sassi
+sasso: Preso.
+
+> lascia tutti
+sasso: Lasciato.
+
+> s
+Scatola statica
+La stanza con la scatola statica e la borsa statica. Uscita a nord.
+
+C'è una scatola qui. Nella scatola c'è una borsa (che contiene un sasso).
+
+> prendi tutto tranne la scatola
+Nulla di disponibile combacia con "prendi tutto tranne la scatola".
+
+> prendi tutto dalla borsa
+sasso: Rimosso.
+
+> lascia tutto
+sasso: Lasciato.
+
+> n
+Scatola normale
+
+C'è una scatola qui. Nella scatola c'è una borsa (che è vuota).
+
+Puoi vedere anche un sasso qui.
+
+> n
+Scatola nascosta
+La stanza con la scatola nascosta. Uscita a sud.
+
+> prendi tutto dalla borsa
+sasso: Rimosso.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
