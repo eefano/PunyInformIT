@@ -33,10 +33,10 @@ moneta rossa: Presa.
 Presa.
 
 > prendi la moneta blu
-Ti ho capito solo fino a "prendi la moneta" poi però ti ho perso.
+Ti ho capito solo fino a "prendi la moneta".
 
 > prendi palla blu e moneta blu
-Ti ho capito solo fino a "prendi palla blu e moneta" poi però ti ho perso.
+Ti ho capito solo fino a "prendi palla blu e moneta".
 
 > lascia tutto
 palla mini blu: Lasciata.

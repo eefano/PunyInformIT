@@ -1074,6 +1074,15 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 	rfalse;
 ];
 
+! ITALIAN ONLY , 'e' means 'east' but it's also italian for 'and', so we have to handle it
+[ _IsSentenceDividerNoAnd p_parse_pointer;
+	! check if current parse block, indicated by p_parse_pointer,
+	! is a period or other sentence divider
+	p_parse_pointer = p_parse_pointer --> 0; ! Just keep the value we're interested in
+	if(p_parse_pointer == './/' or ',//' or THEN1__WD or THEN2__WD or THEN3__WD) rtrue;
+	rfalse;
+];
+
 [ ImplicitGrabIfNotHeld p_noun _ks;
 	! return true if p_noun isn't held by the player at the end of the call
 	! (so that you can use it like: if(_ImplicitGrabIfNotHeld(...)) { }
@@ -1753,7 +1762,7 @@ Array guess_object-->5;
 		_next_word = _parse_pointer-->2;
 		_token = pattern_pointer -> 0;
 #IfDef DEBUG_PARSEPATTERN;
-		print "  TOKEN: ", _token;, " wn ", wn, " _parse_pointer ", _parse_pointer, "^";
+		print "  TOKEN: ", _token, " wn ", wn, " _parse_pointer ", _parse_pointer, "^";
 #EndIf;
 
 		scope_stage = 0;
@@ -2052,7 +2061,8 @@ Array guess_object-->5;
 
 	verb_wordnum = 1;
 
-	if(_IsSentenceDivider(parse + 2) || parse->1 < 1) {
+	! ITALIAN ONLY , 'e' means 'east' but it's also italian for 'and', so we have to handle it
+	if(_IsSentenceDividerNoAnd(parse + 2) || parse->1 < 1) {
 		PrintMsg(MSG_PARSER_NO_INPUT);
 		return -1;
 	}

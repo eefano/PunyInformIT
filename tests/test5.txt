@@ -1,0 +1,39 @@
+
+> prendi palla
+Presa.
+
+> e
+Buio
+Non si riesce a vedere nulla!
+
+> lascia tutto
+palla: Lasciata.
+
+> x palla
+Ma è buio.
+
+> x sedia
+Non vedo nulla di tutto ciò.
+
+> prendi tutto
+palla: Presa.
+
+> o
+Stanza In Luce
+
+> o
+Buio
+Non si riesce a vedere nulla!
+
+> prendi palla
+Non vedo nulla di tutto ciò.
+
+> prendi tavolo
+Preso.
+
+> i
+Stai portando un tavolo e una palla.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

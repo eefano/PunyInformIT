@@ -933,7 +933,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 	! p_arg_1 = the word number of the last word understood + 1.
 		print "Ti ho capito solo fino a ~";
 		_PrintPartialMatch(verb_wordnum, p_arg_1);
-		"~ poi però ti ho perso.";
+		"~.";
 #EndIf;
 #IfTrue MSG_PARSER_CANT_TALK < 1000;
 	MSG_PARSER_CANT_TALK:

@@ -1,0 +1,115 @@
+! this is a test of basic manipulation of multiple objects (balls etc)
+! Bugs fixed/investigated using this test file
+! - "drop cubes" when carrying no balls
+!
+!
+#Iftrue (#version_number == 8);
+Constant USEINFORM;
+#Endif;
+
+Constant Story      "Parser test";
+Constant Headline   "^Una suite di test per PunyInformIT.^";
+Serial "200827";
+Constant INITIAL_LOCATION_VALUE = LitRoom;
+
+! Uncomment to show time instead of score/turns
+!Statusline time;
+
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+
+! Uncomment to add optional features to PunyLib
+!Constant DEBUG;
+!Constant CUSTOM_ABBREVIATIONS;
+!Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+!Constant OPTIONAL_EXTENDED_VERBSET;
+!Constant OPTIONAL_FULL_SCORE;
+!Constant OPTIONAL_FULL_DIRECTIONS;
+!Constant OPTIONAL_GUESS_MISSING_NOUN;
+!Constant OPTIONAL_MANUAL_SCOPE;
+!Constant RUNTIME_ERRORS = 0;
+
+#Ifdef USEINFORM;
+Include "Parser";
+Include "VerbLib";
+#IfNot;
+Include "globals.h";
+#EndIf;
+
+[ InScope person i;
+  if (person == player && location == thedark) {
+    objectloop (i in parent(player)) {
+      if (i has moved) {
+        PlaceInScope(i);
+      }
+    }
+  }
+  if (person == player && real_location == DarkRoom2 ) {
+    PlaceInScope(Table);
+    rtrue;
+  }
+  rfalse;
+];
+
+
+! Uncomment to add PunyLib extensions
+!Include "ext_menu.h";
+!Include "ext_flags.h";
+!Include "ext_quote_box.h";
+!Include "ext_cheap_scenery.h";
+
+#Ifndef USEINFORM;
+Include "puny.h";
+#EndIf;
+
+Object LitRoom "Stanza In Luce"
+	with
+		description [;
+			print "Sei in una stanza illuminata. Dark doorway leads west and east.";
+		],
+		e_to DarkRoom1,
+		w_to DarkRoom2
+	has light;
+
+Object -> Ball "palla"
+	with
+		name 'palla'
+		has female;
+
+
+Object DarkRoom1 "Stanza Buia"
+	with
+		description "La luce arriva dal corridoio ad ovest.",
+		w_to LitRoom;
+
+Object -> Chair "sedia"
+	with
+		name 'sedia'
+		has female;
+
+Object DarkRoom2 "Stanza Buia"
+	with
+		description "La luce arriva dal corridoio ad est.",
+		e_to LitRoom;
+
+Object -> Table "tavolo"
+	with
+		name 'tavolo';
+
+[Initialise;
+	print "^^Partenza!^^";
+	print "Se lasci la palla nella stanza buia sarà sempre in vista.^";
+#IfDef USEINFORM;
+    location=LitRoom;
+#EndIf;
+];
+
+#Ifdef USEINFORM;
+Include "Grammar";
+#Endif;
+

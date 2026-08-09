@@ -13,7 +13,7 @@ s
 metti le palle nella scatola rossa
 metti la moneta rossa nella trasparente
 metti la scatola trasparente nella scatola rossa
-chiudi la scatola rossa poi prendi scatola trasparente
+prendi la scatola trasparente
 apri la scatola rossa
 prendi la scatola rossa
 n

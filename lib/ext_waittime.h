@@ -187,7 +187,7 @@ Constant MAX_WAIT_MINUTES 1440;
 					}
 					_hr = TryNumber(wn);
 					wn++;
-					if (_j ~= 'e' or 'meno' )
+					if (_j ~= 'e//' or 'meno' )
 						_hr = -1;
 					if (_j == 'meno') {
 						_hr--;

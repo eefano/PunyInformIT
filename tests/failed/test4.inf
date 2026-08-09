@@ -101,7 +101,7 @@ Object -> Table "tavolo"
 		initial "C'è un tavolo blu nel mezzo della stanza.",
 	has static supporter enterable;
 
-Ball -> BlueBall with adj1 'mini', adj2 'blu';
+Ball -> BlueBall with adj1 'mini', adj2 'blu', adj2p 'blu';
 
 Ball -> RedBall with adj1 'mini', adj2 'rossa', adj2p 'rosse';
 
