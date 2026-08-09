@@ -883,7 +883,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #Ifndef SKIP_MSG_SWITCH_ON_NOT_SWITCHABL;
 	MSG_SWITCH_ON_NOT_SWITCHABLE, MSG_SWITCH_OFF_NOT_SWITCHABLE:
-		print_ret (CTheyreorThats) noun, " not something you can switch.";
+		print_ret "Non ", (IsOrAre) noun, " un interruttore.";
 #Endif;
 #Ifndef SKIP_MSG_SWITCH_ON_ON;
 	MSG_SWITCH_ON_ON, MSG_SWITCH_OFF_NOT_ON:

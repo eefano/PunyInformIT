@@ -1,0 +1,29 @@
+
+> cosa è samarcanda
+Samarcanda è una città nel sudest dell'Uzbekistan.
+
+> cosa è una grue
+Non dirmi che non lo sai.
+
+> cosa è il conto lungo
+Il Conto Lungo è il grande ciclo Maya del tempo, che iniziò nel 3114 AC e finirà
+con la fine del mondo nel 2012 DC.
+
+> cosa è punyinform
+Al momento ogni domanda ti confonde.
+
+> ripeti
+Sei sicuro di voler ricominciare il gioco? no
+
+> ripeti me
+Non sei un interruttore.
+
+> ripeti interruttore
+Hai acceso l'interruttore.
+
+> punti
+Per ora hai ottenuto 0 punti su un totale di 0, in 5 mosses.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
