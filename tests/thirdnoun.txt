@@ -1,0 +1,10 @@
+
+> installa la batteria sul supporto con la scatola degli attrezzi
+L'hai installata con la scatola degli attrezzi
+
+> installa la batteria sul supporto con gli attrezzi
+L'hai installata con la scatola degli attrezzi
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
