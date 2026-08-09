@@ -86,9 +86,11 @@ moneta nera: (prendendo prima la moneta nera)
 Hai messo la moneta nera nella scatola rossa.
 
 > i
-Stai portando una scatola rossa (che contiene una moneta nera, una moneta rossa,
-una scatola trasparente (che è aperta ma vuota), una palla mini rossa, una palla
-mini verde e una palla mini blu).
+Stai portando una scatola rossa (cheWarning: @test_attr called with object 0 (PC
+= 3fa5) (will ignore further occurrences)
+ contiene una moneta nera, una moneta rossa, una scatola trasparente (che è
+aperta ma vuota), una palla mini rossa, una palla mini verde e una palla mini
+blu).
 
 > termina
 Sei sicuro di voler terminare il gioco? si

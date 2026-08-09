@@ -108,7 +108,7 @@ Constant MSG_PARSER_NOT_MULTIPLE_VERB "Non puoi usare più di una cosa con quest
 Constant MSG_PARSER_NOT_MULTIPLE_DIRS "Non puoi usare direzioni multiple.";
 #EndIf;
 #Ifndef MSG_PARSER_BAD_NUMBER;
-Constant MSG_PARSER_BAD_NUMBER "Non capisco questo numero.";
+Constant MSG_PARSER_BAD_NUMBER "Non ho capito questo numero.";
 #EndIf;
 #Ifndef MSG_PARSER_NO_INPUT;
 Constant MSG_PARSER_NO_INPUT "Come scusa?";

@@ -246,9 +246,7 @@ Constant MAX_WAIT_MINUTES 1440;
 		* number                                     -> WaitMoves;
 #Ifnot;
 	Extend 'aspetta'
-		* 'fino' parsetime                          -> WaitUntil
 		* 'le' parsetime                            -> WaitUntil
-		* 'alle' parsetime                           -> WaitUntil
 		* 'per' number 'mossa'/'mosse'/'turno'/'turni' -> WaitMoves
 		* 'per' number 'minuto'/'minuti'            -> WaitMinutes
 		* 'per' number 'ora'/'ore'                -> WaitHours

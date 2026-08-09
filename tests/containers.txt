@@ -1,0 +1,32 @@
+
+> aspetta sasfas
+Non ho capito questo numero.
+
+> aspetta le 12:05
+Il tempo passa.
+L'orario è: 0:0
+L'orario è: 0:1
+L'orario è: 0:2
+L'orario è: 0:3
+L'orario è: 0:4
+Si riparte!
+
+> aspetta le xyzzy
+Ho capito solo fino a "aspetta le".
+
+> aspetta xyzzy
+Non ho capito questo numero.
+
+> aspetta due
+Il tempo passa.
+L'orario è: 0:5
+L'orario è: 0:6
+Si riparte!
+
+> aspetta
+Si riparte!
+L'orario è: 0:7
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

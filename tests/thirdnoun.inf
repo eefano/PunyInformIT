@@ -117,7 +117,7 @@ Object -> Mounting "supporto"
 
 Object -> Toolbox "scatola degli attrezzi"
     with
-        name 'scatola' 'attrezzi' 'degli attrezzi'
+        name 'scatola' 'degli' 'attrezzi',
     has female;
 
 [Initialise;
