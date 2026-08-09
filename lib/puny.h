@@ -113,10 +113,31 @@ Constant UnsignedCompare = Unsigned__Compare;
 Array cursor_pos --> 2;
 #Endif;
 
+#Iftrue (#version_number == 6);
+[ ScreenWidth  width charw;
+    @get_wind_prop 1 3 -> width;
+    @get_wind_prop 1 13 -> charw;
+    charw = charw & $FF;
+    if (charw == 0) return width;
+    return (width+charw-1) / charw;
+];
+#Ifnot;
+[ ScreenWidth;
+    return (HDR_SCREENWCHARS->0);
+];
+#Endif;
+
 [ _StatusLineHeight p_height;
 	if (statusline_current_height ~= p_height) {
+#Iftrue #version_number == 6;
+		! In z6 the screen is measured in units
+		statusline_current_height = p_height;
+		p_height = p_height * (HDR_FONTHUNITS->0);
+		@split_window p_height;
+#Ifnot;
 		@split_window p_height;
 		statusline_current_height = p_height;
+#Endif;
 	}
 ];
 
@@ -135,6 +156,10 @@ Array cursor_pos --> 2;
 		line = 1;
 		column = 1;
 	}
+#Iftrue #version_number == 6;
+	line = 1 + (line - 1) * (HDR_FONTHUNITS->0);
+	column = 1 + (column - 1) * (HDR_FONTWUNITS->0);
+#Endif;
 	@set_cursor line column;
 	statuswin_current = true;
 ];
@@ -158,6 +183,11 @@ Array cursor_pos --> 2;
 
 	@get_cursor cursor_pos;
 	_current_col = cursor_pos --> 1;
+#Iftrue #version_number == 6;
+	! in z6 get_cursor reports units, so we need to convert
+	_current_col = 1 + (_current_col - 1) / (HDR_FONTWUNITS->0);
+	cursor_pos --> 0 = 1 + ((cursor_pos --> 0) - 1) / (HDR_FONTHUNITS->0);
+#Endif;
 
 	if(_current_col > p_col || cursor_pos --> 0 > 1)
 		_MoveCursor(1, p_col);
@@ -263,16 +293,13 @@ Constant ONE_SPACE_STRING = " ";
 		if (screen_width < 29) {
 			! Width is 26-28, only print moves as "0"
 			_PrintSpacesOrMoveBack(field_2_length, ONE_SPACE_STRING);
-#Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
-			parser_one = 4;
-#Endif;
 		} else {
 			! Width is 29+
 			if (screen_width > 52) {
 				! Width is 53+, print "Moves: 0" and leave some space to the right
 				_PrintSpacesOrMoveBack(13, MOVES__TX);
 #Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
-				parser_one = 4 - field_2_length;
+				parser_one = 6 - field_2_length;
 #Endif;
 			} else if (screen_width < 33) {
 				! Width is 29-32, print "Mv:0"
@@ -283,9 +310,6 @@ Constant ONE_SPACE_STRING = " ";
 			}
 		}
 		print status_field_2;
-#Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
-		parser_one = parser_one - _NumberLength(status_field_2);
-#Endif;
 	}
 #Endif; ! Ifndef NO_MOVES
 #Ifnot;
@@ -308,21 +332,15 @@ Constant ONE_SPACE_STRING = " ";
 				! Width is 55+, print "Score: 0" and leave some space at end
 				_PrintSpacesOrMoveBack(12, SCORE__TX);
 #Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
-				parser_one = 7 - field_1_length;
+				parser_one = 5 - field_1_length;
 #Endif;
 			}
 			print status_field_1;
-#Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
-			parser_one = parser_one - _NumberLength(status_field_1);
-#Endif;
 #Ifnot;
 	! Show score + moves
-#Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
-			parser_one = 8 - _NumberLength(status_field_1);
-#Endif;
 			if (screen_width > 66) {
 				! Width is 67-, print "Score: 0 Moves: 0"
-				_PrintSpacesOrMoveBack(28, SCORE__TX);
+				_PrintSpacesOrMoveBack(27, SCORE__TX);
 				print status_field_1;
 #Ifdef OPTIONAL_NON_FLASHING_STATUSLINE;
 				_PrintSpacesOrMoveBack(15, MOVES__TX);
@@ -334,7 +352,7 @@ Constant ONE_SPACE_STRING = " ";
 			} else {
 				if (screen_width > 35) {
 					! Width is 36-66, print "Sc:0 Mv:0"
-					_PrintSpacesOrMoveBack(8 + field_1_length + 
+					_PrintSpacesOrMoveBack(7 + field_1_length + 
 											field_2_length, SCORE_SHORT__TX);
 					print status_field_1;
 					print (string) MOVES_SHORT__TX;
@@ -373,6 +391,13 @@ Constant ONE_SPACE_STRING = " ";
 
 	_StatusLineHeight(statusline_height);
 	_MoveCursor(1, 1); ! This also sets the upper window as active.
+
+#Iftrue #version_number == 6;
+	! Change to a fixed-width font
+    @set_font 4 -> _visibility_ceiling; ! Throw-awaay value
+    screen_width = ScreenWidth();
+#Endif;
+
 #Ifndef OPTIONAL_NON_FLASHING_STATUSLINE;
 	parser_one = 1000;
 	FastSpaces(screen_width);
@@ -416,6 +441,12 @@ Constant ONE_SPACE_STRING = " ";
 		FastSpaces(parser_one);
 #Endif;
 	_MainWindow(); ! set_window
+
+#Iftrue #version_number == 6;
+	! Change back to normal font
+    @set_font 1 -> _visibility_ceiling; ! Throw-away value
+#Endif;
+
 ];
 #Endif;
 
@@ -1084,6 +1115,15 @@ Constant _SpaceTableLength 20;
 	rfalse;
 ];
 
+[ _IsARoutine_CaseB p_value;
+	! Decide if a value is a routine address, faster than using ofclass
+	! Case B, routines have even addresses, strings have odd addresses
+	@test p_value 1 ?rfalse;
+	@jl p_value (#code_offset) ?~rtrue;
+	@jl p_value (-1) ?rtrue;
+	rfalse;
+];
+
 [ _IsAString_Case1 p_value;
 	! Decide if a value is a string address, faster than using ofclass
 	! For the ideas behind this implementation, see comments in RunRoutines
@@ -1098,6 +1138,15 @@ Constant _SpaceTableLength 20;
 	! For the ideas behind this implementation, see comments in RunRoutines
 	! Case 2, code_offset > 0 && strings_offset < 0
 	@jl p_value (#strings_offset) ?rfalse;
+	@jl p_value (-1) ?rtrue;
+	rfalse;
+];
+
+[ _IsAString_CaseB p_value;
+	! Decide if a value is a string address, faster than using ofclass
+	! Case B, routines have even addresses, strings have odd addresses
+	@test p_value 1 ?~rfalse;
+	@jl p_value (#strings_offset) ?~rtrue;
 	@jl p_value (-1) ?rtrue;
 	rfalse;
 ];
@@ -1130,6 +1179,17 @@ Constant _SpaceTableLength 20;
 		! to decide what kind of value(s) are in the property,
 		! we have specialized code here, to reach the same
 		! conclusions, much cheaper.
+#Ifdef USE_ODDEVEN_PACKING;
+		! Case B, routines have even addresses, strings have odd addresses
+		@test _value 1 ?_notRoutine;
+		@jl _value (#code_offset) ?~_isRoutine;
+		@jl _value (-1) ?_isRoutine;
+		jump _isConstant;
+._notRoutine;
+		@jl _value (#strings_offset) ?~_isString;
+		@jl _value (-1) ?_isString;
+		jump _isConstant;
+#Ifnot;
 		if(_puny_zregion_case == _PunyZRegionCase1) {
 			! Case 1, code_offset > 0 && strings_offset > 0
 			! This is first, because it's the most common case
@@ -1163,6 +1223,7 @@ Constant _SpaceTableLength 20;
 !!		if(value < -1) return stringtype;
 !		@jl _value (-1) ?_isString;
 !		jump _isConstant;
+#Endif;
 
 ._isRoutine;
 			@call _value -> _result;
@@ -2710,12 +2771,16 @@ Object thedark "Buio"
 ! Pick the correct case for custom logic in RunRoutines.
 ! 1: #strings_offset > 0 (DEFAULT)
 ! 2: #code_offset > 0 && #strings_offset < 0
-! 3: #code_offset < 0 && #strings_offset < 0 (CAN'T HAPPEN)
+! 3: #code_offset < 0 && #strings_offset < 0
+! B: z6 or z7 compiled with -B (string addresses are odd, routine addresses even)
+! (Case 3 can't happen. Case B is set in globals.h, no work needed here.)
+#Ifndef USE_ODDEVEN_PACKING;
 	if(#strings_offset < 0) {
 		_puny_zregion_case = _PunyZRegionCase2;
 		IsARoutine = _IsARoutine_Case2;
 		IsAString = _IsAString_Case2;
 	}
+#Endif;
 
 #Ifdef CUSTOM_PLAYER_OBJECT;
 	player = CUSTOM_PLAYER_OBJECT;
@@ -2760,7 +2825,9 @@ Object thedark "Buio"
 	timer1 = 0-->2;
 #Endif;
 #Iftrue #version_number > 3;
+#Iftrue #version_number ~= 6; ! For v6, screen_width is updated in DrawStatusLine instead
 		screen_width = HDR_SCREENWCHARS->0;
+#Endif;
 #Endif;
 
 		_UpdateScoreOrTime();

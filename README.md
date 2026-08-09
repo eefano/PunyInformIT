@@ -12,7 +12,7 @@ Questa è la traduzione in italiano della libreria PunyInform.
 
 PunyInform è una libreria scritta in Inform 6 che consente agli autori di creare giochi di avventura testuale / narrativa interattiva utilizzando la macchina virtuale Z-machine, giocabili sia su computer a 8 bit che su piattaforme più recenti. Fornisce un parser, implementazioni dei verbi più comuni e un framework per la scrittura di avventure testuali.
 
-I giochi che utilizzano PunyInform possono essere compilati nei formati z3, z4, z5 e z8. Ciò significa che rispetto ad Inform 6 standard non è supportato Glulx, ma sono supportati i formati z3 e z4 (che viceversa non sono supportati dalla Inform 6 standard).
+I giochi che utilizzano PunyInform possono essere compilati nei formati z3, z4, z5, z6, z7 e z8. Ciò significa che rispetto ad Inform 6 standard non è supportato Glulx, ma sono supportati i formati z3 e z4 (che viceversa non sono supportati dalla Inform 6 standard). C'è anche un'estensione disponibile per supportare lo schermo grafico z6.
 
 L'obiettivo principale di PunyInform è quello di consentire la realizzazione di giochi veloci e con un ingombro di memoria ridotto. Ciò dovrebbe garantire un buon funzionamento dei giochi su architetture meno recenti, come i computer a 8 bit degli anni '80. Il nostro obiettivo principale è renderlo adatto ai giochi per Commodore 64 utilizzando [Ozmoo](https://github.com/johanberntsson/ozmoo/).
 
@@ -21,6 +21,8 @@ L'obiettivo principale di PunyInform è quello di consentire la realizzazione di
 
 Anche se allo stato attuale sono state effettuate tutte le traduzioni e implementate le grammatiche, non sono ancora stati completati abbastanza test
 per poter dichiarare il software completo e senza errori. 
+
+Il progetto è allineato alle modifiche presenti nella release v6.8 di PunyInform.
 
 ## Istruzioni
 
