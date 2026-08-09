@@ -1,0 +1,111 @@
+
+> scassina scatola con gizmo
+(prendendo prima Gizmo)
+Non puoi disserrarla.
+
+> i
+Stai portando Gizmo.
+
+> lascia tutto
+Gizmo: Lasciato.
+
+> lancia gizmo alla scatola
+(prendendo prima Gizmo)
+Inutile.
+
+> i
+Stai portando Gizmo.
+
+> lascia tutto
+Gizmo: Lasciato.
+
+> inserisci gizmo nella scatola
+(prendendo prima Gizmo)
+Hai messo Gizmo nella scatola.
+
+> i
+Sei a mani vuote.
+
+> lascia tutto
+Non stai portando nulla.
+
+> trasferisci gizmo alla scatola
+Ci è già.
+
+> i
+Sei a mani vuote.
+
+> lascia tutto
+Non stai portando nulla.
+
+> indossa gizmo
+(prendendo prima Gizmo)
+Non puoi indossarlo.
+
+> i
+Stai portando Gizmo.
+
+> lascia tutto
+Gizmo: Lasciato.
+
+> svuota la scatola
+polvere: Lasciata.
+
+> i
+Sei a mani vuote.
+
+> guarda
+Stanza illuminata
+Sei in una stanza illuminata.
+
+Puoi vedere una polvere, Gizmo e scatola (che è vuota) qui.
+
+> s
+Un'altra stanza
+Un'altra stanza luminosa.
+
+Puoi vedere un libro verde, un libro blu e Sally qui.
+
+> cos' è samarcanda
+Samarcanda è una città nel sudest dell'Uzbekistan.
+
+> cos' è il libro
+Al momento ogni domanda ti confonde.
+
+> cos' è il libro verde
+Al momento ogni domanda ti confonde.
+
+> cos' è verde
+Al momento ogni domanda ti confonde.
+
+> cos' è sdasfafaf
+Al momento ogni domanda ti confonde.
+
+> prendi verde
+Preso.
+
+> cos' è verde
+Al momento ogni domanda ti confonde.
+
+> cos' è il libro verde
+Al momento ogni domanda ti confonde.
+
+> mostra verde
+(supponendo Sally)
+Sally non sembra interessata.
+
+> mostra verde a sally
+Sally non sembra interessata.
+
+> mostra a sally verde
+Sally non sembra interessata.
+
+> mostra verde al blu
+Lo puoi fare solo con qualcosa di animato.
+
+> mostra verde blu
+Lo puoi fare solo con qualcosa di animato.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

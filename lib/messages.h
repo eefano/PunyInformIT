@@ -769,10 +769,18 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 		"Non ", (ThatorThose) noun, " stai tenendo in mano.";
 #Endif;
 #Ifndef SKIP_MSG_OPEN_YOU_CANT;
-	MSG_OPEN_YOU_CANT, MSG_CLOSE_YOU_CANT, MSG_ENTER_YOU_CANT,
-	MSG_LOCK_NOT_A_LOCK, MSG_UNLOCK_NOT_A_LOCK, MSG_WEAR_NOT_CLOTHING:
-	! p_arg_1 = the base verb for this action ('open', 'close' etc).
-		"Non puoi ", (verbname) p_arg_1, (ThatorThose) noun, ".";
+	MSG_OPEN_YOU_CANT:
+		"Non puoi aprir", (ThatorThose) noun, ".";
+	MSG_CLOSE_YOU_CANT:
+		"Non puoi chiuder", (ThatorThose) noun, ".";
+	MSG_ENTER_YOU_CANT:
+		"Non puoi entrar", (ThatorThose) noun, ".";
+	MSG_LOCK_NOT_A_LOCK:
+		"Non puoi serrar", (ThatorThose) noun, ".";
+	MSG_UNLOCK_NOT_A_LOCK:
+		"Non puoi disserrar", (ThatorThose) noun, ".";
+	MSG_WEAR_NOT_CLOTHING:
+		"Non puoi indossar", (ThatorThose) noun, ".";
 #Endif;
 #IfTrue MSG_OPEN_ALREADY < 1000;
 	MSG_OPEN_ALREADY:

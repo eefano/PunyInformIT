@@ -247,7 +247,7 @@ Verb 'grida' 'urla' 'sbraita'
 	*                                     -> Shout;
 !!
 Verb 'mostra' 'presenta' 'sfoggia'
-    * creature held                     -> Show reverse
+    * held creature                     -> Show
     * AGpr creature held        				-> Show reverse
     * held AGpr creature        				-> Show;
 !!
