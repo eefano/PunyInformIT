@@ -1,0 +1,188 @@
+
+>si
+Era una domanda retorica.
+
+>x free2
+Nulla di speciale nel free2.
+
+>x free3
+Non vedo nulla di tutto ciò.
+
+>x s5b
+Non vedo nulla di tutto ciò.
+
+>spingi s5b
+Non vedo nulla di tutto ciò.
+
+>prendi s5b
+Non vedo nulla di tutto ciò.
+
+>x s5ac
+Non vedo nulla di tutto ciò.
+
+>spingi s5ac
+Non vedo nulla di tutto ciò.
+
+>prendi s5ac
+Non vedo nulla di tutto ciò.
+
+>x s6b
+Nulla di speciale nel slave6b.
+
+>spingi s6b
+il slave6ac non è aperto.
+
+>prendi s6b
+il slave6ac non è aperto.
+
+>x s6ac
+il slave6container non è aperto.
+
+>spingi s6ac
+il slave6container non è aperto.
+
+>prendi s6ac
+il slave6container non è aperto.
+
+>x s7b
+Nulla di speciale nel slave7b.
+
+>spingi s7b
+il slave7ac non è aperto.
+
+>prendi s7b
+il slave7ac non è aperto.
+
+>x s7ac
+il slave7container non è aperto.
+
+>spingi s7ac
+il slave7container non è aperto.
+
+>prendi s7ac
+il slave7container non è aperto.
+
+>x master 1
+Nulla di speciale nel master1.
+
+>spingi master 1
+Non succede nulla di evidente.
+
+>x master 2
+Nulla di speciale nel master2.
+
+>spingi master 2
+Non succede nulla di evidente.
+
+>x master 3
+Nulla di speciale nel master3.
+
+>spingi master 3
+l'aquarium non è aperto.
+
+>x master 4
+Nulla di speciale nel master4.
+
+>spingi master 4
+l'aquarium non è aperto.
+
+>x free1
+Nulla di speciale nel free1.
+
+>spingi free1
+Non succede nulla di evidente.
+
+>prendi free1
+Preso.
+
+>x s1a
+Nulla di speciale nel slave1a.
+
+>spingi s1a
+Non succede nulla di evidente.
+
+>prendi s1a
+Preso.
+
+>x s1b
+Nulla di speciale nel slave1b.
+
+>spingi s1b
+Non succede nulla di evidente.
+
+>prendi s1b
+Preso.
+
+>x s2a
+Nulla di speciale nel slave2a.
+
+>spingi s2a
+Non succede nulla di evidente.
+
+>prendi s2a
+Preso.
+
+>x s2b
+Nulla di speciale nel slave2b.
+
+>spingi s2b
+il slave2container non è aperto.
+
+>prendi s2b
+il slave2container non è aperto.
+
+>x s3a
+Nulla di speciale nel slave3a.
+
+>spingi s3a
+l'aquarium non è aperto.
+
+>prendi s3a
+l'aquarium non è aperto.
+
+>x s3b
+Nulla di speciale nel slave3b.
+
+>spingi s3b
+l'aquarium non è aperto.
+
+>prendi s3b
+l'aquarium non è aperto.
+
+>x s4a
+Nulla di speciale nel slave4a.
+
+>spingi s4a
+l'aquarium non è aperto.
+
+>prendi s4a
+l'aquarium non è aperto.
+
+>x s4b
+Nulla di speciale nel slave4b.
+
+>spingi s4b
+l'aquarium non è aperto.
+
+>prendi s4b
+l'aquarium non è aperto.
+
+>x free1
+Nulla di speciale nel free1.
+
+>spingi free1
+Non succede nulla di evidente.
+
+>prendi free1
+Già lo possiedi.
+
+>i alto
+Stai portando:
+  un slave2a
+  un slave1b
+  un slave1a
+  un free1
+
+>termina
+Sei sicuro di voler terminare il gioco? si
+

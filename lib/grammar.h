@@ -163,7 +163,7 @@ Verb 'inserisci'
 #Ifdef OPTIONAL_FLEXIBLE_INVENTORY;
 Verb 'inventario' 'i//' 
     *                                     		-> Inv
-    * 'stretto'/'largo'                     		-> Inv;
+    * 'alto'/'largo'                     		-> Inv;
 #Ifnot;
 Verb 'inventario' 'i//' 
 	* 											-> Inv;
@@ -650,7 +650,7 @@ Array _InsertMessages static -->
 #Ifdef OPTIONAL_FLEXIBLE_INVENTORY;
 [ InvSub _mode;
 	_mode = WordValue(num_words);
-	if(_mode == 'stretto') inventory_style = 0;
+	if(_mode == 'alto') inventory_style = 0;
 	if(_mode == 'largo') inventory_style = 1;
 #Ifnot;
 [ InvSub;
