@@ -5,18 +5,18 @@ Sei in una stanza.
 
 Puoi vedere una ragazza qui.
 
-> prendi tutte le lattine
-lattina verde: Già la possiedi.
-lattina marrone: Già la possiedi.
+> prendi tutte le palle
+palla verde: Già la possiedi.
+palla marrone: Già la possiedi.
 
-> dai lattine a ragazza
-Intendi dire la lattina verde o la lattina marrone?
-
-> dai tutte le lattine alla ragazza
+> dai palle a ragazza
 Non puoi usare più di una cosa con questo verbo.
 
-> dai lattina alla ragazza
-Intendi dire la lattina verde o la lattina marrone?
+> dai tutte le palle alla ragazza
+Non puoi usare più di una cosa con questo verbo.
+
+> dai palla alla ragazza
+Intendi dire la palla verde o la palla marrone?
 
 > termina
 Sei sicuro di voler terminare il gioco? si

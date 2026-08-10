@@ -58,16 +58,17 @@ Object -> Girl "ragazza"
         name 'ragazza',
     has animate female;
 
-Object -> GreenCan "lattina verde"
+! ATTENZIONE: Z3 riconosce solo i primi 6 caratteri, Z5 ne riconosce 9 quindi
+! per avere lo stesso risultato nei test ho usato PALLA anzichè LATTINA
+
+Object -> GreenCan "palla verde"
 	with
-        name 'lattina' 'verde' 'lattine//p',
-		description "La lattina verde è vuota.",
+        name 'verde' 'palla' 'palle//p',
 	has female open;
 
-Object -> BrownCan "lattina marrone"
+Object -> BrownCan "palla marrone"
 	with
-        name 'lattina' 'marrone' 'lattine//p',
-		description "La lattina marrone è vuota.",
+        name 'marrone' 'palla' 'palle//p',
 	has female open;
 
 [Initialise; 
