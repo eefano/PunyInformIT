@@ -1,0 +1,24 @@
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant INITIAL_LOCATION_VALUE = Room1;
+
+Include "globals";
+Include "puny";
+
+Object Room1 "Stanza 1"
+	with
+		description "Ci sono due porte nascoste, una rossa e una blu.",
+	has light;
+
+Object -> RossaDoor "porta rossa"
+	with
+		name 'porta' 'rossa',
+		description "Molto rossa.",
+	has female openable lockable locked concealed;
+
+Object -> CyanDoor "porta blu"
+	with
+		name 'porta' 'blu',
+		description "Molto blu.",
+	has female openable lockable locked concealed;
+	
+Constant Initialise = 0;

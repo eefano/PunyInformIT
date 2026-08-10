@@ -1,0 +1,9 @@
+Stanza 1
+Ci sono due porte nascoste, una rossa e una blu.
+
+> apri porta
+Non vedo nulla di tutto ciò.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
