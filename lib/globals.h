@@ -323,8 +323,7 @@ Array LanguageNumberStrings static -->
 	"sedici"
 	"diciassette"
 	"diciotto"
-	"diciannove"
-	"venti";
+	"diciannove";
 #Endif; ! Not OPTIONAL_ALLOW_WRITTEN_NUMBERS
 
 Array LanguageNumberTensStrings static -->
