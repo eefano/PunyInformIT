@@ -1,0 +1,58 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+
+Constant Story      "Mostra contenuti";
+Constant Headline   "^Un esempio PunyInformIT.^";
+
+Constant INITIAL_LOCATION_VALUE = WhiteRoom;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+
+Include "globals.h";
+
+Include "puny.h";
+
+Object WhiteRoom "Stanza bianca"
+	with
+		description "Sei in una larga stanza bianca.",
+	has light;
+
+Object -> Table "tavolo"
+	with
+		name 'tavolo',
+		description [;
+			print "È un tavolo robusto.";
+			self.show_contents();
+			@new_line;
+		],
+		initial [;
+			print "C'è un bellissimo tavolo nel mezzo della stanza.";
+			! If the player is on the table, PunyInform will
+			! show the contents automatically. Otherwise, we
+			! do it!
+			if(~~IndirectlyContains(self, player)) self.show_contents();
+			@new_line;
+		],
+		! show_contents is an individual property - it could
+		! have been called anything. We just picked a
+		! descriptive name.
+		show_contents [;
+			! PrintContents returns true if it printed
+			! anything, false if not.
+			if(PrintContents(" Sul tavolo puoi vedere ", self)) print ".";
+		],
+	has static supporter enterable;
+
+
+Object -> -> plate "piatto"
+	with
+		name 'piatto'
+	has supporter;
+
+Object -> -> fork "forchetta"
+	with
+		name 'forchetta'
+		has female;
+
+[Initialise;
+	print "^^Partenza...^^";
+];

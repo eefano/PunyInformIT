@@ -1,0 +1,21 @@
+
+> entra tavolo
+Sei sul tavolo.
+
+> prendi forchetta
+Presa.
+
+> lascia forchetta
+Lasciata.
+
+> guarda
+Stanza bianca (sopra il tavolo)
+Sei in una larga stanza bianca.
+
+C'è un bellissimo tavolo nel mezzo della stanza.
+
+Sopra il tavolo puoi vedere una forchetta e un piatto.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
