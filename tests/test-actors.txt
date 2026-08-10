@@ -1,0 +1,91 @@
+
+> 
+Come scusa?
+
+> ancora
+Non credo tu lo possa rifare.
+
+> prendi tutto
+mela: Presa.
+chiave rossa: Presa.
+chiave blu: Presa.
+bimbo: Preso.
+
+> lascia tutto
+bimbo: Lasciato.
+chiave blu: Lasciata.
+chiave rossa: Lasciata.
+mela: Lasciata.
+
+> prendi bimbo
+Preso.
+
+> prendi giorgio
+before: Giorgio/13 nothing/0
+Non credo che Giorgio gradirebbe.
+
+> ordina giorgio guarda
+Giorgio orders: nothing/0 nothing/0
+orders look
+Giorgio life: nothing/0 nothing/0
+Giorgio has di meglio da fare.
+
+> chiedi giorgio di me
+before: Giorgio/13 <number>/1
+ask
+Giorgio life: Giorgio/13 <number>/1
+Life Ask
+Non ricevi risposta.
+
+> ordina giorgio di fare qualcosa
+Giorgio orders: Giorgio/13 <number>/1
+orders askto 3 3
+before: Giorgio/13 Giorgio/13
+Giorgio life: Giorgio/13 Giorgio/13
+Life
+Life Answer
+Non ricevi risposta.
+
+> mangia mela
+(prendendo prima la mela)
+È chiaramente immangiabile.
+
+> mangia mela
+È chiaramente immangiabile.
+
+> mangia giorgio
+before: Giorgio/13 nothing/0
+Non credo che Giorgio gradirebbe.
+
+> apri porta con chiave
+Intendi dire la chiave rossa o la chiave blu?
+
+> rossa
+(prendendo prima la chiave rossa)
+La chiave rossa non combacia con questo lucchetto.
+
+> lascia tutto
+chiave rossa: Lasciata.
+mela: Lasciata.
+bimbo: Lasciato.
+
+> prendi la chiave blu
+Presa.
+
+> apri la porta con la chiave
+Hai sbloccato la porta.
+
+> giorgio, guarda
+Giorgio orders: nothing/0 nothing/0
+orders look
+Giorgio life: nothing/0 nothing/0
+Giorgio has di meglio da fare.
+
+> bimbo, guarda
+bimbo orders: nothing/0 nothing/0
+life: nothing/0 nothing/0
+Il bimbo has di meglio da fare.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

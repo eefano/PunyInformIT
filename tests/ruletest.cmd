@@ -5,7 +5,7 @@ ginni, ciao
 gianni, ciao
 s
 ganni, ciao
-gianni, hello
+gianni, ciao
 gianni, apri xyzzy
 gianni, apri in on
 gianni, prendi cubo

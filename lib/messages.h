@@ -778,7 +778,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 	MSG_LOCK_NOT_A_LOCK:
 		"Non puoi serrar", (ThatorThose) noun, ".";
 	MSG_UNLOCK_NOT_A_LOCK:
-		"Non puoi disserrar", (ThatorThose) noun, ".";
+		"Non puoi sbloccar", (ThatorThose) noun, ".";
 	MSG_WEAR_NOT_CLOTHING:
 		"Non puoi indossar", (ThatorThose) noun, ".";
 #Endif;
@@ -820,7 +820,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
     MSG_LOCK_DEFAULT:
         "Hai serrato ", (the) noun, ".";
     MSG_UNLOCK_DEFAULT:
-        "Hai disserrato ", (the) noun, ".";
+        "Hai sbloccato ", (the) noun, ".";
     MSG_ENTER_DEFAULT:
         "", (EnterSupp) noun, ".";
     MSG_EXIT_DEFAULT:
@@ -1003,7 +1003,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 	MSG_LOCK_ALREADY_LOCKED:
 		print_ret (The) noun, " è già serrat", (_o) noun, ".";
 	MSG_UNLOCK_ALREADY_UNLOCKED:
-		print_ret (The) noun, " è già disserrat", (_o) noun, ".";
+		print_ret (The) noun, " è già sbloccat", (_o) noun, ".";
 #Endif;
 #IfTrue MSG_LOCK_CLOSE_FIRST < 1000;
 	MSG_LOCK_CLOSE_FIRST:

@@ -37,7 +37,7 @@ Puoi vedere un cubo rosso, un cubo nero e Gianni qui.
 > ganni, ciao
 Non vedo a chi ti stai riferendo.
 
-> gianni, hello
+> gianni, ciao
  *** Gianni.orders: action is <fake action 4> second=12 (Gianni)
      consult 3/1 (going 4103, notustood 4100)
  *** Stanza 1.before: action is Answer second=12 (Gianni)

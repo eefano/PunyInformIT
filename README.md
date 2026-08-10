@@ -32,6 +32,8 @@ ATTENZIONE: queste istruzioni sono specifiche per questa versione italiana e rif
 
 I verbi sono riconosciuti solo nella forma imperativa (```SPINGI```, ```PRENDI```, etc)
 
+Per questo motivo, per ordinare agli NPC di eseguire azioni, al posto di scrivere ```ORDINA A GIANNI DI GUARDARE```, bisogna scrivere ```GIANNI, GUARDA ``` oppure ```ORDINA A GIANNI GUARDA```.
+
 Le preposizioni articolate vengono riconosciute, ma non viene fatto un controllo sulla correttezza della forma maschile/femminile singolare/plurale. ```IN```, ```NELLA```, ```NEGLI``` sono intercambiabili e interpretate come ```IN QUALCOSA```.
 
 Nei giochi in formato ```.z3``` o ```.z4``` i pronomi non possono essere combinati con l'imperativo. Per esempio, la frase:

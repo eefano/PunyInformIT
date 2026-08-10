@@ -1,7 +1,7 @@
 
 > scassina scatola con gizmo
 (prendendo prima Gizmo)
-Non puoi disserrarla.
+Non puoi sbloccarla.
 
 > i
 Stai portando Gizmo.

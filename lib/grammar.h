@@ -36,23 +36,24 @@
 ! ---------------------
 
 Verb 'rispondi' 'dì'
-	* topic AGpr creature				-> Answer
-	* AGpr creature topic				-> Answer reverse;
+	* creature topic						-> Answer reverse
+	* AGpr creature topic				-> Answer reverse
+	* topic AGpr creature				-> Answer;
 !!
 Verb 'chiedi' 'domanda'
-    * creature  SuDiGpr topic      		-> Ask
-    * AGpr creature  SuDiGpr topic 		-> Ask
-    *  SuDiGpr topic AGpr creature 		-> Ask reverse
-    * topic AGpr creature        				-> Ask reverse;
+    * creature topic 									-> Ask
+    * AGpr creature topic 						-> Ask
+    * SuDiGpr topic AGpr creature 		-> Ask reverse;
 Verb 'ordina' 'comanda' 'impartisci' 
-    * creature 'di' topic      			-> AskTo
-    * AGpr creature 'di' topic 			-> AskTo
-    * 'di' topic AGpr creature 			-> AskTo reverse
-    * topic AGpr creature        		-> AskTo reverse;
+    * creature topic      					-> AskTo
+    * AGpr creature topic 					-> AskTo
+    * SuDiGpr topic AGpr creature 	-> AskTo reverse;
 Verb 'estorci' 
+    * creature noun        					-> AskFor
     * AGpr creature noun        		-> AskFor
     * noun AGpr creature        		-> AskFor reverse;
 Verb 'richiedi' 'esigi'
+    * creature noun        					-> AskFor
     * DaGpr creature noun        		-> AskFor
     * noun DaGpr creature        		-> AskFor reverse;
 !!
@@ -181,7 +182,7 @@ Verb 'ascolta'
     *                                    		-> Listen
     * noun                               		-> Listen;
 !!
-Verb 'serra'
+Verb 'serra' 'blocca'
 	* noun 'con' held				-> Lock;
 !!
 Verb 'guarda' 'vedi' 'osserva' 'v//'
@@ -318,10 +319,10 @@ Verb 'gira' 'ruota'
     * noun 'su' 'off'     -> SwitchOff;
 !!
 #Ifdef OPTIONAL_EXTENDED_VERBSET;
-Verb 'disserra'
+Verb 'disserra' 'sblocca'
 	* noun 'con' held                          -> Unlock;
 #Ifnot;
-Verb 'disserra' 'scassina'
+Verb 'disserra' 'sblocca' 'scassina'
 	* noun 'con' held                          -> Unlock;
 #Endif;
 !!
@@ -892,13 +893,13 @@ Array _PutOnMessages static -->
 
 [ UnlockSub;
 	if (ObjectIsUntouchable(noun)) return;
-	if (noun hasnt lockable) { PrintMsg(MSG_UNLOCK_NOT_A_LOCK, 'disserrare'); rtrue; }
-	if (noun hasnt locked)  { PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED, 'disserrare'); rtrue; }
+	if (noun hasnt lockable) { PrintMsg(MSG_UNLOCK_NOT_A_LOCK, 'sbloccare'); rtrue; }
+	if (noun hasnt locked)  { PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED, 'sbloccare'); rtrue; }
 	if(ImplicitGrabIfNotHeld(second)) rtrue;
 	if (RunRoutines(noun, with_key) ~= second) return MSG_UNLOCK_KEY_DOESNT_FIT;
 	give noun ~locked;
 	run_after_routines_msg = MSG_UNLOCK_DEFAULT;
-	run_after_routines_arg_1 = 'disserrare';
+	run_after_routines_arg_1 = 'sbloccare';
 ];
 
 [ WaitSub;
