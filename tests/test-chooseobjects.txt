@@ -1,0 +1,22 @@
+
+> mangia nera
+(prendendo prima la cioccolata nera)
+Decidi di tenerla per dopo.
+
+> lascia tutto
+cioccolata nera: Lasciata.
+
+> prendi nera
+Intendi dire la cioccolata nera o la liquirizia nera?
+
+> liquirizia
+Presa.
+
+> prendi tutto
+direzione: È difficilmente trasportabile.
+cioccolata nera: Presa.
+arbusti: Sono difficilmente trasportabili.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

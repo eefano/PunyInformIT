@@ -1,0 +1,156 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_LESS_DICT_DATA=1
+
+Constant Story      "Scenari Economici";
+Constant Headline   "^Test per PunyInformIT.^";
+
+Constant STATUSLINE_SCORE; Statusline score;
+Constant NO_SCORE = 0;
+
+!Constant DEBUG;
+Constant OPTIONAL_NO_DARKNESS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant RUNTIME_ERRORS = 2; ! 0, 1 or 2. 0 = smallest file, 2 = most info
+
+Constant INITIAL_LOCATION_VALUE = Library;
+
+Include "globals.h";
+
+! Cheap Scenery Parse Name constants. Use values 100-500.
+Constant CSP_LIBRARY 100;
+
+[ SceneryReply word1 word2 id_or_routine;
+	! We can check location, if we want different answers in different rooms
+	! We can also check action, and there's even an implicit switch on action,
+	! so we can do things like: Take: "You're crazy.";
+	switch(id_or_routine) {
+	201: "Lascia in pace muri o giornali!";
+	PARSE_NAME_AIR:
+		! We don't use word2 for anything in this routine. We set it here, to avoid
+		! a warning that it's unused
+		word2 = 1;
+		"Ti serve l'aria per respirare.";
+	CSP_LIBRARY:
+		"La libreria è importantissima, meglio non vandalizzarla.";
+	}
+	if(CSHasNoun('libro'))
+		"Lascia i libri a chi è veramente interessato.";
+	if(location == Library && word1 == 'scaffali')
+		"Non dovresti toccare gli scaffali.";
+	"Ti ricordo che sei in una libreria, non c'è bisogno di toccare qualsiasi cosa.";
+];
+
+Include "ext_cheap_scenery.h";
+Include "puny.h";
+
+[ PARSE_NAME_AIR;
+	! There is no actual need for a parse_name routine here. It's just here for demonstration purposes
+	if(NextWord() == 'aria') return 1;
+	rfalse;
+];
+
+[ WALL_DESC;
+	Examine:
+		"I muri sono ",
+			(string) random("tutti bianchi", "claustrofobici", "spaventosi",
+				"luccicanti"), " qui.";
+	default:
+		rfalse;
+];
+
+Constant BOOKDESC "Non sei interessato a leggere.";
+
+[SCN_ATMOSPHERE;
+	Examine:
+		"C'è una bella atmosfera in questo posto.";
+	default:
+		! Since this is a named routine, it will return true by default. Thus we
+		! have to return false for all actions we don't care about
+		rfalse;
+];
+
+
+Object Library "Library"
+	with
+		description "Sei in una grande splendida libreria. Puoi esaminare o prendere
+			i vecchi libri, i giornali, la libreria, l'aria, l'atmosfera,
+			il pulsante d'emergenza, 
+			i muri e il soffitto. La sala di lettura è ad est.",
+		before [;
+		Push:
+			if(noun == CheapScenery && cs_match_id == 203) {
+				CSPerformAction(##Examine, 200);
+				rtrue;
+			}
+		Pull:
+			if(noun == CheapScenery && cs_match_id == 203) {
+				CSPerformAction(##Examine, 201);
+				rtrue;
+			}
+		],
+		e_to ReadingRoom,
+		s_to Kitchen,
+		cheap_scenery
+			CS_THEM 14 'vecchi' 'libro' 'libri//p' 'volume' 'volumi//p' BOOKDESC
+			201 'giornale' 'giornali//p' "I giornali sono polverosi."
+			CSP_LIBRARY CS_PARSE_NAME [ _i _w;
+				_w = NextWord();
+				if(_w == 'grande') { _i++; _w = NextWord();}
+				if(_w == 'splendida') { _i++; _w = NextWord();}
+				if(_w == 'libreria') { _i++; return _i;}
+				if(_w == 'casa') { _i++; return _i;}
+				if(_w == 'case') { parser_action = ##PluralFound; _i++; return _i;}
+				return 0;
+			] "È veramente glorioso."
+			CS_MAYBE_ADD_LIST [; if(LightSwitch has on) rtrue; ] Library (switch_scenery)
+			CS_ADD_LIST Library (inside_scenery)
+			203 'pulsante' 'd@@39emergenza' "Solo un bel pulsante.",
+		switch_scenery
+			200 1 'luce' "È come stare al sole.",
+		inside_scenery
+			1 'ciao' SCN_ATMOSPHERE
+			CS_PARSE_NAME PARSE_NAME_AIR "L'aria è molto rarefatta qui."
+			200 1 'atmosfera' SCN_ATMOSPHERE
+			201 'muro' 'muri//p' WALL_DESC
+			1 'soffitto' [;
+				Examine: "Il soffitto è molto alto.";
+				default: "Non riuscirai a raggiungerlo!";
+			]
+			'muro' 'soffitto' "È solo cemento, intonaco e pittura.";
+
+Object -> LightSwitch "interruttore"
+	with name 'interruttore',
+	has apostrofo static switchable;
+
+Object -> Box "scatola"
+	with
+		name 'scatola',
+		description "È una bella scatola.",
+	has female container open openable;
+
+Object ReadingRoom "Sala Lettura"
+	with
+		description "È la sala lettura. L'atmosfera è differente qui.
+			C'è un singolo libro su uno dei tavoli
+			Puoi esaminare o provare a prendere i tavoli, la sala lettura, l'aria,
+			l'atmosfera, i muri e il soffitto. La libreria sta a ovest.",
+		w_to Library,
+		cheap_scenery
+			CS_PARSE_NAME PARSE_NAME_AIR "L'aria è più pesante qui che nella libreria."
+			'singolo' 'libro' "È il classico ~I Promessi Sposi~ di Manzoni."
+			'tavolo' 'tavoli//p' [;
+				Examine: "Molto robusto.";
+				Take, Remove, Turn, Pull, Push: "Decidi che è meglio lasciare i tavoli dove stanno.";
+			]
+			'sala' 'lettura' "È un posto molto tranquillo."
+			CS_ADD_LIST Library (inside_scenery);
+
+Object Kitchen "Cucina"
+	with description "È la cucina.",
+	n_to Library;
+
+[Initialise;
+	print "^^Partenza...^^";
+	lookmode = 2;
+];

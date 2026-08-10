@@ -719,7 +719,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 
 #Iftrue MSG_TAKE_SCENERY < 1000;
 	MSG_TAKE_SCENERY:
-		print_ret (CTheyreorThats) noun, " difficilmente trasportabile.";
+		print_ret (CTheyreorThats) noun, " difficilmente trasportabil", (_e) noun, ".";
 #EndIf;
 #Ifndef SKIP_MSG_PUSH_DEFAULT;
 	MSG_PUSH_DEFAULT, MSG_PULL_DEFAULT, MSG_TURN_DEFAULT:
@@ -727,7 +727,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #Ifndef SKIP_MSG_PUSH_STATIC;
 	MSG_PUSH_STATIC, MSG_PULL_STATIC, MSG_TURN_STATIC, MSG_TAKE_STATIC:
-		print_ret (CTheyreorThats) noun, " inamovibile.";
+		print_ret (CTheyreorThats) noun, " inamovibil", (_e) noun, ".";
 #Endif;
 #Ifndef SKIP_MSG_PUSH_SCENERY;
 	MSG_PUSH_SCENERY, MSG_PULL_SCENERY, MSG_TURN_SCENERY:
