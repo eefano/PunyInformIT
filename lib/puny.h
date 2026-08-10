@@ -2857,7 +2857,7 @@ Object thedark "Buio"
 			}
 			_disallow_complex_again = false;
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
-			if(parse-->1 == 'undo') {
+			if(parse-->1 == 'undo' or 'rimedia') {
 				PerformUndo();
 				@new_line;
 				jump _abort_current_input;

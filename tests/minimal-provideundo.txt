@@ -1,0 +1,13 @@
+
+> i
+Sei a mani vuote.
+
+> rimedia
+Non riconosco questo verbo.
+
+> punti
+Non c'è punteggio in questo gioco.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
