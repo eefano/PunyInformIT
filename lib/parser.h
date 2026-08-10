@@ -280,6 +280,7 @@ System_file;
 	!  10000				if it has 5 or more digits.
 	_i = wn; wn = p_wordnum; _j = NextWord(); wn = _i;
 #Ifdef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
+	if (_j == 'un' or 'un@@39' or 'una') return 1;
 	_j = NumberWord(_j); if (_j >= 1) return _j;
 #Endif;
 

@@ -1,0 +1,22 @@
+
+> aspetta le 1
+(domani)
+
+Il tempo passa.
+Sono le ore 1 e 0 minuti. 
+
+> aspetta per dieci minuti
+Il tempo passa.
+Sono le ore 1 e 10 minuti. 
+
+> aspetta per un' ora
+Il tempo passa.
+Sono le ore 2 e 10 minuti. 
+
+> aspetta le 3:05
+Il tempo passa.
+Sono le ore 3 e 5 minuti. 
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
