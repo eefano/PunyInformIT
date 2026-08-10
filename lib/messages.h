@@ -879,7 +879,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #IfTrue MSG_WEAR_DEFAULT < 1000;
 	MSG_WEAR_DEFAULT:
-		"Ora stai indossando ", (the) noun, ".";
+		"Hai indossato ", (the) noun, ".";
 #EndIf;
 #IfTrue MSG_DISROBE_NOT_WEARING < 1000;
 	MSG_DISROBE_NOT_WEARING:

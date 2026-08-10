@@ -1,0 +1,74 @@
+
+> metti me nella scatola
+Non è una buona idea.
+
+> prendi batteria
+Presa.
+
+> metti tutto nel sacco
+batteria: Hai messo la batteria nel sacco.
+
+> prendi batteria
+Presa.
+
+> metti me e la batteria nel sacco
+tu: Sei nel sacco.
+batteria: Hai messo la batteria nel sacco.
+
+> prendi batteria
+Presa.
+
+> metti me nel sacco
+Ma ci sei gia dentro!
+
+> guarda
+Stanza Illuminata (dentro il sacco)
+Sei in una stanza illuminata.
+
+Puoi vedere dei calzini e un scatola (che è vuoto) qui.
+
+> esci
+Sei fuori dal sacco.
+
+> prendi batteria
+Già la possiedi.
+
+> lascia batteria
+Lasciata.
+
+> togli tutto tranne la batteria
+calzini: Presi.
+
+> indossa calzini
+Hai indossato i calzini.
+
+> esamina quelli
+Non c'è nulla di speciale nei calzini.
+
+> rimuovi tutto tranne i calzini
+batteria: Presa.
+
+> lascia tutto
+batteria: Lasciata.
+
+> prendi batteria.s.n
+Presa.
+
+Altra Stanza
+Sei nell'altra stanza.
+
+Stanza Illuminata
+
+Puoi vedere un scatola (che è vuoto) e un sacco (che è vuoto) qui.
+
+> lascia tutto
+batteria: Lasciata.
+
+> prendi batteria.s
+Presa.
+
+Altra Stanza
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

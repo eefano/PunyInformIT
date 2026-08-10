@@ -210,7 +210,10 @@ Verb 'spingi' 'sgombra' 'muovi' 'premi' 'sposta'
     * noun InGpr noun         						-> Transfer
     * noun 'verso' noun                   -> Transfer;
 !!
-Verb 'metti' 'piazza' 'posiziona' 'colloca'
+Verb 'piazza' 'posiziona' 'colloca'
+	* multiexcept InGpr noun								-> Insert
+	* multiexcept SuGpr noun								-> PutOn;
+Verb 'metti'
 	* multiexcept InGpr noun								-> Insert
 	* multiexcept SuGpr noun								-> PutOn
 	* 'su' held                            -> Wear;
@@ -222,9 +225,8 @@ Verb 'leggi'
     * InGpr noun  SuDiGpr topic       		-> Consult
     * InGpr noun topic            				-> Consult;
 !!
-Verb 'togli'
-	* worn                        		-> Disrobe
-	* multi                                 -> Take
+Verb 'togli' 'rimuovi'
+	* multi                                 -> TakeDisrobe
 	* multiinside DaGpr noun			-> Remove;
 !!
 Verb 'sfrega' 'pulisci' 'spolvera' 'lucida' 'strofina' 'smacchia' 'spazza'
@@ -829,6 +831,11 @@ Array _PutOnMessages static -->
 	if(TryToTakeNoun(true) ~= false) rtrue;
 	run_after_routines_msg = MSG_TAKE_DEFAULT;
 	!PrintMsg(MSG_TAKE_DEFAULT); rtrue;
+];
+
+[ TakeDisrobeSub;
+	if(noun has worn) <<Disrobe noun>>;
+	<<Take noun>>;
 ];
 
 [ TieSub;
