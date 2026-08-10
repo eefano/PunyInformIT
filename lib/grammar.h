@@ -35,7 +35,7 @@
 ! Base verbs
 ! ---------------------
 
-Verb 'rispondi'
+Verb 'rispondi' 'dì'
 	* topic AGpr creature				-> Answer
 	* AGpr creature topic				-> Answer reverse;
 !!

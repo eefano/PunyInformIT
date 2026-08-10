@@ -1,0 +1,105 @@
+
+> n
+ *** Stanza 1.before: action is Go noun=5 (nord)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Stanza 2.before: action is <fake action 7> noun=5 (nord)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Stanza 1.after: action is <fake action 7> noun=5 (nord)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Stanza 2.after: action is Go noun=5 (nord)
+     consult 0/0 (going 4103, notustood 4100)
+Buio
+Non si riesce a vedere nulla!
+ *** Stanza 2.after: action is Look noun=5 (nord)
+     consult 0/0 (going 4103, notustood 4100)
+
+> ginni, ciao
+Non vedo a chi ti stai riferendo.
+
+> gianni, ciao
+Non vedo a chi ti stai riferendo.
+
+> s
+ *** Stanza 2.before: action is Go noun=5 (sud)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Stanza 1.before: action is <fake action 7> noun=5 (sud)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Stanza 1.after: action is <fake action 7> noun=5 (sud)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Stanza 1.after: action is Go noun=5 (sud)
+     consult 0/0 (going 4103, notustood 4100)
+Stanza 1
+
+Puoi vedere un cubo rosso, un cubo nero e Gianni qui.
+ *** Stanza 1.after: action is Look noun=5 (sud)
+     consult 0/0 (going 4103, notustood 4100)
+
+> ganni, ciao
+Non vedo a chi ti stai riferendo.
+
+> gianni, hello
+ *** Gianni.orders: action is <fake action 4> second=12 (Gianni)
+     consult 3/1 (going 4103, notustood 4100)
+ *** Stanza 1.before: action is Answer second=12 (Gianni)
+     consult 3/1 (going 4103, notustood 4100)
+ *** Gianni.life: action is Answer second=12 (Gianni)
+     consult 3/1 (going 4103, notustood 4100)
+Non ricevi risposta.
+
+> gianni, apri xyzzy
+ *** Gianni.orders: action is <fake action 4> noun= ('apri') second=12 (Gianni)
+     consult 3/2 (going 4103, notustood 4100)
+ *** Stanza 1.before: action is Answer noun= ('apri') second=12 (Gianni)
+     consult 3/2 (going 4103, notustood 4100)
+ *** Gianni.life: action is Answer noun= ('apri') second=12 (Gianni)
+     consult 3/2 (going 4103, notustood 4100)
+Non ricevi risposta.
+
+> gianni, apri in on
+ *** Gianni.orders: action is <fake action 4> noun= ('apri') second=12 (Gianni)
+     consult 3/3 (going 4103, notustood 4100)
+ *** Stanza 1.before: action is Answer noun= ('apri') second=12 (Gianni)
+     consult 3/3 (going 4103, notustood 4100)
+ *** Gianni.life: action is Answer noun= ('apri') second=12 (Gianni)
+     consult 3/3 (going 4103, notustood 4100)
+Non ricevi risposta.
+
+> gianni, prendi cubo
+Devi essere più specifico.
+
+> gianni, prendi cubo rosso
+ *** Gianni.orders: action is Take noun=10 (cubo rosso)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Gianni.life: action is Take noun=10 (cubo rosso)
+     consult 0/0 (going 4103, notustood 4100)
+Gianni has di meglio da fare.
+
+> gianni, esamina pistola
+ *** Gianni.orders: action is Examine noun=13 (pistola)
+     consult 0/0 (going 4103, notustood 4100)
+ *** Gianni.life: action is Examine noun=13 (pistola)
+     consult 0/0 (going 4103, notustood 4100)
+Gianni has di meglio da fare.
+
+> gianni, aiuta me
+ *** Gianni.orders: action is <fake action 4> second=12 (Gianni)
+     consult 3/2 (going 4103, notustood 4100)
+ *** Stanza 1.before: action is Answer second=12 (Gianni)
+     consult 3/2 (going 4103, notustood 4100)
+ *** Gianni.life: action is Answer second=12 (Gianni)
+     consult 3/2 (going 4103, notustood 4100)
+Non ricevi risposta.
+
+> gianni, dì a me dragon master
+ *** Gianni.orders: action is Answer second=6 (tu)
+     consult 6/2 (going 4103, notustood 4100)
+ *** Gianni.life: action is Answer second=6 (tu)
+     consult 6/2 (going 4103, notustood 4100)
+Gianni has di meglio da fare.
+
+> esamina pistola
+Non vedo nulla di tutto ciò.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

@@ -1,0 +1,118 @@
+#Iftrue (#version_number == 8);
+Constant USEINFORM;
+#Endif;
+
+Constant Story "Regole test";
+Constant Headline "^Prova le regole attraverso le stanze.^";
+Serial "200827";
+
+Constant INITIAL_LOCATION_VALUE = Room1;
+Constant DEBUG;
+
+#Ifndef USEINFORM;
+! Uncomment to show time instead of score/turns
+!Statusline time;
+
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+
+! Uncomment to add optional features to PunyLib
+!Constant CUSTOM_ABBREVIATIONS;
+!Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_EXTENDED_VERBSET;
+!Constant OPTIONAL_NO_DARKNESS;
+!Constant OPTIONAL_FULL_SCORE;
+!Constant OPTIONAL_FULL_DIRECTIONS;
+!Constant OPTIONAL_GUESS_MISSING_NOUN;
+!Constant OPTIONAL_MANUAL_SCOPE;
+!Constant RUNTIME_ERRORS = 0;
+#EndIf;
+
+#Ifdef USEINFORM;
+Include "Parser";
+Include "VerbLib";
+#IfNot;
+Include "globals.h";
+#EndIf;
+
+#Ifndef USEINFORM;
+Include "puny.h";
+#EndIf;
+
+! Uncomment to add PunyLib extensions
+!Include "ext_menu.h";
+!Include "ext_flags.h";
+!Include "ext_quote_box.h";
+!Include "ext_cheap_scenery.h";
+
+
+#Ifdef USEINFORM;
+Include "Grammar";
+#Endif;
+
+[ NounParameter p_w;
+    if (p_w >= 1 && p_w <= top_object) print p_w, " (", (name) p_w, ")";
+    if (UnsignedCompare(p_w, dict_start) >= 0 &&
+            UnsignedCompare(p_w, dict_end) < 0 &&
+            (p_w - dict_start) % dict_entry_size == 0)
+        print " ('", (address) p_w, "')";
+];
+
+Class Room
+	with
+		print_trace [ prop;
+#Ifdef DEBUG;
+			print " *** ", (name) self, ".", (string) prop, ": action is ", (DebugAction) action;
+			if(noun ~= 0) print " noun=", (NounParameter) noun;
+			if(second ~=0) print " second=", (NounParameter) second;
+			print "^     consult ", consult_from, "/", consult_words;
+			print " (going ", ##Going,  ", notustood ", ##NotUnderstood, ")^";
+#Endif;
+		],
+		before [; self.print_trace("before"); ],
+		after [; self.print_trace("after"); ],
+	has light;
+
+Room Room1 "Stanza 1"
+	with
+		description "Puoi vedere la stanza 2 a nord.",
+		n_to Room2;
+
+Object -> RedCube "cubo rosso"
+    with
+        name 'cubo' 'rosso';
+
+Object -> BlackCube "cubo nero"
+    with
+        name 'cubo' 'nero';
+
+Room -> John "Gianni"
+	with
+		name 'gianni',
+		life [; self.print_trace("life"); ],
+		orders [; self.print_trace("orders"); ],
+	has animate proper;
+
+Object -> -> Gun "pistola"
+    with
+        name 'pistola'
+				has female;
+
+Room Room2 "Stanza 2"
+	with
+		description "Puoi vedere la stanza 1 a sud.",
+		s_to Room1
+	has ~light;
+
+[ Initialise;
+ 	location = Room1;
+#Ifndef DEBUG;
+	print "^^Devi compilare in modo DEBUG per vedere cosa succede!";
+#Endif;
+	"^^";
+];
