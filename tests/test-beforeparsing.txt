@@ -1,0 +1,17 @@
+> i
+Sei a mani vuote.
+
+> prendi tutto lentamente
+batteria: Presa.
+supporto: Preso.
+attrezzi: Preso.
+
+> prendi tutto
+Nulla di disponibile combacia con "prendi tutto".
+
+> lentamente i
+Stai portando un attrezzi, un supporto e una batteria.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
