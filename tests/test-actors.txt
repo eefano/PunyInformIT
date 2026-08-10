@@ -28,7 +28,7 @@ Non credo che Giorgio gradirebbe.
 Giorgio orders: nothing/0 nothing/0
 orders look
 Giorgio life: nothing/0 nothing/0
-Giorgio has di meglio da fare.
+Giorgio ha di meglio da fare.
 
 > chiedi giorgio di me
 before: Giorgio/13 <number>/1
@@ -79,12 +79,12 @@ Hai sbloccato la porta.
 Giorgio orders: nothing/0 nothing/0
 orders look
 Giorgio life: nothing/0 nothing/0
-Giorgio has di meglio da fare.
+Giorgio ha di meglio da fare.
 
 > bimbo, guarda
 bimbo orders: nothing/0 nothing/0
 life: nothing/0 nothing/0
-Il bimbo has di meglio da fare.
+Il bimbo ha di meglio da fare.
 
 > termina
 Sei sicuro di voler terminare il gioco? si

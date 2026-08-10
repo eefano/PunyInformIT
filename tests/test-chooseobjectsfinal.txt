@@ -1,0 +1,24 @@
+
+> v
+Il Pub
+Sei in un pub.
+
+Puoi vedere un tavolo (su cui c'è una palla rossa) e una scatola (che contiene
+una palla verde) qui.
+
+> prendi palla dalla scatola
+Rimossa.
+
+> i
+Stai portando una palla verde e una palla rosa.
+
+> guarda
+Il Pub
+Sei in un pub.
+
+Puoi vedere un tavolo (su cui c'è una palla rossa) e una scatola (che è aperta
+ma vuota) qui.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

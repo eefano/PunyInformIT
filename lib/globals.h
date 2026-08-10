@@ -104,8 +104,8 @@ Constant comma_word   = 'comma,';  ! An "untypeable word" used to substitute
 Constant SOMETHING_STR = "qualcosa";
 Constant SOMEONE_STR = "qualcuno/a";
 Constant SOMEDIRECTION_STR = "(una direzione)";
-Constant IS_STR = "è ";
-Constant ARE_STR = "sono ";
+Constant IS_STR = "c'è ";
+Constant ARE_STR = "ci sono ";
 
 Default DEFAULT_CAPACITY = 100;
 

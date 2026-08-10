@@ -1292,13 +1292,10 @@ default:
 	print (the) p_obj, " ", (isorare) p_obj;
 ];
 
-[ DoOrDoes p_obj;
-	print "do";
-	if (p_obj hasnt pluralname) print "es";
-];
-
 [ HaveOrHas p_obj;
-	if (p_obj has pluralname) print "have"; else print "has";
+	if (p_obj has pluralname) print "hanno"; 
+	else if (p_obj == player) print "hai";
+	else print "ha";
 ];
 
 [ IsorAre p_obj;

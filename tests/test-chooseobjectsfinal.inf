@@ -1,0 +1,64 @@
+Constant Story      "ChooseObjectsFinal demo";
+Constant Headline   "^Test per PunyInformIT.^";
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant INITIAL_LOCATION_VALUE = Pub;
+Constant DEBUG;
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+
+
+include "globals";
+
+[ ChooseObjectsFinal p_arr p_len _i _o;
+    print "*** ChooseObjectsFinal, action is ",(DebugAction) action,", object count is ", p_len, ": ^";
+    for(_i = 0: _i < p_len: _i++) {
+        _o = p_arr-->_i;
+        print "  Object# ", _o, ": ", (the) _o;
+        if(parent(_o))
+            print " in ",(the) parent(_o);
+        new_line;
+    }
+    "*** End of list";
+];
+
+include "puny";
+
+Object Pub "Il Pub"
+    with
+        description "Sei in un pub."
+    has light;
+
+Object -> Table "tavolo"
+	with name 'tavolo'
+	has supporter;
+
+Object -> -> RedBall "palla rossa"
+    with
+        name 'palla' 'rossa'
+        has female;
+
+Object -> Box "scatola"
+    with
+        name 'scatola',
+        inside_description "Che scatole.",
+    has female container open openable enterable;
+
+Object -> -> GreenBall "palla verde"
+    with
+        name 'palla' 'verde'
+        has female;
+
+Object PinkBall "palla rosa"
+    with
+        name 'palla' 'rosa'
+        has female;
+
+
+[Initialise;
+    move PinkBall to player;
+    "Sto test mostra che oggetti ChooseObjectsFinal può scegliere.";
+];

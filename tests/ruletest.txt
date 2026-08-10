@@ -72,14 +72,14 @@ Devi essere più specifico.
      consult 0/0 (going 4103, notustood 4100)
  *** Gianni.life: action is Take noun=10 (cubo rosso)
      consult 0/0 (going 4103, notustood 4100)
-Gianni has di meglio da fare.
+Gianni ha di meglio da fare.
 
 > gianni, esamina pistola
  *** Gianni.orders: action is Examine noun=13 (pistola)
      consult 0/0 (going 4103, notustood 4100)
  *** Gianni.life: action is Examine noun=13 (pistola)
      consult 0/0 (going 4103, notustood 4100)
-Gianni has di meglio da fare.
+Gianni ha di meglio da fare.
 
 > gianni, aiuta me
  *** Gianni.orders: action is <fake action 4> second=12 (Gianni)
@@ -95,7 +95,7 @@ Non ricevi risposta.
      consult 6/2 (going 4103, notustood 4100)
  *** Gianni.life: action is Answer second=6 (tu)
      consult 6/2 (going 4103, notustood 4100)
-Gianni has di meglio da fare.
+Gianni ha di meglio da fare.
 
 > esamina pistola
 Non vedo nulla di tutto ciò.
