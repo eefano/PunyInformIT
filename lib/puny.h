@@ -548,45 +548,42 @@ Constant ONE_SPACE_STRING = " ";
 	if (n == 0)	{ print "zero"; rfalse; }
 	if (n < 0)	 { print "meno "; n = -n; }
 	if (n >= 1000) {
-		if (n/1000 > 1) print (LanguageNumber) n/1000, " mila";
+		if (n/1000 > 1) print (LanguageNumber) n/1000, "mila";
 		else print "mille";
 		n = n%1000;
 		if (n > 0) print " ";
 	}
 	if (n >= 100)  {
-		if (n/100 > 1) {
-			print (LanguageNumber) n/100, "cento";
-			n = n%100;
-			if (n > 0) print " ";
-		} else {
-			n = n%100;
-			if (n > 0) {
-				print "cento ";
-			} else print "cento";
-		}
+		if (n/100 > 1) print (LanguageNumber) n/100, " cento";
+		else print "cento";
+		n = n%100; 
+		if (n > 0) print " ";
 	}
 	if (n == 0) rfalse;
 #Ifdef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
-	if(n < 13)
+#Iftrue #version_number < 4;
+	if(n < 13 || n == 20)
 		print (address) LanguageNumbers-->(2 * n - 1);
-	else if(n <= 20)
+	else if(n < 20)
 		print (string) LanguageNumberStrings-->(n - 13);
 	else {
 		print (string) LanguageNumberTensStrings-->(n / 10 - 2);
-		if (n%10 ~= 0) {
-			if (n <= 29) print (LanguageNumber) n%10;
-			else print " e ", (LanguageNumber) n%10;
-		}
+		if (n%10 ~= 0) print (LanguageNumber) n%10;
 	}
 #Ifnot; ! z4+
-	if(n <= 20)
+	if(n < 21)
+		print (address) LanguageNumbers-->(2 * n - 1);
+	else {
+		print (string) LanguageNumberTensStrings-->(n / 10 - 2);
+		if (n%10 ~= 0) print (LanguageNumber) n%10;
+	}
+#Endif;
+#Ifnot;
+	if(n < 20)
 		print (string) LanguageNumberStrings-->(n - 1);
 	else {
 		print (string) LanguageNumberTensStrings-->(n / 10 - 2);
-		if (n%10 ~= 0) {
-			if (n <= 29) print (LanguageNumber) n%10;
-			else print " e ", (LanguageNumber) n%10;
-		}
+		if (n%10 ~= 0) print (LanguageNumber) n%10;
 	}
 #Endif;
 ];
@@ -2537,7 +2534,7 @@ Object selfobj "tu"
 		life NULL,
 		each_turn NULL,
 		time_out NULL,
-		describe NULL,
+		describe NULL, 
 #Ifndef OPTIONAL_NO_ADD_TO_SCOPE;
 		add_to_scope 0,
 #Endif;
@@ -2982,7 +2979,7 @@ Object thedark "Buio"
 		_ReadPlayerInput(true);
 		verb_word = parse-->1;
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
-		if(verb_word == 'rimedia') {
+		if(verb_word == 'undo' or 'rimedia') {
 			PerformUndo();
 		}
 #Endif;
