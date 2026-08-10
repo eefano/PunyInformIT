@@ -501,10 +501,14 @@ Global scope_copy_actor = 0;
 Global scope_routine;    ! for scope=Routine grammar
 Global scope_stage;      ! for scope=Routine grammar: 1, 2 then 3
 Global keep_silent;
-Global itobj = 0;        ! The object which is currently "it"
-Global himobj = 0;       ! The object which is currently "him"
-Global herobj = 0;       ! The object which is currently "her"
-Global themobj = 0;      ! The object which is currently "them"
+Global lo_obj =  0;      ! ogg.attualmente riferito al singolare maschile
+Global la_obj =  0;      ! ogg.attualmente riferito al singolare femminile
+Global li_obj =  0;      ! ogg.attualmente riferito al plurale maschile
+Global le_obj =  0;      ! ogg.attualmente riferito al plurale femminile
+!Global itobj = 0;        ! The object which is currently "it"
+!Global himobj = 0;       ! The object which is currently "him"
+!Global herobj = 0;       ! The object which is currently "her"
+!Global themobj = 0;      ! The object which is currently "them"
 Global top_object;
 Global also_flag;        ! Used by Look
 Global inventory_style = 1;
@@ -521,11 +525,6 @@ Global react_before_in_scope;
 Global react_after_in_scope;
 Global each_turn_in_scope;
 #Endif;
-
-Global lo_obj =  0;
-Global la_obj =  0;
-Global li_obj =  0;
-Global le_obj =  0;
 
 Global dict_start;
 Global dict_entry_size;

@@ -2013,10 +2013,10 @@ Array guess_object-->5;
 	if(p_object == 0 or player or Directions) return;
 	if(p_object has pluralname) {
 		if(p_object has female) le_obj = p_object;
-		if(p_object hasnt female) li_obj = p_object;
+		else li_obj = p_object;
 	} else {
 		if(p_object has female) la_obj = p_object;
-		if(p_object hasnt female) lo_obj = p_object;
+		else lo_obj = p_object;
 	}
 ];
 

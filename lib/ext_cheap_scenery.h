@@ -617,10 +617,10 @@ Object CheapScenery "oggetto"
 		],
 		react_after [ _i;
 			Go:
-				if(itobj == self) itobj = 0;
-#ifdef PUNYINFORM_MAJOR_VERSION;
-				if(themobj == self) themobj = 0;
-#Endif;
+				if(lo_obj == self) lo_obj = 0;
+				if(la_obj == self) la_obj = 0;
+				if(li_obj == self) li_obj = 0;
+				if(le_obj == self) le_obj = 0;
 #iftrue #version_number > 4;
 				_i = 0; ! Get rid of warning
 				@copy_table CSData 0 10;
