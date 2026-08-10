@@ -1,0 +1,9 @@
+> prendi tutto
+Candela: Presa.
+
+> lascia tutto
+Candela: Lasciata.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

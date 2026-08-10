@@ -1196,9 +1196,8 @@ Verb meta 'breve' 'normal'
 Verb meta 'totali' 'totale' 'tot'
     *                                           -> FullScore;
 Verb meta 'punti' 'punteggio'
-    *                                           -> Score;
+    *                                           -> Score
     * 'totali'/'totale'/'tot'                   -> FullScore;
-Verb 
 #Endif;
 
 #Ifndef NO_SCORE;
