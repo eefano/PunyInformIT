@@ -1355,22 +1355,13 @@ default:
 [DiPrep p_obj;
 	if (p_obj has pluralname) {
 		if (p_obj has female) print "delle ";
-		else {
-			if (p_obj has logli) print "degli ";
-			else print "dei ";
-		}
+		else if (p_obj has apostrofo or logli) print "degli ";
+		else print "dei ";
 	} else {
-		if (p_obj has female) {
-			if (p_obj has apostrofo) print "dell'";
-			else print "della ";
-		} 
-		else {
-			if (p_obj has logli) { 
-				if (p_obj has apostrofo) print "dell'"; 
-				else print "dello ";
-			}
-			else print "del ";
-		}
+		if (p_obj has apostrofo) print "dell'";
+		else if (p_obj has female) print "della ";
+		else if (p_obj has logli) print "dello "; 
+		else print "del ";
 	}
 	print (name) p_obj;
 	return;
@@ -1379,22 +1370,13 @@ default:
 [APrep p_obj;
 	if (p_obj has pluralname) {
 		if (p_obj has female) print "alle ";
-		else {
-			if (p_obj has logli) print "agli ";
-			else print "ai ";
-		}
+		else if (p_obj has apostrofo or logli) print "agli ";
+		else print "ai ";
 	} else {
-		if (p_obj has female) {
-			if (p_obj has apostrofo) print "all'";
-			else print "alla ";
-		} 
-		else {
-			if (p_obj has logli) { 
-				if (p_obj has apostrofo) print "all'"; 
-				else print "allo ";
-			}
-			else print "al ";
-		}
+		if (p_obj has apostrofo) print "all'";
+		else if (p_obj has female) print "alla ";
+		else if (p_obj has logli) print "allo "; 
+		else print "al ";
 	}
 	print (name) p_obj;
 	return;
@@ -1403,22 +1385,13 @@ default:
 [DaPrep p_obj;
 	if (p_obj has pluralname) {
 		if (p_obj has female) print "dalle ";
-		else {
-			if (p_obj has logli) print "dagli ";
-			else print "dai ";
-		}
+		else if (p_obj has apostrofo or logli) print "dagli ";
+		else print "dai ";
 	} else {
-		if (p_obj has female) {
-			if (p_obj has apostrofo) print "dall'";
-			else print "dalla ";
-		} 
-		else {
-			if (p_obj has logli) { 
-				if (p_obj has apostrofo) print "dall'"; 
-				else print "dallo ";
-			}
-			else print "dal ";
-		}
+		if (p_obj has apostrofo) print "dall'";
+		else if (p_obj has female) print "dalla ";
+		else if (p_obj has logli) print "dallo "; 
+		else print "dal ";
 	}
 	print (name) p_obj;
 	return;
@@ -1427,22 +1400,13 @@ default:
 [InPrep p_obj;
 	if (p_obj has pluralname) {
 		if (p_obj has female) print "nelle ";
-		else {
-			if (p_obj has logli) print "negli ";
-			else print "nei ";
-		}
+		else if (p_obj has apostrofo or logli) print "negli ";
+		else print "nei ";
 	} else {
-		if (p_obj has female) {
-			if (p_obj has apostrofo) print "nell'";
-			else print "nella ";
-		} 
-		else {
-			if (p_obj has logli) { 
-				if (p_obj has apostrofo) print "nell'"; 
-				else print "nello ";
-			}
-			else print "nel ";
-		}
+		if (p_obj has apostrofo) print "nell'";
+		else if (p_obj has female) print "nella ";
+		else if (p_obj has logli) print "nello "; 
+		else print "nel ";
 	}
 	print (name) p_obj;
 	return;
@@ -1451,22 +1415,13 @@ default:
 [SuPrep p_obj;
 	if (p_obj has pluralname) {
 		if (p_obj has female) print "sulle ";
-		else {
-			if (p_obj has logli) print "sugli ";
-			else print "sui ";
-		}
+		else if (p_obj has apostrofo or logli) print "sugli ";
+		else print "sui ";
 	} else {
-		if (p_obj has female) {
-			if (p_obj has apostrofo) print "sull'";
-			else print "sulla ";
-		} 
-		else {
-			if (p_obj has logli) { 
-				if (p_obj has apostrofo) print "sull'"; 
-				else print "sullo ";
-			}
-			else print "sul ";
-		}
+		if (p_obj has apostrofo) print "sull'";
+		else if (p_obj has female) print "sulla ";
+		else if (p_obj has logli) print "sullo "; 
+		else print "sul ";
 	}
 	print (name) p_obj;
 	return;

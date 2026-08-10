@@ -1,10 +1,16 @@
 transcript
 
 guarda
-esamina l' ancora
+esamina il libro
 esamina l' angelo
-esamina gli stecchi
 esamina lo pneumatico
+esamina la palla
+esamina l' ancora
+esamina i fogli
+esamina gli imbuti
+esamina gli stecchi
+esamina le perle
+esamina le aragoste
 termina
 si
 

@@ -115,7 +115,7 @@ Object -> LightSwitch "Interruttore"
         short_name "interruttore",
         description "È un pulsante sul muro.",
         name 'interruttore' 'pulsante',
-    has switchable static apostrofo logli;
+    has switchable static apostrofo;
 
 [Initialise;
 	print "^^Partenza!^^";

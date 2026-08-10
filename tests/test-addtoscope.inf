@@ -106,7 +106,7 @@ Object -> Aquarium "aquarium"
 	with
 		name 'aquarium',
 		inside_description "It feels so nice, standing in the aquarium.",
-	has apostrofo logli container openable enterable transparent;
+	has apostrofo container openable enterable transparent;
 
 Object -> -> Master3 "master3"
 	with

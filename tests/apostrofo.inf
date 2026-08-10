@@ -45,22 +45,47 @@ Object StartRoom "Stanza"
 		],
 	has female light;
 
-Object -> Anchor "ancora"
-	with name 'ancora'
-	has female apostrofo;
+
+Object -> Book "libro"
+	with name 'libro'
+	;
+
+Object -> Angel "angelo"
+	with name 'angelo'
+	has apostrofo animate;
 
 Object -> Tire "pneumatico"
 	with name 'pneumatico'
 	has logli;
 
-Object -> Angel "angelo"
-	with name 'angelo'
-	has logli apostrofo animate;
+Object -> Ball "palla"
+	with name 'palla'
+	has female;
+
+Object -> Anchor "ancora"
+	with name 'ancora'
+	has female apostrofo;
+
+
+Object -> Fogli "fogli"
+  with name 'fogli//p'
+	has pluralname;
+
+Object -> Imbuti "imbuti"
+  with name 'imbuti//p'
+	has pluralname apostrofo;
 
 Object -> Sticks "stecchi"
   with name 'stecchi//p'
 	has pluralname logli;
 
+Object -> Perle "perle"
+  with name 'perle//p'
+	has pluralname female;
+
+Object -> Aragoste "aragoste"
+  with name 'aragoste//p'
+	has pluralname female apostrofo;
 
 [Initialise;
 	print "^^Partenza!^^";

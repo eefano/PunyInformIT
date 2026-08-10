@@ -67,7 +67,7 @@ L'attributo ```neuter``` è stato rimosso in favore di due nuovi attributi: ```a
 
 * ```logli``` serve ad indicare quando il nome maschile prevede l'articolo ```LO / GLI``` al posto di ```IL / I```. Se presente, nelle stampe trasforma ```IL STRACCIO``` in ```LO STRACCIO``` oppure ```NEL SPORCO``` in ```NELLO SPORCO```
 
-* La combinazione ```apostrofo``` più ```logli``` va usata per i nomi maschili che iniziano con vocale o acca, ad esempio per ottenere correttamente sia ```L'ALBERO / SULL'ALBERO``` che ```GLI ALBERI / SUGLI ALBERI```.
+* Per i nomi maschili che iniziano per vocale o acca è sufficiente indicare ```apostrofo``` dato che l'uso di ```LO / GLI``` è implicito. L'articolo indefinito maschile singolare ```UN``` verrà comunque stampato senza apostrofo. 
 
 Quando scrivete le vostre regole grammaticali, per le preposizioni utilizzate ```DiGpr``` al posto di ```'di'```, ```AGpr``` al posto di ```'a//'``` e così via anche per ```DaGpr```, ```InGpr```, ```SuGpr```, ```SuDiGpr```. 
 

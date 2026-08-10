@@ -2,19 +2,39 @@
 > guarda
 Stanza
 Sei in una stanza piena di cose.
-Puoi vedere un'ancora, uno pneumatico, un angelo e degli stecchi qui.
+Puoi vedere un libro, un angelo, uno pneumatico, una palla, un'ancora, dei
+fogli, degli imbuti, degli stecchi, delle perle e delle aragoste qui.
 
-> esamina l' ancora
-Non c'è nulla di speciale nell'ancora.
+> esamina il libro
+Non c'è nulla di speciale nel libro.
 
 > esamina l' angelo
 Non c'è nulla di speciale nell'angelo.
 
-> esamina gli stecchi
-Non c'è nulla di speciale negli stecchi.
-
 > esamina lo pneumatico
 Non c'è nulla di speciale nello pneumatico.
 
+> esamina la palla
+Non c'è nulla di speciale nella palla.
+
+> esamina l' ancora
+Non c'è nulla di speciale nell'ancora.
+
+> esamina i fogli
+Non c'è nulla di speciale nei fogli.
+
+> esamina gli imbuti
+Non c'è nulla di speciale negli imbuti.
+
+> esamina gli stecchi
+Non c'è nulla di speciale negli stecchi.
+
+> esamina le perle
+Non c'è nulla di speciale nelle perle.
+
+> esamina le aragoste
+Non c'è nulla di speciale nelle aragoste.
+
 > termina
 Sei sicuro di voler terminare il gioco? si
+
