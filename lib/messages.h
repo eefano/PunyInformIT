@@ -1011,7 +1011,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #Ifndef SKIP_MSG_LOCK_KEY_DOESNT_FIT;
 	MSG_LOCK_KEY_DOESNT_FIT, MSG_UNLOCK_KEY_DOESNT_FIT:
-		print_ret (The) second, " non combacia", (_no) second, " con questo lucchetto.";
+		print_ret (The) second, " non combacia", (_no) second, " con questa serratura.";
 #Endif;
 #IfTrue MSG_EXAMINE_CLOSED < 1000;
 	MSG_EXAMINE_CLOSED:

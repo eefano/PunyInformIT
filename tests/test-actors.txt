@@ -62,7 +62,7 @@ Intendi dire la chiave rossa o la chiave blu?
 
 > rossa
 (prendendo prima la chiave rossa)
-La chiave rossa non combacia con questo lucchetto.
+La chiave rossa non combacia con questa serratura.
 
 > lascia tutto
 chiave rossa: Lasciata.
