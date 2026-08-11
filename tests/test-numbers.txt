@@ -1,0 +1,40 @@
+
+> spingi 2
+Qualcosa è successo. 
+
+> spingi due
+Qualcosa è successo. 
+
+> spingi secondo bottone
+Qualcosa è successo. 
+
+> s
+Stanza Delle Note
+Sei nella stanza dei bottoni.
+
+Puoi vedere un passo ùno e un passo due qui.
+
+> x 1
+Non c'è nulla di speciale nel passo ùno.
+
+> x ùno
+Non c'è nulla di speciale nel passo ùno.
+
+> x 2
+Non c'è nulla di speciale nel passo due.
+
+> prendi ùno
+passo ùno: È inamovibile.
+
+> prendi due
+passo due: È inamovibile.
+
+> premi 1
+È inamovibile.
+
+> premi 2
+È inamovibile.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

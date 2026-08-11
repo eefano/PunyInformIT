@@ -57,6 +57,8 @@ Per brevità, i pronomi riflessivi si possono in genere omettere, tranne per i v
 
 L'apostrofo nei formati ```.z3``` e ```.z4``` non può essere attaccato alla parola successiva (scrivere invece ```L' APOSTROFO``` con lo spazio). I formati ```.z5``` e superiori lo separano in automatico.
 
+Il numero ```uno``` va in conflitto con l'articolo ```uno```. Per il momento, occorre scrivere il numero come ```ùno``` (con la ù accentata).
+
 ### Per gli autori
 
 L'italiano non ha una forma neutra, quindi ricordarsi di utilizzare l'attributo ```female``` anche per oggetti inanimati, dove necessario.
