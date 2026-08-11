@@ -1218,7 +1218,7 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 		if(AMUSING_PROVIDED == 0 && deadflag == GS_WIN) 
 			print ", leggi i RETROSCENA";
 #Endif;
-		print " o TERMINA il gioco.";
+		print " o TERMINA il gioco.^> ";
 		rtrue;
 #EndIf;
 #IfTrue MSG_AREYOUSUREQUIT < 1000;

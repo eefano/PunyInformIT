@@ -95,7 +95,7 @@ Object Library "Library"
 		e_to ReadingRoom,
 		s_to Kitchen,
 		cheap_scenery
-			CS_THEM 14 'vecchi' 'libro' 'libri//p' 'volume' 'volumi//p' BOOKDESC
+			CS_THEM 15 'vecchio' 'vecchi//p' 'libro' 'libri//p' 'volume' 'volumi//p' BOOKDESC
 			201 'giornale' 'giornali//p' "I giornali sono polverosi."
 			CSP_LIBRARY CS_PARSE_NAME [ _i _w;
 				_w = NextWord();
