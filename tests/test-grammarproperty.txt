@@ -1,0 +1,49 @@
+
+> john, prendi la mira
+grammar 3 0
+"Ok, sto puntando."
+
+> john, prendi prendi la mira
+grammar 3 0
+answer words 4 from 3
+Non ricevi risposta.
+
+> john, ciao
+grammar 3 0
+answer words 1 from 3
+Non ricevi risposta.
+
+> john, prendi me
+grammar 3 0
+order ##Take
+John ha di meglio da fare.
+
+> john, salta
+grammar 3 0
+Non ho niente
+
+> john, apri mela
+grammar 3 0
+answer words 2 from 3
+Non ricevi risposta.
+
+> john, chiudi mela
+grammar 3 0
+Perchè mi chiedi di chiudere la mela.
+
+> john, spegni mela
+grammar 3 0
+Io spengo la mela.
+
+> john, mangia mela
+grammar 3 0
+Io mangio
+
+> john, bevi mela
+grammar 3 0
+answer words 2 from 3
+Non ricevi risposta.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

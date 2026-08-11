@@ -1,0 +1,136 @@
+! this code looks messy but it tests all return values from the 
+! grammar property. -1, 0, 'verb' and -'verb'. See test-grammarproperty.cmd
+! for example inputs.
+
+#Iftrue (#version_number == 8);
+Constant USEINFORM;
+#Endif;
+
+Constant Story      "Parser test";
+Constant Headline   "^Test per PunyInformIT.^";
+Serial "200827";
+Constant INITIAL_LOCATION_VALUE = Library;
+
+! Uncomment to show time instead of score/turns
+!Statusline time;
+
+!Constant DEBUG;
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+
+! Uncomment to add optional features to PunyLib
+!Constant DEBUG;
+!Constant CUSTOM_ABBREVIATIONS;
+!Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_EXTENDED_VERBSET;
+!Constant OPTIONAL_GRAMMAR_PROPERTY;
+!Constant OPTIONAL_NO_DARKNESS;
+!Constant OPTIONAL_FULL_SCORE;
+!Constant OPTIONAL_FULL_DIRECTIONS;
+!Constant OPTIONAL_GUESS_MISSING_NOUN;
+!Constant OPTIONAL_MANUAL_SCOPE;
+!Constant RUNTIME_ERRORS = 0;
+
+#Ifdef USEINFORM;
+Include "Parser";
+Include "VerbLib";
+#IfNot;
+Include "globals.h";
+#EndIf;
+
+#Ifndef USEINFORM;
+Include "puny.h";
+#EndIf;
+
+! Uncomment to add PunyLib extensions
+!Include "ext_menu.h";
+!Include "ext_flags.h";
+!Include "ext_quote_box.h";
+!Include "ext_cheap_scenery.h";
+
+
+#Ifdef USEINFORM;
+Include "Grammar";
+#Endif;
+
+[ TakeAimSub;
+    ! Only BattleBot can be ordered to take aim, and this is handled in its
+    ! orders property, so this routine should never be executed.
+    "No.";
+];
+
+Verb 'bot,' * 'prendi' 'la' 'mira' -> TakeAim;
+
+Object Library "Libreria"
+	with
+	    description "Nella libreria.",
+	has light;
+
+Object -> John "John"
+	with name 'john',
+	life [;
+	Answer:  print "answer words ", consult_words, " from ", consult_from, "^";
+	Ask: print "ask^";
+	Order: 
+        print "order ";
+        switch(action) {
+        ##Inv: print "##Inv";
+        ##Take: print "##Take";
+        default: print action;
+        };
+        print "^";
+	],
+	before [;
+	Consult: print "consult^";
+	],
+	orders [;
+    Open: "Perchè mi chiedi di aprire ", (the) noun, ".";
+    Close: "Perchè mi chiedi di chiudere ", (the) noun, ".";
+    Eat: "Io mangio";
+    Jump: "Io salto";
+    Unlock: "Io sblocco ", (the) noun, ".";
+    SwitchOff: "Io spengo ", (the) noun, ".";
+    Inv: "Non ho niente";
+    TakeAim: "~Ok, sto puntando.~";
+	],
+	grammar [;
+	    print "grammar ", verb_wordnum, " ", verb_word == 'jump', "^";
+	    if(verb_word == 'bevi') {
+			parser_one = 1;
+	        return 'mangia';
+        }
+	    if(verb_word == 'apri') {
+			parser_one = 1;
+	        return 'chiudi';
+        }
+	    if(verb_word == 'chiudi') {
+            parser_one = -1;
+	        return -'mangia';
+        }
+	    if(verb_word == 'salta') {
+	        action = ##Inv;
+	        rtrue;
+        }
+        if(verb_word == 'prendi') {
+            parser_one = -1;
+            return -'bot,';
+        }
+        rfalse;
+    ],
+	has animate proper;
+
+Object -> apple "mela"
+	with name 'mela',
+	has female edible;
+
+[ Initialise;
+#IfDef USEINFORM;
+    location=INITIAL_LOCATION_VALUE;
+#EndIf;
+];
+
