@@ -1,0 +1,7 @@
+
+transcript
+
+ascolta
+termina
+si
+
