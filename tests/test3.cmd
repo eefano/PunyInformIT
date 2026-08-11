@@ -1,6 +1,7 @@
 transcript
 
 chiedi alla scala di me
+chiedi di me alla scala
 chiedi a john di me
 metti john sulla scatola
 apri la scatola

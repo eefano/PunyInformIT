@@ -1,0 +1,68 @@
+
+> consulta libro su fantasmi
+special_number = 0
+consult_words = 1
+consult_from = 4
+Non scopri nulla di interessante nel libro.
+
+> leggi sui fantasmi nel libro
+special_number = 0
+consult_words = 1
+consult_from = 3
+Non scopri nulla di interessante nel libro.
+
+> leggi fantasmi nel libro
+special_number = 0
+consult_words = 1
+consult_from = 2
+Non scopri nulla di interessante nel libro.
+
+> chiedi john sui fantasmi
+???
+special_number = 0
+consult_words = 1
+consult_from = 4
+John ignores your question.
+
+> rispondi fantasmi a john
+???
+special_number = 0
+consult_words = 1
+consult_from = 2
+no answer.
+
+> consulta libro su frutto
+special_number = 0
+consult_words = 1
+consult_from = 4
+Non scopri nulla di interessante nel libro.
+
+> leggi del frutto nel libro
+special_number = 0
+consult_words = 1
+consult_from = 3
+Non scopri nulla di interessante nel libro.
+
+> leggi frutto in libro
+special_number = 0
+consult_words = 1
+consult_from = 2
+Non scopri nulla di interessante nel libro.
+
+> chiedi john su frutto
+frutto
+special_number = 0
+consult_words = 1
+consult_from = 4
+John ignores your question.
+
+> rispondi frutto a john
+frutto
+special_number = 0
+consult_words = 1
+consult_from = 2
+no answer.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

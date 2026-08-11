@@ -38,16 +38,22 @@
 Verb 'rispondi' 'dì'
 	* creature topic						-> Answer reverse
 	* AGpr creature topic				-> Answer reverse
-	* topic AGpr creature				-> Answer;
+	* topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Answer;
 !!
 Verb 'chiedi' 'domanda'
+		* creature noun 									-> AskFor
+		* AGpr creature noun							-> AskFor
+		* noun AGpr creature							-> AskFor reverse
+    * creature SuDiGpr topic 					-> Ask
+    * AGpr creature SuDiGpr topic 		-> Ask
     * creature topic 									-> Ask
     * AGpr creature topic 						-> Ask
-    * SuDiGpr topic AGpr creature 		-> Ask reverse;
+    * SuDiGpr topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Ask reverse
+    * topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Ask reverse;
 Verb 'ordina' 'comanda' 'impartisci' 
     * creature topic      					-> AskTo
     * AGpr creature topic 					-> AskTo
-    * SuDiGpr topic AGpr creature 	-> AskTo reverse;
+    * topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> AskTo reverse;
 Verb 'estorci' 
     * creature noun        					-> AskFor
     * AGpr creature noun        		-> AskFor
@@ -220,10 +226,10 @@ Verb 'metti'
 !!
 Verb 'leggi'
     * noun                               	-> Examine
-    *  SuDiGpr topic InGpr noun          -> Consult reverse
-    * topic InGpr noun            				-> Consult reverse
-    * InGpr noun  SuDiGpr topic       		-> Consult
-    * InGpr noun topic            				-> Consult;
+    * InGpr noun SuDiGpr topic            -> Consult
+    * InGpr noun topic            				-> Consult
+    * SuDiGpr topic 'in'/'nel'/'nello'/'nella'/'nei'/'negli'/'nelle'/'nell@@39'/'dentro' noun -> Consult reverse
+    * topic 'in'/'nel'/'nello'/'nella'/'nei'/'negli'/'nelle'/'nell@@39'/'dentro' noun -> Consult reverse;
 !!
 Verb 'togli' 'rimuovi'
 	* multi                                 -> TakeDisrobe
@@ -234,18 +240,18 @@ Verb 'sfrega' 'pulisci' 'spolvera' 'lucida' 'strofina' 'smacchia' 'spazza'
 !!
 Verb 'cerca'
     * noun                          		-> Search
-    *  SuDiGpr topic InGpr noun        -> Consult reverse
-    * topic InGpr noun                	-> Consult reverse
-    * InGpr noun  SuDiGpr topic       	-> Consult
-    * InGpr noun topic            			-> Consult;
+    * InGpr noun SuDiGpr topic          -> Consult
+    * InGpr noun topic            			-> Consult
+    * SuDiGpr topic 'in'/'nel'/'nello'/'nella'/'nei'/'negli'/'nelle'/'nell@@39'/'dentro' noun -> Consult reverse
+    * topic 'in'/'nel'/'nello'/'nella'/'nei'/'negli'/'nelle'/'nell@@39'/'dentro' noun -> Consult reverse;
 !!
 Verb 'svesti' 'spoglia'
 	* DiGpr held                           -> Disrobe
 	* SelfGpr DiGpr held                   -> Disrobe;
 !!
 Verb 'grida' 'urla' 'sbraita'
-	* topic AGpr creature               	-> Answer
 	* AGpr noun                         	-> ShoutAt
+	* topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Answer
 	* topic                               -> Shout
 	*                                     -> Shout;
 !!
@@ -285,25 +291,17 @@ Verb 'disattiva' 'spegni'
 !!
 #Ifndef EXT_TALK_MENU;
 Verb 'informa' 'narra' 'spiega' 'rivela' 'parla' 'comunica' 'conversa'
-    * creature SuDiGpr topic        			-> Tell
     * creature topic                      -> Tell
-    * 'con' creature SuDiGpr topic 	 	    -> Tell
     * 'con' creature topic        		    -> Tell
-    * SuDiGpr topic 'con' creature		    -> Tell reverse
-    * topic 'con' creature		            -> Tell reverse
-    * AGpr creature SuDiGpr topic 	 	    -> Tell
     * AGpr creature topic        		      -> Tell
-    * SuDiGpr topic AGpr creature		      -> Tell reverse
-    * topic AGpr creature                 -> Tell reverse;
+    * topic 'con' creature		    				-> Tell reverse
+    * topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Tell reverse;
 #Endif;
 #Ifdef EXT_TALK_MENU;
 Verb 'informa' 'narra' 'spiega' 'rivela'
-    * creature SuDiGpr topic        			-> Tell
     * creature topic                      -> Tell
-    * AGpr creature SuDiGpr topic 	 	    -> Tell
     * AGpr creature topic        		      -> Tell
-    * SuDiGpr topic AGpr creature		      -> Tell reverse
-    * topic AGpr creature                 -> Tell reverse;
+    * topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Tell reverse;
 #Endif;
 !!
 Verb 'lega' 'appiccica' 'avvita' 'ripara' 'incolla' 'salda' 'unisci' 'collega'
@@ -948,15 +946,8 @@ Verb 'compra' 'acquista'
     * noun                               		-> Buy;
 !!
 Verb 'consulta'
-    * creature  SuDiGpr topic      	-> Ask
-    * AGpr creature  SuDiGpr topic 	-> Ask
-    *  SuDiGpr topic AGpr creature 	-> Ask reverse
-    * topic AGpr creature        			-> Ask reverse
-    *  SuDiGpr topic InGpr noun      -> Consult reverse
-    * topic InGpr noun                -> Consult reverse
-    * InGpr noun  SuDiGpr topic      -> Consult
-    * InGpr noun topic            		-> Consult;
-
+    * noun SuDiGpr topic            				-> Consult
+    * noun topic            								-> Consult;
 !!
 Verb 'svuota' 'vuota' 'versa' 'riversa'
     * noun              							-> Empty

@@ -77,6 +77,20 @@ Verb 'chiedi'
     * AGpr creature SuDiGpr topic -> Ask;
 ```
 
+Attenzione a ```topic``` perchè si mangia le Gpr che stanno immediatamente dopo, di conseguenza se volessimo scrivere l'esempio sopra al rovescio, dovremmo esplicitare tutte le preposizioni articolate possibili:
+
+Esempio: ```CHIEDI SU/DI QUALCOSA A QUALCUNO```
+```
+Verb 'chiedi'
+    * SuDiGpr topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Ask reverse;
+```
+
+Per gestire le regole su azioni riflessive è stato creato ```SelfGpr```. Per esempio ```TUFFATI``` (che in Z3 si scrive ```TUFFA -TI / TUFFA TE```) la regola si costruisce così:
+```
+Verb 'tuffa'
+    * SelfGpr -> Swim;
+```
+
 Esistono routine per stampare la preposizione articolata corretta nelle vostre stringhe: ```(DiPrep)``` ```(APrep)``` ```(DaPrep)``` ```(InPrep)``` ```(SuPrep)```. 
 
 Esempio: ```HAI MESSO LA PALLA NELLA SCATOLA / HAI MESSO LA PALLA NEI CESTI```
