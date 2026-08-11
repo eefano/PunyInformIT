@@ -1,0 +1,48 @@
+
+> spingi mela nella scatola
+prendendo la mela
+Le mele sono proibite
+
+> spingi banana nella scatola
+prendendo la banana
+Hai messo la banana nel scatola.
+
+> spingi limone nella scatola
+prendendo il limone
+Hai messo il limone nel scatola.
+
+> v
+Libreria
+Sei in libreria.
+
+Puoi vedere un scatola (che contiene un limone e una banana), degli Indiani
+Apache e John qui.
+
+> i
+Stai portando una mela.
+
+> prendi banana
+prendendo la banana
+Sembra sia incastrata nella scatola.
+
+> svuota la scatola
+limone: prendendo il limone
+Lasciato.
+banana: prendendo la banana
+Sembra sia incastrata nella scatola.
+
+> dai mela agli indiani
+Gli Indiani Apache non sembrano interessati.
+
+> dai mela a john
+John non sembra interessato.
+
+> chiedi agli indiani me
+Gli Indiani Apache hanno di meglio da fare.
+
+> chiedi a John me
+John ha di meglio da fare.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
