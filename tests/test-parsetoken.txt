@@ -1,0 +1,154 @@
+
+> .
+Come scusa?
+
+> ..
+Come scusa?
+
+Come scusa?
+
+> ,
+Come scusa?
+
+> 
+Come scusa?
+
+> x john
+È bellissimo e lo sa.
+
+> x bello
+È bellissimo e lo sa.
+
+> x il bello john
+È bellissimo e lo sa.
+
+> scan1 carta
+Analizzo la carta... Ok!
+
+> scan1 carta e cartapecora
+carta: Analizzo la carta... Ok!
+cartapecora: Analizzo la cartapecora... Ok!
+
+> scan1 carta con me
+Analizzo la carta con tu
+
+> scan1 tutto
+carta: Analizzo la carta... Ok!
+cartapecora: Analizzo la cartapecora... Ok!
+
+> scan2 carta
+Analizzo la carta... Ok!
+
+> scan2 carta e cartapecora
+Non puoi usare più di una cosa con questo verbo.
+
+> scan2 tutto
+Non puoi usare più di una cosa con questo verbo.
+
+> scan3 carta
+Analizzo la carta... Ok!
+
+> scan3 carta qui
+Non capisco questa frase.
+
+> scan3 john qui
+Analizzo John... Ok!
+
+> scan3 john
+Sei pazzo!
+
+> scan4 carta
+Analizzo la carta... Ok!
+
+> scan4 carta qui
+Non capisco questa frase.
+
+> scan4 john qui
+Analizzo John... Ok!
+
+> scan4 john
+Sei pazzo!
+
+> spara 100
+Il nome è 100.
+
+> sbalordisci per asdsadas
+ParseToken returned -1
+ParseToken returned -1
+Non puoi sbalordirti per questo, mattacchione!
+
+> sbalordisci per john
+ParseToken returned -1
+ParseToken returned -1
+Non puoi sbalordirti per questo, mattacchione!
+
+> sbalordisci per mela
+ParseToken returned 11
+ParseToken returned 11
+La mela è in vista!
+
+> spara xyzzy
+Non ho capito questo numero.
+
+> yeah
+Non capisco questa frase.
+
+> s
+Parcheggio
+Sei nel parcheggio.
+
+Puoi vedere una mela e un uovo qui.
+
+> x uovo
+Non c'è nulla di speciale nell'uovo.
+
+> x tuorlo
+Non c'è nulla di speciale nell'uovo.
+
+> x succulento
+Non c'è nulla di speciale nell'uovo.
+
+> x succulento uovo
+Non c'è nulla di speciale nell'uovo.
+
+> x succulento tuorlo
+Non c'è nulla di speciale nell'uovo.
+
+> x l' uovo
+Non c'è nulla di speciale nell'uovo.
+
+> x il succulento uovo
+Non c'è nulla di speciale nell'uovo.
+
+> x mela
+Non c'è nulla di speciale nella mela.
+
+> x albicocca
+Non c'è nulla di speciale nella mela.
+
+> x banana
+Scusa, non capisco cosa significhi "banana".
+
+> prendi albicocca e uovo
+mela: Presa.
+uovo: Preso.
+
+> prendi banana e uovo
+Scusa, non capisco cosa significhi "banana".
+
+> prendi mela. vai nord
+Già la possiedi.
+
+Libreria
+
+Puoi vedere John qui.
+
+> s
+Parcheggio
+
+> prendi banana. vai nord
+Scusa, non capisco cosa significhi "banana".
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
