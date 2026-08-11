@@ -1,0 +1,11 @@
+
+> addossa maglia
+(prendendo prima la maglia)
+Hai indossato la maglia.
+
+> addossa sasso
+Preso.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
