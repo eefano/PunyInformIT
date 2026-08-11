@@ -849,7 +849,7 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 
 	! check for pronouns
 	_k = p_parse_pointer --> 0;
-	if(_k == '-lo' or 'quello' or '-la' or 'quella' or '-li' or 'quelli' or 'quegli' or '-le' or 'quelle' or '-ti' or 'te' or '-mi' or 'me') { 
+	if(_k == '-lo' or 'quello' or '-la' or 'quella' or '-li' or 'quelli' or 'quegli' or '-le' or 'quelle' or '-ti' or 'te' or '-mi' or 'me' or 'lui' or 'lei' or 'loro') { 
 		switch(_k) {
 		'-lo': _noun = lo_obj;
 		'quello': _noun = lo_obj;
@@ -864,6 +864,9 @@ Constant _PARSENP_CHOOSEOBJ_WEIGHT = 1000;
 		'te': _noun = player;
 		'-mi': _noun = player;
 		'me': _noun = player;
+		'lui': _noun = lo_obj;
+		'lei': _noun = la_obj;
+		'loro': _noun = li_obj;   ! TODO come gestire 'loro' femminili ?
 		}
 		if(_noun == 0) {
 			phase2_necessary = PHASE2_ERROR;

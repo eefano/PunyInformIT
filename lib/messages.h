@@ -66,7 +66,7 @@ Constant MSG_SAVE_DEFAULT "Fatto.";
 Constant MSG_INSERT_ITSELF "Non puoi inserire una cosa dentro sé stessa.";
 #Endif;
 #Ifndef MSG_PUTON_ITSELF;
-Constant MSG_PUTON_ITSELF "No puoi mettere una cosa sopra sè stessa.";
+Constant MSG_PUTON_ITSELF "Non puoi mettere una cosa sopra sè stessa.";
 #Endif;
 #Ifndef MSG_ATTACK_DEFAULT;
 Constant MSG_ATTACK_DEFAULT "La violenza non è la risposta.";
@@ -846,8 +846,12 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 		"Già ", (ThatorThose) noun, " possiedi.";
 #Endif;
 #Ifndef SKIP_MSG_SAVE_FAILED;
-	MSG_SAVE_FAILED, MSG_RESTORE_FAILED, MSG_RESTART_FAILED:
-		"Fallito ", (verbname) verb_word, ".";
+	MSG_SAVE_FAILED:
+		"Salvataggio", " fallito.";
+	MSG_RESTORE_FAILED:
+	  "Caricamento", " fallito.";
+  MSG_RESTART_FAILED:
+		"Impossibile ricominciare.";
 #Endif;
 #Ifndef SKIP_MSG_INSERT_ALREADY;
 	MSG_INSERT_ALREADY, MSG_PUTON_ALREADY, MSG_TRANSFER_ALREADY:
@@ -1349,77 +1353,51 @@ default:
 	return;
 ];
 
-[DiPrep p_obj;
+[_Articola p_obj;
 	if (p_obj has pluralname) {
-		if (p_obj has female) print "delle ";
-		else if (p_obj has apostrofo or logli) print "degli ";
-		else print "dei ";
+		if (p_obj has female) print "lle ";
+		else if (p_obj has apostrofo or logli) print "gli ";
+		else print "i ";
 	} else {
-		if (p_obj has apostrofo) print "dell'";
-		else if (p_obj has female) print "della ";
-		else if (p_obj has logli) print "dello "; 
-		else print "del ";
+		if (p_obj has apostrofo) print "ll'";
+		else if (p_obj has female) print "lla ";
+		else if (p_obj has logli) print "llo "; 
+		else print "l ";
 	}
+	return;
+];
+
+[DiPrep p_obj;
+	if (p_obj has proper) print "di ";
+	else print "de", (_Articola) p_obj;
 	print (name) p_obj;
 	return;
 ];
 
 [APrep p_obj;
-	if (p_obj has pluralname) {
-		if (p_obj has female) print "alle ";
-		else if (p_obj has apostrofo or logli) print "agli ";
-		else print "ai ";
-	} else {
-		if (p_obj has apostrofo) print "all'";
-		else if (p_obj has female) print "alla ";
-		else if (p_obj has logli) print "allo "; 
-		else print "al ";
-	}
+	if (p_obj has proper) print "a ";
+	else print "a", (_Articola) p_obj;
 	print (name) p_obj;
 	return;
 ];
 
 [DaPrep p_obj;
-	if (p_obj has pluralname) {
-		if (p_obj has female) print "dalle ";
-		else if (p_obj has apostrofo or logli) print "dagli ";
-		else print "dai ";
-	} else {
-		if (p_obj has apostrofo) print "dall'";
-		else if (p_obj has female) print "dalla ";
-		else if (p_obj has logli) print "dallo "; 
-		else print "dal ";
-	}
+	if (p_obj has proper) print "da ";
+	else print "da", (_Articola) p_obj;
 	print (name) p_obj;
 	return;
 ];
 
 [InPrep p_obj;
-	if (p_obj has pluralname) {
-		if (p_obj has female) print "nelle ";
-		else if (p_obj has apostrofo or logli) print "negli ";
-		else print "nei ";
-	} else {
-		if (p_obj has apostrofo) print "nell'";
-		else if (p_obj has female) print "nella ";
-		else if (p_obj has logli) print "nello "; 
-		else print "nel ";
-	}
+	if (p_obj has proper) print "in ";
+	else print "ne", (_Articola) p_obj;
 	print (name) p_obj;
 	return;
 ];
 
 [SuPrep p_obj;
-	if (p_obj has pluralname) {
-		if (p_obj has female) print "sulle ";
-		else if (p_obj has apostrofo or logli) print "sugli ";
-		else print "sui ";
-	} else {
-		if (p_obj has apostrofo) print "sull'";
-		else if (p_obj has female) print "sulla ";
-		else if (p_obj has logli) print "sullo "; 
-		else print "sul ";
-	}
+	if (p_obj has proper) print "su ";
+	else print "su", (_Articola) p_obj;
 	print (name) p_obj;
 	return;
 ];
