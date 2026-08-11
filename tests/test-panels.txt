@@ -1,0 +1,25 @@
+
+> esamina pannelli di controllo
+Intendi dire il pannello di navigazione o il pannello di carico?
+
+> esamina pannello di navigazione
+Sei solo un marinaio, non un navigatore. Non capisci a cosa servano questi
+controlli. Comunque il sonar mostra che la nave è solo a poche miglia dalla
+costa. Con i motori spenti, la nave presto arriverà a riva per inerzia e i fumi
+letali potrebbero uccidere centinaia di persone.
+
+> r
+Sei solo un marinaio, non un navigatore. Non capisci a cosa servano questi
+controlli. Comunque il sonar mostra che la nave è solo a poche miglia dalla
+costa. Con i motori spenti, la nave presto arriverà a riva per inerzia e i fumi
+letali potrebbero uccidere centinaia di persone.
+
+> x controllo xyzzy
+Ho capito solo fino a "x controllo".
+
+> carico
+Non riconosco questo verbo.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

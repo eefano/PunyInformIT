@@ -43,7 +43,7 @@ Object ButtonRoom "Stanza Dei Bottoni"
 
 Object -> Button "bottone"
 	with 
-		name '2//' 'due' 'second' 'bottone',
+		name '2//' 'due' 'secondo' 'bottone',
 		description "È un bottone con il numero '2' sopra. ",
 		before [;
 			push:
