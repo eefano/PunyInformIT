@@ -1,0 +1,43 @@
+
+> x statua nord
+Non c'è nulla di speciale nella statua nord.
+
+> x statua
+Intendi dire la statua sud o la statua nord?
+
+> nord
+Non c'è nulla di speciale nella statua nord.
+
+> mira statua nord
+Action ##Scan.
+Nessuna direzione impostata.
+Noun è 11 (statua nord) 
+Second è 0 (not è un oggetto) 
+
+> mira a est della statua nord
+Action ##ScanDirOf.
+La direzione è 3 (est)
+Noun è 5 (est) 
+Second è 11 (statua nord) 
+
+> mira a nord
+Action ##ScanNorthOn.
+Nessuna direzione impostata.
+Noun è 0 (not è un oggetto) 
+Second è 0 (not è un oggetto) 
+
+> prendi tutto tranne e
+Nulla di disponibile combacia con "prendi tutto tranne e".
+
+> prendi s e e
+Non vedo nulla di tutto ciò.
+
+> spingi e o
+Non puoi usare direzioni multiple.
+
+> sblocca ovest con su
+Non puoi usare direzioni multiple.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
