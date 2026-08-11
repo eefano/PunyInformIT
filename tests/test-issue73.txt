@@ -1,0 +1,14 @@
+
+> dai giulia mela
+(prendendo prima la mela)
+Giulia non sembra interessata.
+
+> dai mela giulia
+Giulia non sembra interessata.
+
+> i
+Stai portando una mela.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
