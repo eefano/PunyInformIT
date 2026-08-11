@@ -222,7 +222,8 @@ Verb 'piazza' 'posiziona' 'colloca'
 Verb 'metti'
 	* multiexcept InGpr noun								-> Insert
 	* multiexcept SuGpr noun								-> PutOn
-	* 'su' held                            -> Wear;
+	* 'su' held                             -> Wear
+	*  held                                 -> Wear;
 !!
 Verb 'leggi'
     * noun                               	-> Examine
@@ -232,7 +233,9 @@ Verb 'leggi'
     * topic 'in'/'nel'/'nello'/'nella'/'nei'/'negli'/'nelle'/'nell@@39'/'dentro' noun -> Consult reverse;
 !!
 Verb 'togli' 'rimuovi'
-	* multi                                 -> TakeDisrobe
+  * 'di' 'dosso' noun           -> Disrobe
+  * SelfGpr noun								-> Disrobe
+	* multi                       -> TakeDisrobe
 	* multiinside DaGpr noun			-> Remove;
 !!
 Verb 'sfrega' 'pulisci' 'spolvera' 'lucida' 'strofina' 'smacchia' 'spazza'

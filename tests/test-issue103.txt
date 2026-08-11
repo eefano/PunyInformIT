@@ -1,0 +1,38 @@
+
+> entra
+Bagno
+Sei nel bagno.
+
+> esci
+Libreria
+
+Puoi vedere un cappello qui.
+
+> metti cappello
+(prendendo prima il cappello)
+Hai indossato il cappello.
+
+> i                                                                     
+Stai portando un cappello (indossato).
+
+> togli -ti cappello
+Ti togli di dosso il cappello.
+
+> togli -ti cappello
+Non stai indossando il cappello.
+
+> togli cappello                                                            
+Già lo possiedi.
+
+> lascia cappello                                                             
+Lasciato.
+
+> togli di dosso cappello                                                     
+Non stai indossando il cappello.
+
+> rimuovi cappello                                                         
+Preso.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
