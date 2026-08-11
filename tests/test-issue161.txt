@@ -1,0 +1,29 @@
+> foo for 1
+Penso che tu volessi dire "foo for qualcosa unit". Per favore, prova ancora.
+
+> foo for 1 unit
+Got here: 1
+
+> blob
+Penso che tu volessi dire "blob qualcosa to qualcosa minute". Per favore, prova
+ancora.
+
+> blob me to 4
+Penso che tu volessi dire "blob tu to qualcosa minute". Per favore, prova
+ancora.
+
+> blob me to 5 minute
+You blob: 5
+
+> blob me to 0 minute
+You blob: 0
+
+> blob me to 10000 minute
+You blob: 10000
+
+> blob me to 10001 minute
+You blob: 10000
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

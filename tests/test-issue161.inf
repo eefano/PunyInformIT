@@ -1,0 +1,20 @@
+
+! QUESTO TEST NON E' STATO VOLUTAMENTE TRADOTTO
+
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant INITIAL_LOCATION_VALUE = TheRoom;
+
+Constant Story "NumberTokenDescribeGrammarTest";
+Include "globals.h";
+Include "puny.h";
+
+[ Initialise; ];
+
+Object TheRoom "The Room" with description "The room";
+
+[ FooSub; "Got here: ", noun; ];
+Verb 'foo' * 'for' number 'unit' -> Foo;
+
+[ BlobSub; "You blob: ", second; ];
+Verb 'blob' * noun 'to' number 'minute' -> Blob;
+
