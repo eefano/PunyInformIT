@@ -1,0 +1,10 @@
+
+> apri mela
+Non puoi aprirla.
+
+> chiudi mela
+Non capisco questa frase.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
