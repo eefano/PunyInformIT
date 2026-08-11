@@ -1,6 +1,9 @@
 !% -~S
 !% $OMIT_UNUSED_ROUTINES=1
 !% $ZCODE_LESS_DICT_DATA=1
+!% $LONG_DICT_FLAG_BUG=0
+
+! LONG DICT FLAG SERVE PERCHE Z3 non riesce a leggere il //p dopo una parola piu lunga di 6
 
 Constant Story      "Scenari Economici";
 Constant Headline   "^Test per PunyInformIT.^";
@@ -105,7 +108,7 @@ Object Library "Library"
 			] "È veramente glorioso."
 			CS_MAYBE_ADD_LIST [; if(LightSwitch has on) rtrue; ] Library (switch_scenery)
 			CS_ADD_LIST Library (inside_scenery)
-			203 'pulsante' 'd@@39emergenza' "Solo un bel pulsante.",
+			203 3 'pulsante' 'd@@39' 'emergenza' "Solo un bel pulsante.",
 		switch_scenery
 			200 1 'luce' "È come stare al sole.",
 		inside_scenery

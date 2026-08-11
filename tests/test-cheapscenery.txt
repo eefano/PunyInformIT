@@ -11,8 +11,8 @@ I giornali sono polverosi.
 > spingi giornali
 Lascia in pace muri o giornali!
 
-> x them
-The papers are all dusty.
+> esamina -li
+I giornali sono polverosi.
 
 > x la grande libreria
 È veramente glorioso.
@@ -41,16 +41,16 @@ Non riuscirai a raggiungerlo!
 > x quello
 Il soffitto è molto alto.
 
-> x pulsante d'emergenza
+> x pulsante d' emergenza
 Solo un bel pulsante.
 
 > x luce
 Non vedo nulla di tutto ciò.
 
-> spingi pulsante d'emergenza
+> spingi pulsante d' emergenza
 C'è una bella atmosfera in questo posto.
 
-> tira pulsante d'emergenza
+> tira pulsante d' emergenza
 I giornali sono polverosi.
 
 > accendi interruttore
@@ -59,10 +59,10 @@ Hai acceso l'interruttore.
 > x luce
 È come stare al sole.
 
-> spingi pulsante d'emergenza
+> spingi pulsante d' emergenza
 È come stare al sole.
 
-> tira pulsante d'emergenza
+> tira pulsante d' emergenza
 I giornali sono polverosi.
 
 > e
