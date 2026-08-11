@@ -1,0 +1,85 @@
+
+> prendi tutto
+scatola: Presa.
+palla: (Decidi di prendere anche il libro)
+Preso.
+Presa.
+libro: Non puoi prenderlo in modo esplicito. Prova a mangiarlo, il parser
+dovrebbe fartelo prendere!
+
+> lascia tutto
+palla: Lasciata.
+libro: Lasciato.
+scatola: Lasciata.
+
+> prendi libro
+Non puoi prenderlo in modo esplicito. Prova a mangiarlo, il parser dovrebbe
+fartelo prendere!
+
+> prendi palla
+(Decidi di prendere anche il libro)
+Preso.
+Presa.
+
+> i alto
+Stai portando:
+  una palla
+  un libro
+
+> lascia tutto
+palla: Lasciata.
+libro: Lasciato.
+
+> mangia libro
+(prendendo prima il libro)
+È chiaramente immangiabile.
+
+> i
+Stai portando:
+  un libro
+
+> lascia tutto
+libro: Lasciato.
+
+> x palla
+La palla può essere presa ma non con azione implicita.
+
+> mangia palla
+(prendendo prima la palla)
+La palla non può essere presa con azione implicita!
+
+> metti palla nella scatola
+(prendendo prima la palla)
+La palla non può essere presa con azione implicita!
+
+> prendi palla
+(Decidi di prendere anche il libro)
+Preso.
+Presa.
+
+> lascia palla
+Lasciata.
+
+> prendi -la
+Presa.
+
+> i
+Stai portando:
+  una palla
+  un libro
+
+> lascia tutto
+palla: Lasciata.
+libro: Lasciato.
+
+> metti libro in scatola
+(prendendo prima il libro)
+Non puoi prenderlo in modo esplicito. Prova a mangiarlo, il parser dovrebbe
+fartelo prendere!
+
+> i
+Sei a mani vuote.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

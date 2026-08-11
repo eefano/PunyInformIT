@@ -1,0 +1,81 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_LESS_DICT_DATA=1
+
+Constant Story      "Test";
+Constant Headline   "^Test per PunyInformIt.^";
+
+Constant STATUSLINE_SCORE; Statusline score;
+
+Constant NO_SCORE = 0;
+
+
+! Uncomment to add optional features to PunyInform
+!Constant DEBUG;
+Constant OPTIONAL_NO_DARKNESS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_EXTENDED_VERBSET;
+Constant OPTIONAL_FLEXIBLE_INVENTORY;
+!Constant OPTIONAL_PROVIDE_UNDO;
+!Constant RUNTIME_ERRORS = 0; ! 0, 1 or 2. 0 = smallest file, 2 = most info
+
+Constant INITIAL_LOCATION_VALUE = Library;
+
+Include "globals.h";
+
+Include "puny.h";
+
+Object Library "Libreria"
+	with
+		description "Nella libreria.";
+
+Object -> Box "scatola"
+	with
+		name 'scatola',
+		inside_description "Confortevole.",
+	has female container open openable enterable;
+
+
+Object -> Ball "palla"
+	with
+		name 'palla',
+		description "La palla può essere presa ma non con azione implicita.",
+		before [;
+			Take, Remove:
+				if(input_action ~= action)
+					"La palla non può essere presa con azione implicita!";
+				if(Book in location) {
+					print "(Decidi di prendere anche il libro)^";
+					<Take Book>;
+				}
+		]
+		has female;
+
+Object -> Book "libro"
+	with
+		name 'libro',
+		description "Questo libro può solo essere preso quando un HELD token impone al parser di provare a prenderlo,
+			O quando prendi la palla ed il libro è nei paraggi.",
+		before [;
+			Take, Remove:
+				if(input_action == ##Take && input_noun == Ball)
+					rfalse; ! Allow action
+				if(action_to_be < 0) ! This is not the parser performing an implicit Take
+					"Non puoi prenderlo in modo esplicito. Prova a mangiarlo, il parser dovrebbe fartelo prendere!";
+		];
+
+Object -> Button "pulsante"
+	with
+		name 'pulsante',
+		description "Premendo il pulsante ti fa prendere il libro.",
+		before [;
+			Push:
+				<<Take Book>>;
+		],
+	has static;
+
+				
+
+[Initialise;
+	print "^^Partenza!^^";
+];
