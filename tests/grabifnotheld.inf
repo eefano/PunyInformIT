@@ -119,7 +119,7 @@ Object -> Thing1 "Gizmo"
 Object -> Thing2 "scatola"
     with
         name 'scatola'
-    has female proper container open;
+    has female container open;
 
 Object -> -> Dust "polvere"
    with 

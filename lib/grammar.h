@@ -146,10 +146,14 @@ Verb 'alza' 'solleva'
 	* multi                             -> Take
 	* multiinside DaGpr noun						-> Remove;
 !!
-Verb 'dai' 'sfama' 'offri' 'dona' 'paga'
-    * held AGpr creature        		-> Give
-    * AGpr creature held        		-> Give reverse
-    * creature held            			-> Give reverse;
+Verb 'dai' 'dal' 'offri' 'dona'
+	* held creature									-> Give
+  * held AGpr creature        		-> Give
+  * AGpr creature held        		-> Give reverse
+  * creature held            			-> Give reverse;
+Verb 'sfama' 'paga'
+    * 'con' held creature        		-> Give
+    * creature 'con' held        		-> Give reverse;
 
 [ ADirection;
 	if (noun == Directions) rtrue;

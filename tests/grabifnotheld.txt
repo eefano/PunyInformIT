@@ -58,7 +58,7 @@ Sei a mani vuote.
 Stanza illuminata
 Sei in una stanza illuminata.
 
-Puoi vedere una polvere, Gizmo e scatola (che è vuota) qui.
+Puoi vedere una polvere, Gizmo e una scatola (che è vuota) qui.
 
 > s
 Un'altra stanza

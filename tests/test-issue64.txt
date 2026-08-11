@@ -1,0 +1,94 @@
+
+> dal -la a lui
+Non saprei a cosa si riferisca "-la".
+
+> dai mela a lui
+(prendendo prima la mela)
+Non saprei a cosa si riferisca "lui".
+
+> dai quella
+Penso che tu volessi dire "dai mela qualcuno/a". Per favore, prova ancora.
+
+> dai a lui
+Non saprei a cosa si riferisca "lui".
+
+> x mela
+Non c'è nulla di speciale nella mela.
+
+> x bob
+Non c'è nulla di speciale in Bob.
+
+> dal -la a lui
+Bob non sembra interessato.
+
+> metti mela sulla mela
+Non puoi mettere una cosa sopra sè stessa.
+
+> metti mela nella mela
+Non puoi inserire una cosa dentro sé stessa.
+
+> cerca cespuglio
+Hai trovato un ananas. Lo prendi.
+
+> i
+Stai portando un ananas e una mela.
+
+> lascia tutto
+ananas: Lasciato.
+mela: Lasciata.
+
+> guarda
+Stanza
+Sei nella stanza.
+
+Puoi vedere una mela, una banana, Bob e un cespuglio qui.
+
+> i
+Sei a mani vuote.
+
+> prendi tutto
+mela: Presa.
+banana: Presa.
+cespuglio: Preso.
+
+> prendi ananas
+Preso.
+
+> lascia tutto
+ananas: Lasciato.
+cespuglio: Lasciato.
+banana: Lasciata.
+mela: Lasciata.
+
+> i
+Sei a mani vuote.
+
+> prendi ananas
+Preso.
+
+> i
+Stai portando un ananas.
+
+> carica
+Enter a file name.
+Default is "test-issue64.qzl": sdsda
+Caricamento fallito.
+
+> mangia mela
+(prendendo prima la mela)
+Hai mangiato la mela. Niente male.
+
+
+  *** Hai vinto ***
+
+In questo gioco hai ottenuto 0 punti su un totale di 0, in 17 mosses.
+
+Ora RICOMINCIA il gioco, CARICA una partita o TERMINA il gioco.
+> carica
+Enter a file name.
+Default is "sdsda.qzl": dasdas
+Caricamento fallito.
+
+Ora RICOMINCIA il gioco, CARICA una partita o TERMINA il gioco.
+> termina
+
