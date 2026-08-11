@@ -1,0 +1,22 @@
+
+> x inutile
+Non serve riferirsi a "inutile" in questo gioco.
+
+> x scenario
+Non serve riferirsi a "scenario" in questo gioco.
+
+> x scenario inutile
+Non serve riferirsi a "scenario" in questo gioco.
+
+> metti mela nella scatola
+Non vedo nulla di tutto ciò.
+
+> prendi scatola
+Perchè hai preso la scatola?
+
+> i
+Stai portando una scatola (che è aperta ma vuota).
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
