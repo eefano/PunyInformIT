@@ -1,0 +1,16 @@
+
+> dici ciao
+consult_words = 1
+consult_from = 2
+
+> dici halloween
+consult_words = 1
+consult_from = 2
+
+> dici ciao ciao
+consult_words = 2
+consult_from = 2
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

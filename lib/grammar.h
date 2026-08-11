@@ -35,7 +35,7 @@
 ! Base verbs
 ! ---------------------
 
-Verb 'rispondi' 'dì'
+Verb 'rispondi' 'dì' 'dici'
 	* creature topic						-> Answer reverse
 	* AGpr creature topic				-> Answer reverse
 	* topic 'a//'/'al'/'allo'/'alla'/'ai'/'agli'/'alle'/'all@@39' creature -> Answer;
