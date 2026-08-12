@@ -1,0 +1,91 @@
+
+> guarda
+Libreria
+Libreria Canaglia.
+
+Un tavolo sta in mezzo alla stanza.
+
+Puoi vedere anche una cesta (che è aperta ma vuota), un libro, una giara di
+vetro (che è aperta ma vuota), una pesca, un secchio (che è vuoto), del pattume,
+un'urna di vetro (che è vuota) e una cipolla qui.
+
+> prendi tutto
+cesta: Presa.
+libro: Preso.
+giara di vetro: Presa.
+pesca: Presa.
+secchio: Preso.
+pattume: Preso.
+urna di vetro: Presa.
+cipolla: Presa.
+
+> i largo
+Stai portando una cipolla, un'urna di vetro (che è vuota), del pattume, un
+secchio (che è vuoto), una pesca, una giara di vetro (che è aperta ma vuota), un
+libro e una cesta (che è aperta ma vuota).
+
+> i alto
+Stai portando:
+  una cipolla
+  un'urna di vetro (che è vuota)
+  del pattume
+  un secchio (che è vuoto)
+  una pesca
+  una giara di vetro (che è aperta ma vuota)
+  un libro
+  una cesta (che è aperta ma vuota)
+
+> tuttoriempi
+Sposti cose dentro cose!
+
+> i largo
+Stai portando un'urna di vetro (che contiene una cipolla), un secchio (che
+contiene del pattume), una giara di vetro (che è aperta e contiene una pesca) e
+una cesta (che contiene un libro).
+
+> i alto
+Stai portando:
+  un'urna di vetro
+    una cipolla
+  un secchio
+    del pattume
+  una giara di vetro (che è aperta)
+    una pesca
+  una cesta
+    un libro
+
+> metti secchio nella giara
+Hai messo il secchio nella giara di vetro.
+
+> i largo
+Stai portando un'urna di vetro (che contiene una cipolla), una giara di vetro
+(che è aperta e contiene un secchio (che contiene del pattume) e una pesca) e
+una cesta (che contiene un libro).
+
+> i alto
+Stai portando:
+  un'urna di vetro
+    una cipolla
+  una giara di vetro (che è aperta)
+    un secchio
+      del pattume
+    una pesca
+  una cesta
+    un libro
+
+> metti tutto sul tavolo
+urna di vetro: Hai messo l'urna di vetro sul tavolo.
+giara di vetro: Hai messo la giara di vetro sul tavolo.
+cesta: Hai messo la cesta sul tavolo.
+
+> guarda
+Libreria
+Libreria Canaglia.
+
+Un tavolo sta in mezzo alla stanza. Sul tavolo ci sono una cesta (che contiene
+un libro), una giara di vetro (che è aperta e contiene un secchio (che contiene
+del pattume) e una pesca) e un'urna di vetro (che contiene una cipolla).
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
