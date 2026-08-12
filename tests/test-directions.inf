@@ -90,7 +90,7 @@ Include "puny.h";
 	if(p_noun ofclass ProperObject || p_noun == Directions)
 		print (name) p_noun;
 	else
-		print "not è un oggetto";
+		print "non è un oggetto";
 	print ") ^";
 ];
 

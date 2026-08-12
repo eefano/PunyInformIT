@@ -12,7 +12,7 @@ Non c'è nulla di speciale nella statua nord.
 Action ##Scan.
 Nessuna direzione impostata.
 Noun è 11 (statua nord) 
-Second è 0 (not è un oggetto) 
+Second è 0 (non è un oggetto) 
 
 > mira a est della statua nord
 Action ##ScanDirOf.
@@ -23,8 +23,8 @@ Second è 11 (statua nord)
 > mira a nord
 Action ##ScanNorthOn.
 Nessuna direzione impostata.
-Noun è 0 (not è un oggetto) 
-Second è 0 (not è un oggetto) 
+Noun è 0 (non è un oggetto) 
+Second è 0 (non è un oggetto) 
 
 > prendi tutto tranne e
 Nulla di disponibile combacia con "prendi tutto tranne e".
