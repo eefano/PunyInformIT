@@ -56,7 +56,9 @@ Include "puny.h";
 Include "Grammar";
 #Endif;
 
-Extend 'dai' replace
+! Attenzione il verbo 'dai' diventa 'da*' per effetto collaterale
+! della dearticolizzazione delle preposizioni
+Extend 'da*' replace
    * held creature -> Give
    * creature held -> Give reverse;
 

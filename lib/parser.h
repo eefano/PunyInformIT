@@ -238,8 +238,11 @@ System_file;
 #Endif;
 
 #Iftrue #version_number > 4;
-    Translation();
+    SeparaPronomi();
+		SeparaApostrofi();
 #Endif;
+	DisarticolaPrep();
+
 	num_words = parse -> 1;
 	! Set word after last word in parse array to all zeroes, so it won't match any words.
 	_result = num_words + num_words + 1;

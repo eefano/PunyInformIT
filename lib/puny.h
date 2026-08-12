@@ -22,9 +22,7 @@
 !Constant DEBUG_SCOPE;
 
 System_file;
-#Iftrue #version_number > 4;
 Include "translation.h";
-#Endif;
 Include "messages.h";
 
 

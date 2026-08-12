@@ -1,3 +1,5 @@
+#Iftrue #version_number > 4;
+
 ! ==============================================================================
 ! Translated from a script by Pablo Martínez in 2025
 ! ==============================================================================
@@ -37,11 +39,9 @@ System_file;
     if (b->1 < b->0) (b->1)++;
 ];
 
-[ Translation w x length change cx cx1;
-  
-	ProcessApostrofi();
-
-	for (w=parse->1:w>=1:w--) {
+[ SeparaPronomi w x length change cx cx1;
+ 
+ 	for (w=parse->1:w>=1:w--) {
 		length = parse->(4*w);
 		if (parse-->(w*2-1) == 0 && length >= 3) {
 			x = parse->(4*w + 1) + length - 1; 
@@ -66,7 +66,7 @@ System_file;
 	LTI_Insert(pos-len, ' ');
 ];
 
-[ ProcessApostrofi change i b;
+[ SeparaApostrofi change i b;
 	b = buffer;
 	for(i=0 : i < b ->1 : i++) {
 		if(b->(i+2) == '@@39') {
@@ -76,3 +76,42 @@ System_file;
 	}
 	if (change)	Tokenise__(buffer, parse);
 ];
+
+#endif;
+
+!In Inform 6, the operator -> reads an array using a byte index, 
+!while --> reads an array using a word index.
+
+!Byte index  0         1        2-3   4    5       6-7   8    9
+!Word index  0                  1     2            3     4
+!            Capacity  # Words  Word 1---------->  Word 2---------->
+!                               Addr  Len  Offset  Addr  Len  Offset
+
+[ DisarticolaPrep i p w;
+	p = parse;
+	for (i = p->1 : i >=1 : i--) {
+		w = p-->(i*2-1);
+
+		if (w == 'del' or 'dello' or 'della' or 'dei' or 'degli' or 'delle' or 'dell@@39') {
+			p-->(i*2-1) = 'di*';
+			p->(i*4) = 3;
+		}
+		else if (w == 'al' or 'allo' or 'alla' or 'ai' or 'agli' or 'alle' or 'all@@39') {
+			p-->(i*2-1) = 'a*';
+			p->(i*4) = 2;
+		}
+		else if (w == 'dal' or 'dallo' or 'dalla' or 'dai' or 'dagli' or 'dalle' or 'dall@@39') {
+			p-->(i*2-1) = 'da*';
+			p->(i*4) = 3;
+		}
+		else if (w == 'nel' or 'nello' or 'nella' or 'nei' or 'negli' or 'nelle' or 'nell@@39') {
+			p-->(i*2-1) = 'in*';
+			p->(i*4) = 3;
+		}
+		else if (w == 'sul' or 'sullo' or 'sulla' or 'sui' or 'sugli' or 'sulle' or 'sull@@39') { 
+			p-->(i*2-1) = 'su*';
+			p->(i*4) = 3;
+		}
+	}
+];
+

@@ -11,7 +11,7 @@ lascia tutto
 prendi tutte le rosse
 prendi la palla blu
 prendi la moneta blu
-prendi palla blu e moneta blu
+prendi la palla blu e moneta blu
 lascia tutto
 prendi palla
 rossa

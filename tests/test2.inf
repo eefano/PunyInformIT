@@ -37,7 +37,7 @@ Object table "tavolo" example_room
 !Verb 'piazza' = 'metti';
 
 Extend 'metti'
-	*	held 'sotto' AGpr noun		-> PutUnder;
+	*	held 'sotto' noun		-> PutUnder;
 
 [PutUnderSub;
 	remove noun;

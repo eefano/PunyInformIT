@@ -95,13 +95,13 @@ Include "puny.h";
 ];
 
 Verb 'mira'
-	* 'a' 'nord' -> ScanNorthOn
+	* 'a//'/'a*' 'nord' -> ScanNorthOn
   * 'verso' noun -> Scan
-	* AGpr noun -> Scan
+	* 'a//'/'a*' noun -> Scan
 	* noun -> Scan
-	* 'verso' noun=ADirection DiGpr noun -> ScanDirOf
-	* AGpr noun=ADirection DiGpr noun -> ScanDirOf
-	* noun=ADirection DiGpr noun -> ScanDirOf;
+	* 'verso' noun=ADirection 'di'/'di*' noun -> ScanDirOf
+	* 'a//'/'a*' noun=ADirection 'di'/'di*' noun -> ScanDirOf
+	* noun=ADirection 'di'/'di*' noun -> ScanDirOf;
 	
 [ ScanSub;
 	print "Action ##Scan.^";

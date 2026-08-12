@@ -113,7 +113,7 @@ Object -> -> Spoon "cucchiaio"
 [ Type3Sub;
 ];
 
-Verb 'type1' * special InGpr noun -> Type1;
-Verb 'type2' * topic InGpr noun -> Type2;
-Verb 'type3' * noun InGpr special -> Type3;
+Verb 'type1' * special 'in'/'in*' noun -> Type1;
+Verb 'type2' * topic 'in'/'in*' noun -> Type2;
+Verb 'type3' * noun 'in'/'in*' special -> Type3;
 

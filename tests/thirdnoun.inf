@@ -73,7 +73,7 @@ Global third;
 ];
 
 Verb 'installa' 
-  * noun SuGpr noun 'con' ThirdNoun -> Install;
+  * noun 'su'/'su*' noun 'con' ThirdNoun -> Install;
 
 #Ifdef USEINFORM;
 Include "Grammar";
@@ -117,7 +117,8 @@ Object -> Mounting "supporto"
 
 Object -> Toolbox "scatola degli attrezzi"
     with
-        name 'scatola' 'degli' 'attrezzi',
+        ! Attenzione: le preposizioni sono de-articolate in di*
+        name 'scatola' 'di*' 'attrezzi',
     has female;
 
 [Initialise;

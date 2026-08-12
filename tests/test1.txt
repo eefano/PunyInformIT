@@ -35,8 +35,8 @@ Presa.
 > prendi la moneta blu
 Ho capito solo fino a "prendi la moneta".
 
-> prendi palla blu e moneta blu
-Ho capito solo fino a "prendi palla blu e moneta".
+> prendi la palla blu e moneta blu
+Ho capito solo fino a "prendi la palla blu e moneta".
 
 > lascia tutto
 palla mini blu: Lasciata.

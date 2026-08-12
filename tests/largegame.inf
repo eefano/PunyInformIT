@@ -79,7 +79,7 @@ Include "puny.h";
 ! Uncomment to add PunyLib extensions
 Include "ext_waittime.h";
 
-Array a1 --> 27800;   ! punyinformIT seems a little bigger than the original
+Array a1 --> 27700;   ! punyinformIT seems a little bigger than the original
 
 Object Library "Libreria"
 	with
