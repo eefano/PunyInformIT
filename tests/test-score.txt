@@ -1,0 +1,73 @@
+
+> prendi punto
+Preso.
+
+> lascia punto
+Lasciato.
+
+> prendi tutto
+punto: Preso.
+veleno: Preso.
+palla: Presa.
+torcia: Presa.
+
+> apri scatola
+Hai aperto la scatola, rivelando nulla.
+
+> metti tutto in scatola
+torcia: Hai messo la torcia nella scatola.
+palla: Hai messo la palla nella scatola.
+veleno: Hai messo il veleno nella scatola.
+punto: Hai messo il punto nella scatola.
+
+[Il punteggio è appena salito di 4 punti.]
+
+
+  *** Hai vinto ***
+
+In questo gioco hai ottenuto 4 punti su un totale di 4, in 5 mosses.
+
+Ora RICOMINCIA il gioco, CARICA una partita o TERMINA il gioco.
+> ricomincia
+
+
+Partenza!
+
+
+Parser test
+Un test per PunyInformIT.
+
+Stanza
+La stanza.
+
+Puoi vedere una scatola (chiusa), un veleno, un punto, una palla e una torcia
+qui.
+
+> si
+Non riconosco questo verbo.
+
+> prendi punto
+Preso.
+
+> apri scatola
+Hai aperto la scatola, rivelando nulla.
+
+> metti punto nella scatola
+Hai messo il punto nella scatola.
+
+[Il punteggio è appena salito di 1 punto.]
+
+> prendi veleno
+Preso.
+
+> mangia veleno
+AAAargh!
+
+
+  *** Sei morto ***
+
+In questo gioco hai ottenuto 1 punto su un totale di 4, in 5 mosses.
+
+Ora RICOMINCIA il gioco, CARICA una partita o TERMINA il gioco.
+> termina
+
