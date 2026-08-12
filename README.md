@@ -67,7 +67,7 @@ L'apostrofo nei formati ```.z3``` e ```.z4``` non può essere attaccato alla par
 
 ### Numeri
 
-Il numero ```uno``` va in conflitto con l'articolo ```uno```. Per il momento, occorre scrivere il numero come ```ùno``` (con la ù accentata).
+Il numero ```uno``` va in conflitto con l'articolo ```uno```. Per il momento gli articoli indeterminativi non vengono ignorati dal parser per dare modo di ragionare sulle quantità, ma vanno trattati esplicitamente.
 
 
 ## Istruzioni per gli autori

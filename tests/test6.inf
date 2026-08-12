@@ -76,7 +76,9 @@ Object -> "samarcanda"
 
 [ QuerySub; noun.description();];
 
-Verb 'cosa' * 'è//'/'era' scope=QueryTopic -> Query;
+Verb 'cosa' 
+    * 'è//'/'era' 'un'/'un@@39'/'uno'/'una' scope=QueryTopic -> Query
+    * 'è//'/'era' scope=QueryTopic -> Query;
 
 #Ifdef USEINFORM;
 Include "Grammar";

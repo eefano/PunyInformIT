@@ -77,7 +77,7 @@ Constant PHASE2_SCOPE           = 3;
 !Constant WORDSIZE 2; ! set by the compiler from Inform 6.30
 
 [_IsArticle text;
-	if (text=='un' or 'uno' or 'una' or 'un@@39' or 'il' or 'lo' or 'la' or 'i//' or 'gli' or 'le' or 'l@@39') rtrue;
+	if (text=='il' or 'lo' or 'la' or 'i//' or 'gli' or 'le' or 'l@@39') rtrue;
 	rfalse;
 ];
 
@@ -285,7 +285,7 @@ Constant DIRECTION_COUNT = 8;
 
 #IfDef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
 Array LanguageNumbers static table
-	'ùno' 1 'due' 2 'tre' 3 'quattro' 4 'cinque' 5
+	'uno' 1 'due' 2 'tre' 3 'quattro' 4 'cinque' 5
 	'sei' 6 'sette' 7 'otto' 8 'nove' 9 'dieci' 10
 	'undici' 11 'dodici' 12 'tredici' 13 'quattordici' 14 'quindici' 15
 	'sedici' 16 'diciassette' 17 'diciotto' 18 'diciannove' 19 'venti' 20;

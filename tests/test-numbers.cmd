@@ -5,9 +5,9 @@ spingi due
 spingi secondo bottone
 s
 x 1
-x ùno
+x uno
 x 2
-prendi ùno
+prendi uno
 prendi due
 premi 1
 premi 2

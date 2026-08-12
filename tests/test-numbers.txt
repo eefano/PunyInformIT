@@ -12,19 +12,19 @@ Qualcosa è successo.
 Stanza Delle Note
 Sei nella stanza dei bottoni.
 
-Puoi vedere un passo ùno e un passo due qui.
+Puoi vedere un passo uno e un passo due qui.
 
 > x 1
-Non c'è nulla di speciale nel passo ùno.
+Non c'è nulla di speciale nel passo uno.
 
-> x ùno
-Non c'è nulla di speciale nel passo ùno.
+> x uno
+Non c'è nulla di speciale nel passo uno.
 
 > x 2
 Non c'è nulla di speciale nel passo due.
 
-> prendi ùno
-passo ùno: È inamovibile.
+> prendi uno
+passo uno: È inamovibile.
 
 > prendi due
 passo due: È inamovibile.

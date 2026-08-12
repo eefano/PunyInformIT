@@ -57,10 +57,9 @@ Object NoteRoom "Stanza Delle Note"
         n_to ButtonRoom,
 	has light;
 
-Object -> ws_one "passo ùno"
+Object -> ws_one "passo uno"
     with
-				! ATTENZIONE: accentare la ù per di ùno per distinguerlo da uno articolo
-        name 'ùno' '1//' 'passo',     
+        name 'uno' '1//' 'passo',     
 	has static;
 
 Object -> ws_two "passo due"
