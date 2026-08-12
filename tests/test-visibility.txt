@@ -1,0 +1,30 @@
+
+> accendi torcia
+Hai acceso la torcia.
+
+Libreria
+Sei in libreria.
+
+> lascia torcia
+Lasciata.
+
+> n
+
+*** OnEnterDarkness *** called.
+Buio
+Non si riesce a vedere nulla!
+
+> s
+Libreria
+
+Puoi vedere una torcia (che fa luce) qui.
+
+> n
+
+*** OnEnterDarkness *** called.
+Buio
+Non si riesce a vedere nulla!
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

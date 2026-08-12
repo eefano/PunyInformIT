@@ -663,7 +663,7 @@ Constant ONE_SPACE_STRING = " ";
 [ _PrintAfterEntry p_obj _contents _newline _started;
 	_newline = c_style & NEWLINE_BIT;
 #Ifndef OPTIONAL_NO_DARKNESS;
-	if(p_obj has light && p_obj hasnt animate) print " (facendo luce)";
+	if(p_obj has light && p_obj hasnt animate) print " (che fa luce)";
 #Endif;
 	if(p_obj has worn && action == ##Inv) {
 		print " (indossat", (_o) p_obj, ")";
