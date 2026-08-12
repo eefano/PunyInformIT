@@ -987,10 +987,8 @@ Verb 'tuffa'
 !!
 Verb 'dondola' 'bilancia' 'aggrappa'
     * noun     			                  			-> Swing
-    * 'con' noun     			                  -> Swing
-    * 'su'/'su*'/'sopra' noun                       			-> Swing
-    * SelfGpr 'con' noun     			          -> Swing
-    * SelfGpr 'su'/'su*'/'sopra' noun                    -> Swing;
+    * 'con'/'su'/'su*'/'sopra' noun         -> Swing
+    * SelfGpr 'con'/'su'/'su*'/'sopra' noun -> Swing;
 !!
 Verb 'assaggia' 'degusta' 'assapora' 'lecca'
     * noun                               		-> Taste;

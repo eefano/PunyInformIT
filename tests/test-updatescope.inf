@@ -1,0 +1,101 @@
+!% -~S
+
+Constant Story      "Update Scope test";
+Constant Headline   "^Un test per PunyInformIT.^";
+
+Constant STATUSLINE_SCORE; Statusline score;
+
+Constant DEBUG;
+Constant OPTIONAL_NO_DARKNESS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_MANUAL_SCOPE;
+Constant OPTIONAL_MANUAL_SCOPE_BOOST;
+!Constant RUNTIME_ERRORS = 0; ! 0, 1 or 2. 0 = smallest file, 2 = most info
+
+Constant INITIAL_LOCATION_VALUE = NearLocation;
+
+Include "globals.h";
+
+! [ ForceScopeUpdate;
+	! if(scope_reason == PARSING_REASON && location == NearLocation)
+		! rtrue;
+	! if(scope_reason == PARSING_REASON && action_to_be == ##Take)
+		! rtrue;
+	! if(scope_reason == REACT_BEFORE_REASON)
+		! rtrue;
+	! if(scope_reason == EACH_TURN_REASON && turns == 2)
+		! rtrue;
+	! rfalse;
+! ];
+
+[ InScope p_actor;
+	print "^InScope(", (name) p_actor, ", ";
+	
+	switch(scope_reason) {
+		PARSING_REASON: print "PARSING";
+		!TALKING_REASON: print "TALKING";
+		EACH_TURN_REASON: print "EACH_TURN";
+		REACT_BEFORE_REASON: print "REACT_BEFORE";
+		REACT_AFTER_REASON: print "REACT_AFTER";
+		LOOPOVERSCOPE_REASON: print "LOOPOVERSCOPE";
+		TESTSCOPE_REASON: print "TESTSCOPE";
+	}
+	if(action >= 0)
+		print ", ", (DebugAction) action;
+	print ")^";
+	if(scope_reason == PARSING_REASON && location == NearLocation)
+		PlaceInScope(Linda);
+	if(scope_reason == REACT_BEFORE_REASON)
+		PlaceInScope(RemoteObject);
+	if(scope_reason == EACH_TURN_REASON && turns == 2)
+		PlaceInScope(RemoteObject);
+	rfalse;
+];
+
+Include "puny.h";
+
+Object NearLocation "Luogo Vicino"
+	with
+		description "Sei in un luogo vicino, Il luogo remoto sta ad est.",
+		e_to RemoteLocation;
+
+Object -> Box "scatola"
+	with
+		name 'scatola',
+	has female container open openable enterable;
+
+Object -> Bob "Bob"
+	with
+		name 'bob',
+	has animate proper;
+
+Object -> NearObject "oggetto vicino"
+	with
+		name 'oggetto' 'vicino';
+
+Object RemoteLocation "Luogo Remoto"
+	with
+		description "Sei in un luogo remoto. Il luogo vicino sta a ovest.",
+		w_to NearLocation;
+
+Object -> Linda "Linda"
+	with
+		name 'linda',
+	has animate proper female;
+
+Object -> RemoteObject "oggetto remoto"
+	with
+		name 'oggetto' 'remoto',
+		react_before [;
+			Take: print "^L'oggetto remoto dice ~Prenderai qualcosa.~^";
+		],
+		react_after [;
+			Take: print "^L'oggetto remoto dice ~Hai preso qualcosa.~^";
+		],
+		each_turn [;
+			print "^L'oggetto remoto dice ~Faccio qualcosa ogni turno.~^";
+		];
+
+[Initialise;
+	print "^^Partenza^^";
+];

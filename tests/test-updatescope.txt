@@ -1,0 +1,159 @@
+
+> linda, esamina l' oggetto remoto
+
+InScope(tu, PARSING)
+
+InScope(Linda, PARSING, Examine)
+Linda ha di meglio da fare.
+
+InScope(tu, EACH_TURN, Examine)
+
+> linda, esamina me
+
+InScope(tu, PARSING)
+
+InScope(Linda, PARSING, Examine)
+
+InScope(tu, REACT_BEFORE, Answer)
+Non ricevi risposta.
+
+InScope(tu, EACH_TURN, Answer)
+
+L'oggetto remoto dice "Faccio qualcosa ogni turno."
+
+> bob, esamina linda
+
+InScope(tu, PARSING)
+
+InScope(Bob, PARSING, Examine)
+Bob ha di meglio da fare.
+
+InScope(tu, EACH_TURN, Examine)
+
+> e
+
+InScope(tu, REACT_BEFORE, Go)
+
+InScope(tu, REACT_AFTER, Go)
+Luogo Remoto
+Sei in un luogo remoto. Il luogo vicino sta a ovest.
+
+Puoi vedere Linda e un oggetto remoto qui.
+
+InScope(tu, REACT_AFTER, Look)
+
+InScope(tu, EACH_TURN, Go)
+
+L'oggetto remoto dice "Faccio qualcosa ogni turno."
+
+> o
+
+InScope(tu, REACT_BEFORE, Go)
+
+InScope(tu, REACT_AFTER, Go)
+Luogo Vicino
+
+Puoi vedere una scatola (che è aperta ma vuota), Bob e un oggetto vicino qui.
+
+InScope(tu, REACT_AFTER, Look)
+
+InScope(tu, EACH_TURN, Go)
+
+> x me
+
+InScope(tu, PARSING, Examine)
+
+InScope(tu, REACT_BEFORE, Examine)
+Splendido come sempre.
+
+InScope(tu, REACT_AFTER, Examine)
+
+InScope(tu, EACH_TURN, Examine)
+
+> bob, x me
+
+InScope(tu, PARSING)
+
+InScope(Bob, PARSING, Examine)
+Bob ha di meglio da fare.
+
+InScope(tu, EACH_TURN, Examine)
+
+> bob, dai a me scatola
+
+InScope(tu, PARSING)
+
+InScope(Bob, PARSING, Give)
+
+InScope(Bob, PARSING, Give)
+
+InScope(Bob, PARSING, Give)
+
+InScope(Bob, PARSING, Give)
+Bob ha di meglio da fare.
+
+InScope(tu, EACH_TURN, Give)
+
+> chiedi a bob di scatola
+
+InScope(tu, PARSING, AskFor)
+
+InScope(tu, PARSING, AskFor)
+
+InScope(tu, PARSING, AskFor)
+
+InScope(tu, PARSING, AskFor)
+
+InScope(tu, PARSING, Ask)
+
+InScope(tu, PARSING, Ask)
+
+InScope(tu, PARSING, Ask)
+
+InScope(tu, REACT_BEFORE, Ask)
+Non ricevi risposta.
+
+InScope(tu, EACH_TURN, Ask)
+
+> chiedi a bob la scatola
+
+InScope(tu, PARSING, AskFor)
+
+InScope(tu, PARSING, AskFor)
+
+InScope(tu, PARSING, AskFor)
+Bob ha di meglio da fare.
+
+InScope(tu, EACH_TURN, Give)
+
+> prendi scatola
+
+InScope(tu, PARSING, Take)
+
+InScope(tu, REACT_BEFORE, Take)
+
+L'oggetto remoto dice "Prenderai qualcosa."
+
+InScope(tu, TESTSCOPE, Take)
+
+InScope(tu, REACT_AFTER, Take)
+Presa.
+
+InScope(tu, EACH_TURN, Take)
+
+> lascia -la
+
+InScope(tu, PARSING, Drop)
+
+InScope(tu, TESTSCOPE, Drop)
+
+InScope(tu, REACT_BEFORE, Drop)
+
+InScope(tu, REACT_AFTER, Drop)
+Lasciata.
+
+InScope(tu, EACH_TURN, Drop)
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
