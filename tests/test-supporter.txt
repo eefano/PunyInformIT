@@ -1,0 +1,60 @@
+
+> guarda
+Stanza
+Nella stanza.
+
+Puoi vedere un vassoio (su cui ci sono un piatto, una giara a campana (che è
+chiusa e contiene un sedano) e un cucchiaio) qui.
+
+> prendi vassoio
+Preso.
+
+> i
+Stai portando un vassoio (su cui ci sono un piatto, una giara a campana (che è
+chiusa e contiene un sedano) e un cucchiaio).
+
+> i alto
+Stai portando:
+  un vassoio
+    un piatto
+    una giara a campana (che è chiusa)
+      un sedano
+    un cucchiaio
+
+> metti vassoio nella giara
+Non puoi inserire una cosa dentro sé stessa.
+
+> prendi giara
+Presa.
+
+> metti vassoio nella giara
+Non puoi, dato che la giara a campana è chiusa.
+
+> apri giara
+Hai aperto la giara a campana.
+
+> metti vassoio in giara
+Hai messo il vassoio nella giara a campana.
+
+> i
+Stai portando:
+  una giara a campana (che è aperta)
+    un vassoio
+      un piatto
+      un cucchiaio
+    un sedano
+
+> i largo
+Stai portando una giara a campana (che è aperta e contiene un vassoio (su cui ci
+sono un piatto e un cucchiaio) e un sedano).
+
+> prendi cucchiaio
+Preso.
+
+> i
+Stai portando un cucchiaio e una giara a campana (che è aperta e contiene un
+vassoio (su cui c'è un piatto) e un sedano).
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
