@@ -1,0 +1,63 @@
+
+> xcfdf blu
+UnknownVerb 'xcfdf': non è xyzzy, rimane sconosciuto
+Non riconosco questo verbo.
+
+> xyzzy blu
+UnknownVerb 'xyzzy': ho cambiato 'xyzzy' in 'esamina'
+una giacca blu
+
+> apri baule
+Intendi dire il baule nero o il baule bianco?
+
+> bianco
+Hai aperto il baule bianco, rivelando nulla.
+
+> guarda
+Parco
+Sei in un parco. C'è una panca di legno e una di pietra qui. Puoi andare a sud.
+
+Puoi vedere una giacca blu, un baule nero (chiuso) e un baule bianco (che è
+aperto ma vuoto) qui.
+
+> i
+Stai portando una giacca rossa.
+
+> lascia giacca
+Lasciata.
+
+> x panca
+Intendi dire la panca di legno o la panca di pietra?
+
+> pietra
+una panca di pietra
+
+> s
+UnknownVerb 's': non è xyzzy, rimane sconosciuto
+Stanza
+Sei in una stanza. C'è una panca di legno qui. Puoi andare a nord.
+
+Puoi vedere una panca di pietra qui.
+
+> x pietra
+una panca di pietra
+
+> x panca di legno
+una panca di legno
+
+> n
+UnknownVerb 'n': non è xyzzy, rimane sconosciuto
+Parco
+
+Puoi vedere una giacca rossa, una giacca blu, un baule nero (chiuso) e un baule
+bianco (che è aperto ma vuoto) qui.
+
+> siedi sulla panca
+Intendi dire la panca di legno o la panca di pietra?
+
+> legno
+Sei nella panca di legno.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
