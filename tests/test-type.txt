@@ -1,0 +1,14 @@
+
+> type1 scatola
+Penso che tu volessi dire "type1 qualcosa in qualcosa". Per favore, prova
+ancora.
+
+> type2 scatola
+Penso che tu volessi dire "type2 qualcosa in qualcosa". Per favore, prova
+ancora.
+
+> type3 scatola in sdas
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
