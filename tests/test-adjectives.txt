@@ -1,0 +1,8 @@
+
+> dici test
+Penso che tu volessi dire "dici qualcosa a qualcuno/a". Per favore, prova
+ancora.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
