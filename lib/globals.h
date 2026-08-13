@@ -76,10 +76,17 @@ Constant PHASE2_SCOPE           = 3;
 
 !Constant WORDSIZE 2; ! set by the compiler from Inform 6.30
 
+#Ifdef OPTIONAL_ALLOW_WRITTEN_NUMBERS;
 [_IsArticle text;
-	if (text=='il' or 'lo' or 'la' or 'i//' or 'gli' or 'le' or 'l@@39') rtrue;
+	if (text=='il' or 'lo' or 'la' or 'i//' or 'gli' or 'le' or 'l@@39' or 'di*') rtrue;
 	rfalse;
 ];
+#Ifnot;
+[_IsArticle text;
+	if (text=='il' or 'lo' or 'la' or 'i//' or 'gli' or 'le' or 'l@@39' or 'un' or 'uno' or 'una' or 'un@@39' or 'di*') rtrue;
+	rfalse;
+];
+#Endif;
 
 [_IsAllWord text;
 	if (text=='tutto' or 'tutta' or 'tutte' or 'tutti') rtrue;

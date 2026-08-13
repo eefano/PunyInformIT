@@ -227,6 +227,7 @@ Verb 'cerca'
     * topic 'in'/'in*'/'dentro' noun -> Consult reverse;
 !!
 Verb 'svesti' 'spoglia'
+	* held                           					  -> Disrobe
 	* 'di'/'di*' held                           -> Disrobe
 	* SelfGpr 'di'/'di*' held                   -> Disrobe;
 !!

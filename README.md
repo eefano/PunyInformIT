@@ -65,11 +65,6 @@ Per brevità, i pronomi riflessivi si possono in genere omettere, tranne per i v
 L'apostrofo nei formati ```.z3``` e ```.z4``` non può essere attaccato alla parola successiva (scrivere invece ```L' APOSTROFO``` con lo spazio). I formati ```.z5``` e superiori lo separano in automatico.
 
 
-### Numeri
-
-Il numero ```uno``` va in conflitto con l'articolo ```uno```. Per il momento gli articoli indeterminativi non vengono ignorati dal parser per dare modo di ragionare sulle quantità, ma vanno trattati esplicitamente.
-
-
 ## Istruzioni per gli autori
 
 ### Attributi 
@@ -83,6 +78,13 @@ L'attributo ```neuter``` è stato rimosso in favore di due nuovi attributi: ```a
 * ```logli``` serve ad indicare quando il nome maschile prevede l'articolo ```LO / GLI``` al posto di ```IL / I```. Se presente, nelle stampe trasforma ```IL STRACCIO``` in ```LO STRACCIO``` oppure ```NEL SPORCO``` in ```NELLO SPORCO```
 
 * Per i nomi maschili che iniziano per vocale o acca è sufficiente indicare ```apostrofo``` dato che l'uso di ```LO / GLI``` è implicito. L'articolo indefinito maschile singolare ```UN``` verrà comunque stampato senza apostrofo. 
+
+
+### Numeri
+
+Quando definite la costante ```OPTIONAL_ALLOW_WRITTEN_NUMBERS``` il numero uno va in confiltto con gli articoli indeterminativi ```uno```,```una```,```un'```, che in genere sono ignorati dal parser, ma in questa modalità sono trattati come quantità numeriche.
+
+In generale il risultato non cambia, tranne in alcuni casi: in particolare quando implementate ```ChooseObjectsFinal```: affinchè tutto funzioni correttamente dovete includere gli articoli indeterminativi tra i ```name``` dell'oggetto, oppure trattati nella routine ```parse_name```.
 
 
 ### Preposizioni articolate
@@ -107,6 +109,7 @@ ATTENZIONE, EFFETTI COLLATERALI:
 * Il verbo standard ```'dai'``` diventa ```'da*'```. Ricordatevelo se dovreste ridefinire o estendere questo verbo!
 
 * Se gli oggetti contengono preposizioni articolate nella loro descrizione principale, per esempio ```Object -> Toolbox "scatola degli attrezzi"```, definite la loro lista dei nomi in modo opportuno, per esempio: ```with name 'scatola' 'di*' 'attrezzi'```.
+
 
 ### Verbi riflessivi
 

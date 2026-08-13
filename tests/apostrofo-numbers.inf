@@ -1,0 +1,93 @@
+! questo è un test per gli apostrofi
+!
+Constant Story      "Test del parser";
+Constant Headline   "^Una suite di test per PunyInformIT.^";
+Serial "200913";
+
+Constant INITIAL_LOCATION_VALUE = StartRoom;
+
+! Uncomment to show time instead of score/turns
+!Statusline time;
+
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_PARSENOUNPHRASE;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_SCOPE;
+
+! Uncomment to add optional features to PunyLib
+!Constant DEBUG;
+!Constant CUSTOM_ABBREVIATIONS;
+Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+!Constant OPTIONAL_EXTENDED_VERBSET;
+!Constant OPTIONAL_FULL_SCORE;
+!Constant OPTIONAL_FULL_DIRECTIONS;
+!Constant OPTIONAL_GUESS_MISSING_NOUN;
+!Constant OPTIONAL_MANUAL_SCOPE;
+!Constant RUNTIME_ERRORS = 0;
+
+Include "globals.h";
+
+! Uncomment to add PunyLib extensions
+!Include "ext_menu.h";
+!Include "ext_flags.h";
+!Include "ext_quote_box.h";
+!Include "ext_cheap_scenery.h";
+
+Include "puny.h";
+
+Object StartRoom "Stanza"
+	with
+		description [;
+			print "Sei in una stanza piena di cose.";
+		],
+	has female light;
+
+
+Object -> Book "libro"
+	with name 'libro'
+	;
+
+Object -> Angel "angelo"
+	with name 'angelo'
+	has apostrofo animate;
+
+Object -> Tire "pneumatico"
+	with name 'pneumatico'
+	has logli;
+
+Object -> Ball "palla"
+	with name 'palla'
+	has female;
+
+Object -> Anchor "ancora"
+	with name 'ancora'
+	has female apostrofo;
+
+
+Object -> Fogli "fogli"
+  with name 'fogli//p'
+	has pluralname;
+
+Object -> Imbuti "imbuti"
+  with name 'imbuti//p'
+	has pluralname apostrofo;
+
+Object -> Sticks "stecchi"
+  with name 'stecchi//p'
+	has pluralname logli;
+
+Object -> Perle "perle"
+  with name 'perle//p'
+	has pluralname female;
+
+Object -> Aragoste "aragoste"
+  with name 'aragoste//p'
+	has pluralname female apostrofo;
+
+[Initialise;
+	print "^^Partenza!^^";
+	return 2;
+];
