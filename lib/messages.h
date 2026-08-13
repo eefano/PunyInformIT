@@ -1209,7 +1209,7 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #Ifdef OPTIONAL_PROVIDE_UNDO_FINAL;
 	#Ifdef DEATH_MENTION_UNDO;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0)
-				print ", RIMEDIA all'ultima mossa"
+				print ", RIMEDIA all'ultima mossa";
 	#Ifnot;
 			if(((HDR_GAMEFLAGS->1) & 16) ~= 0 && deadflag ~= GS_WIN)
 				print ", RIMEDIA all'ultima mossa";

@@ -91,7 +91,7 @@ Object -> Record "disco"
         name 'disco',
 		description "The Dark Side Of The Moon, dei Pink Floyd.";
 
-Extend 'riproduci'
+Extend 'riproduci' first
 	* held 'su'/'su*' noun -> Play;
 
 [PlaySub;

@@ -1414,15 +1414,15 @@ Verb meta 'places' 'luoghi'
 	*                                           -> Places;
 #Endif; ! NO_PLACES
 
-Verb meta 'recording' 'registrazione'
+Verb meta 'recording' 'registra'
 	*                                           -> CommandsOn
 	* 'on'/'attiva'                             -> CommandsOn
 	* 'off'/'disattiva'                         -> CommandsOff;
 
-Verb meta 'replay' 'riproduzione'
+Verb meta 'replay' 'riproduci'
 	*                                           -> CommandsRead;
 
-Verb meta 'script' 'transcript' 'trascrizione'
+Verb meta 'script' 'transcript' 'trascrivi'
 	*                                           -> ScriptOn
 	* 'on'/'attiva'                             -> ScriptOn
 	* 'off'/'disattiva'                         -> ScriptOff;

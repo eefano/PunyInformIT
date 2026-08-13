@@ -1,0 +1,83 @@
+
+> prendi libri e manopola
+libro blu: Il libro blu comincia a ticchettare...
+libro verde: John dice, "Oh no! Questo è mio!"
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+manopola: È inamovibile.
+
+> prendi manopola e libri
+manopola: È inamovibile.
+libro verde: John dice, "Oh no! Questo è mio!"
+
+Il libro blu sta ticchettando sonoramente.
+
+> prendi libri e manopola
+libro verde: John dice, "Oh no! Questo è mio!"
+manopola: È inamovibile.
+
+Il libro blu sta ticchettando sonoramente.
+
+> lascia tutto tranne la scatola e il libro blu
+Non capisco questa frase.
+
+> ricomincia
+Sei sicuro di voler ricominciare il gioco? si
+
+
+Benvenuto alla Testbench... Dove si provano tutte le funzionalità di
+PunyInformIT. Non è un gioco vero e proprio ma puoi 'vincere' mettendo cose
+nella scatola, o perdere guardando il sole presso il fiume o provocando John.
+
+Testbench
+Una sandbox per lo sviluppo di PunyInformIT
+
+Immensa libreria
+Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è ad est.
+
+C'è una manopola nera sul muro.
+
+Un libro blu riposa su uno scaffale. Guardare il libro blu ti disorienta.
+
+Un vecchio e consunto libro verde.
+
+Puoi vedere anche un interruttore della luce, una felpa, un acquario (che è
+aperto ma vuoto), una scatola (chiusa), uno scaffale (su cui ci sono un paio di
+stivali), una scala (su cui c'è un adesivo), John, una borsa infinita (che è
+aperta ma vuota), quello stupido vecchio libro rosa e una torcia elettrica
+(brutta come la morte) qui.
+
+> prendi blu e tutti i libri tranne i blu
+libro blu: Il libro blu comincia a ticchettare...
+libro verde: John dice, "Oh no! Questo è mio!"
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+
+> apri scatola
+Hai aperto la scatola, rivelando un libro rosso e un libro marrone.
+
+Il libro blu sta ticchettando sonoramente.
+
+[Il punteggio è appena salito di 3 punti.]
+
+> metti libro nella scatola
+Intendi dire il libro rosa o il libro blu?
+
+> i
+Stai portando quello stupido vecchio libro rosa e un libro blu (che fa luce).
+
+Il libro blu sta ticchettando sonoramente.
+
+> prendi libro dalla scatola
+Intendi dire il libro rosso o il libro marrone?
+
+> marrone
+Evviva, ci siamo disfati del libro marrone!
+
+La scatola esplode.
+
+Il libro blu sta ticchettando sonoramente.
+
+[Il punteggio è appena sceso di 1 punto.]
+
+> termina
+Non sei uno che si arrende, eh? si
+
