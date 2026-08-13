@@ -1,0 +1,301 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $ZCODE_LESS_DICT_DATA=1
+
+Constant Story      "Indistinguibili";
+Constant Headline   "^Un test per PunyInformIT.^";
+
+Constant STATUSLINE_SCORE; Statusline score;
+
+Constant NO_SCORE = 0;
+
+!Constant DEBUG; ! Provides debug verbs for both Inform and PunyInform
+!Constant DEBUG_PARSEANDPERFORM;
+!Constant DEBUG_PARSEPATTERN;
+!Constant DEBUG_PARSETOKEN;
+!Constant DEBUG_GETNEXTNOUN;
+!Constant DEBUG_PARSENOUNPHRASE;
+
+! Uncomment to add optional features to PunyInform
+Constant RUNTIME_ERRORS = 2; ! 0, 1 or 2. 0 = smallest file, 2 = most info
+
+Constant OPTIONAL_LIST_TOGETHER;
+Constant OPTIONAL_LANGUAGE_NUMBER; ! Use this to have list_together print numbers using words
+Constant OPTIONAL_ALLOW_WRITTEN_NUMBERS; ! Cheaper to add when OPTIONAL_LANGUAGE_NUMBER is defined
+
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_EXTENDED_VERBSET;
+Constant OPTIONAL_FLEXIBLE_INVENTORY;
+
+Constant INITIAL_LOCATION_VALUE = Pub;
+
+Include "globals.h";
+
+[ ObjDepth p_obj _i;
+	while(p_obj) { p_obj = parent(p_obj); _i++; }
+	return _i;
+];
+
+[ ChooseObjectsFinal p_arr p_len _i _j _o _o2 _sg _d _d2 _other_group_present;
+	print "ChooseObjectsFinal^";
+	for(_i = 0: _i < p_len: _i++) {
+		_o = p_arr-->_i;
+		if(_o provides same_group) {
+			_sg = _o.same_group;
+			_d = ObjDepth(_o);
+			for(_j = p_len - 1: _j > _i: _j--) {
+				_o2 = p_arr-->_j;
+				if(_o2 provides same_group) {
+					if(_o2.same_group == _sg) {
+						_d2 = ObjDepth(_o2);
+						if( _d2 < _d) {
+							! Prefer more shallow object, so swap main obj and this
+							_o = _o2;
+							p_arr-->_j = p_arr-->_i;
+							p_arr-->_i = _o;
+							_d = _d2;
+						}
+						ChooseObjectsFinal_Discard(_j);
+						p_len--;
+					} else
+						_other_group_present = true;
+				}
+			}
+			if(_other_group_present == false)
+				return; ! The group of indistinguishable objects we just handled was the last one
+			_other_group_present = false; ! Let's hope the next one is the last one
+		}
+	}	
+];
+
+Include "puny.h";
+
+Class Dado
+	with
+		same_group 1,
+		short_name "dado",
+		parse_name [ _w i;
+			_w = NextWord();
+			if(_w == 'un')
+			{
+				i++;
+				_w = NextWord();
+			}
+
+			if(_w == 'dado')
+				i++;
+			else if(_w == 'dadi//p' && i==0) {
+				parser_action = ##PluralFound;
+				i++;
+			}
+			return i;
+		],
+		description "I dadi sono tutti uguali.",
+		before [;
+		Search: "I dadi sono un blocco unico.";
+		],
+		list_together [ _obj _n;
+			if(inventory_stage == 1) {
+				for(_obj=parser_one: _obj ~= 0: _obj = NextEntry(_obj, parser_two)) _n++;
+				print (LanguageNumber) _n, " dadi";
+				if(c_style & NEWLINE_BIT)
+					new_line;
+				rtrue;
+			}
+		];
+
+Class Coin
+	with
+		parse_name [ _w _n;
+			_w = NextWord();
+
+			if(_w == self.&name-->0 or 'moneta') _n++;
+			else if(_w == 'monete//p') {
+				parser_action = ##PluralFound;
+				_n++;
+			}
+			_w = NextWord();
+			
+			if(_w == self.&name-->0 or 'd@@39') { ! Matches 'silver' or 'gold'
+				_n++;
+			}
+			_w = NextWord();
+
+			if(_w == self.&name-->0) { ! Matches 'silver' or 'gold'
+				_n++;
+			}
+			return _n;
+		],
+		has female;
+
+Class SilverCoin
+	class Coin,
+	with
+		same_group 2,
+		name 'argento',
+		short_name "moneta d'argento",
+		description "Le monete d'argento sono tutte uguali.",
+		list_together [ _obj _n;
+			if(inventory_stage == 1) {
+				for(_obj=parser_one: _obj ~= 0: _obj = NextEntry(_obj, parser_two)) _n++;
+				print (LanguageNumber) _n, " monete d'argento";
+				if(c_style & NEWLINE_BIT)
+					new_line;
+				rtrue;
+			}
+		];
+
+Class GoldCoin
+	class Coin
+	with
+		same_group 3,
+		name 'oro',
+		short_name "moneta d'oro",
+		description "Le monete d'oro sono tutte uguali.",
+		list_together [ _obj _n;
+			if(inventory_stage == 1) {
+				for(_obj=parser_one: _obj ~= 0: _obj = NextEntry(_obj, parser_two)) _n++;
+				print (LanguageNumber) _n, " monete d'oro";
+				if(c_style & NEWLINE_BIT)
+					new_line;
+				rtrue;
+			}
+		];
+
+
+Object Pub "La Bisca"
+	with
+		description "Sei in una bisca.",
+        s_to ButtonRoom,
+	has light;
+
+Object -> Dadiera "portadadi"
+	with
+		describe [ _i;
+			print "^Un portadadi è appeso al muro";
+			_i = children(self);
+			if(_i) {
+				print ", con ";
+				if(_i == 1) print "un dado";
+				else print (LanguageNumber) _i, " dadi";
+				print " sopra di esso";
+			}
+			".";
+		],
+		parse_name [ _w;
+			! Can only be referred to as "portadadi' or "porta dadi" or "porta"
+			_w = NextWord();
+			if(_w == 'portadadi' or 'porta') return 1;
+			if(_w == 'porta' && NextWord() == 'dadi') return 2;
+		],
+		before [;
+			Receive:
+				if(noun ofclass Dado) <<ThrowAt noun self>>;
+				"Il portadadi serve solo per lanciarci dentro i dadi!";
+			ThrownAt: 
+				if(noun ofclass Dado) {
+					move noun to self;
+					"Uau, hai centrato il portadadi!";
+				}
+		],
+	has static supporter;
+
+Dado -> Dado1;
+Dado -> Dado2;
+
+SilverCoin -> SilverCoin1;
+
+Object -> Table "tavolo"
+	with
+		name 'tavolo',
+	has supporter open openable enterable;
+
+SilverCoin -> -> SilverCoin2;
+SilverCoin -> -> SilverCoin3;
+GoldCoin -> -> GoldCoin1;
+Dado -> -> Dado3;
+
+Class KettleBell
+	with
+#IfV5;
+		name 'peso' 'da' 'pesi//p' 'kg' 'chilo' 'chili' 'chilogrammi',
+#IfNot;
+		parse_name [ _i;
+			while(NextWord() == 'peso' or 'da' or 'pesi//p'
+				or 'kg' or 'chilo' or 'chili' or 'chilogrammi'
+				or self.&name-->0 or self.&name-->1) _i++;
+			return _i;
+		],
+#EndIf;
+		weight 0,
+		description "Sono dei pesi gommati per esercitarsi.";
+
+KettleBell -> Bell2 "peso da due chili"
+	with
+		weight 2,
+		name '2//' 'due';
+
+KettleBell -> Bell5 "peso da cinque chili"
+	with
+		weight 5,
+		name '5//' 'cinque';
+
+KettleBell -> Bell10 "peso da dieci chili"
+	with
+		weight 10,
+		name '10' 'dieci';
+
+GoldCoin -> GoldCoin2;
+GoldCoin -> GoldCoin3;
+GoldCoin -> GoldCoin4;
+
+Object -> Box "scatola"
+	with
+		name 'scatola',
+		inside_description "Noiosa scatola.",
+	has female container open openable enterable;
+
+GoldCoin -> -> GoldCoin5;
+
+Object ButtonRoom "Stanza Dei Bottoni"
+	with
+		description "La Stanza Dei Bottoni.",
+        n_to Pub,
+        s_to NoteRoom,
+	has light;
+
+Object -> Button "bottone"
+	with 
+		name '2//' 'due' 'secondo' 'bottone',
+		description "È un bottone con il numero '2' sopra. ",
+		before [;
+			push:
+			"Qualcosa è accaduto. ";
+		],
+	has static;
+
+Object NoteRoom "Stanza delle Note"
+	with
+		description "La Stanza delle Note.",
+        n_to ButtonRoom,
+	has light;
+
+Object -> ws_one "passo uno"
+    with
+        name 'uno' '1//' 'passo',
+        IntrinsicNote 1;
+
+Object -> ws_two "passo due"
+    with
+        name 'due' '2//' 'passo',
+        IntrinsicNote 2;
+
+
+[Initialise; ! i;
+	print "^^Oggetti Indistinguibili. Cose da provare:^ 
+			INVENTARIO ALTO^
+			INVENTARIO LARGO^
+			PRENDI MONETE^
+			ESAMINA DADI^
+			^^";
+];

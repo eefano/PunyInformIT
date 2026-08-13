@@ -1,0 +1,225 @@
+
+> guarda
+La Bisca
+Sei in una bisca.
+
+Un portadadi è appeso al muro.
+
+Puoi vedere anche una moneta d'argento, un tavolo (su cui ci sono una moneta
+d'oro, un dado e due monete d'argento), un peso da due chili, un peso da cinque
+chili, un peso da dieci chili, una scatola (che contiene una moneta d'oro), due
+dadi e tre monete d'oro qui.
+
+> lascia due dadi
+In mano non ne hai.
+
+> prendi un dado
+ChooseObjectsFinal
+Preso.
+
+> prendi un peso da 5 chili
+Preso.
+
+> lascia tutto
+peso da cinque chili: Lasciato.
+dado: Lasciato.
+
+> prendi due oro
+ChooseObjectsFinal
+moneta d'oro: Presa.
+moneta d'oro: Presa.
+
+> i
+Stai portando due monete d'oro.
+
+> lascia tutto
+moneta d'oro: Lasciata.
+moneta d'oro: Lasciata.
+
+> prendi due monete
+moneta d'oro: Presa.
+moneta d'oro: Presa.
+
+> i
+Stai portando due monete d'oro.
+
+> lascia tutto
+moneta d'oro: Lasciata.
+moneta d'oro: Lasciata.
+
+> guarda
+La Bisca
+Sei in una bisca.
+
+Un portadadi è appeso al muro.
+
+Puoi vedere anche un peso da cinque chili, una moneta d'argento, un tavolo (su
+cui ci sono un dado e due monete d'argento), un peso da due chili, un peso da
+dieci chili, una scatola (che è aperta ma vuota), cinque monete d'oro e due dadi
+qui.
+
+> x moneta
+ChooseObjectsFinal
+ChooseObjectsFinal
+ChooseObjectsFinal
+Intendi dire la moneta d'argento o la moneta d'oro?
+
+> argento
+ChooseObjectsFinal
+Le monete d'argento sono tutte uguali.
+
+> x monete
+ChooseObjectsFinal
+ChooseObjectsFinal
+Intendi dire la moneta d'argento o la moneta d'oro?
+
+> oro
+ChooseObjectsFinal
+Le monete d'oro sono tutte uguali.
+
+> prendi argento
+ChooseObjectsFinal
+Presa.
+
+> prendi monete d' argento
+moneta d'argento: Presa.
+moneta d'argento: Presa.
+
+> prendi moneta d' oro
+ChooseObjectsFinal
+Presa.
+
+> prendi monete
+moneta d'oro: Presa.
+moneta d'oro: Presa.
+moneta d'oro: Presa.
+moneta d'oro: Presa.
+
+> x dado
+ChooseObjectsFinal
+I dadi sono tutti uguali.
+
+> x dadi
+ChooseObjectsFinal
+I dadi sono tutti uguali.
+
+> cerca dado
+ChooseObjectsFinal
+I dadi sono un blocco unico.
+
+> cerca dadi
+ChooseObjectsFinal
+I dadi sono un blocco unico.
+
+> prendi dadi
+dado: Preso.
+dado: Preso.
+dado: Preso.
+
+> lancia dado al porta
+ChooseObjectsFinal
+Uau, hai centrato il portadadi!
+
+> guarda
+La Bisca
+Sei in una bisca.
+
+Un portadadi è appeso al muro, con un dado sopra di esso.
+
+Puoi vedere anche un peso da cinque chili, un tavolo, un peso da due chili, un
+peso da dieci chili e una scatola (che è aperta ma vuota) qui.
+
+> lancia dado al porta
+ChooseObjectsFinal
+Uau, hai centrato il portadadi!
+
+> guarda
+La Bisca
+Sei in una bisca.
+
+Un portadadi è appeso al muro, con due dadi sopra di esso.
+
+Puoi vedere anche un peso da cinque chili, un tavolo, un peso da due chili, un
+peso da dieci chili e una scatola (che è aperta ma vuota) qui.
+
+> lancia dado al porta
+Uau, hai centrato il portadadi!
+
+> guarda
+La Bisca
+Sei in una bisca.
+
+Un portadadi è appeso al muro, con tre dadi sopra di esso.
+
+Puoi vedere anche un peso da cinque chili, un tavolo, un peso da due chili, un
+peso da dieci chili e una scatola (che è aperta ma vuota) qui.
+
+> prendi tutti i dadi
+dado: Preso.
+dado: Preso.
+dado: Preso.
+
+> guarda
+La Bisca
+Sei in una bisca.
+
+Un portadadi è appeso al muro.
+
+Puoi vedere anche un peso da cinque chili, un tavolo, un peso da due chili, un
+peso da dieci chili e una scatola (che è aperta ma vuota) qui.
+
+> metti tutto nella scatola
+dado: Hai messo il dado nella scatola.
+dado: Hai messo il dado nella scatola.
+dado: Hai messo il dado nella scatola.
+moneta d'oro: Hai messo la moneta d'oro nella scatola.
+moneta d'oro: Hai messo la moneta d'oro nella scatola.
+moneta d'oro: Hai messo la moneta d'oro nella scatola.
+moneta d'oro: Hai messo la moneta d'oro nella scatola.
+moneta d'oro: Hai messo la moneta d'oro nella scatola.
+moneta d'argento: Hai messo la moneta d'argento nella scatola.
+moneta d'argento: Hai messo la moneta d'argento nella scatola.
+moneta d'argento: Hai messo la moneta d'argento nella scatola.
+
+> chiudi scatola
+Hai chiuso la scatola.
+
+> lascia 5 monete
+Non vedo nulla di tutto ciò.
+
+> prendi 5 monete
+Non vedo nulla di tutto ciò.
+
+> prendi monete
+Non vedo nulla di tutto ciò.
+
+> s
+Stanza Dei Bottoni
+La Stanza Dei Bottoni.
+
+Puoi vedere un bottone qui.
+
+> spingi 2
+Qualcosa è accaduto. 
+
+> spingi due
+Qualcosa è accaduto. 
+
+> spingi secondo bottone
+Qualcosa è accaduto. 
+
+> s
+Stanza delle Note
+La Stanza delle Note.
+
+Puoi vedere un passo uno e un passo due qui.
+
+> x 1
+Non c'è nulla di speciale nel passo uno.
+
+> x 2
+Non c'è nulla di speciale nel passo due.
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
