@@ -1,0 +1,53 @@
+
+> esamina ovest
+Una bella statua di Medusa.
+
+> spingi ovest
+Meglio lasciarla dov'è!
+
+> spingi ovest ovest
+Provi a spingere la statua verso ovest, senza riuscirci.
+
+> vai ovest
+Guardaroba
+I muri di questa piccola stanza erano pieni di ganci per gli abiti, ma ora ne
+rimane solo uno. La porta d'uscita è a est.
+
+> togli gancio
+È difficilmente trasportabile.
+
+> e
+Foyer del Teatro
+
+> ovest
+Guardaroba
+
+> togli -ti mantello
+Ti togli di dosso il mantello di velluto.
+
+> metti mantello su gancio
+Hai messo il mantello di velluto sul piccolo gancio di ottone.
+
+[Il punteggio è appena salito di 1 punto.]
+
+> e
+Foyer del Teatro
+
+> s
+Bar del Foyer
+A differenza dell'opulenza del Foyer, il bar è modesto e anche completamente
+deserto. Sembra ci sia una specie di messaggio scarabocchiato nella segatura del
+pavimento.
+
+> x pavimento
+Il messaggio, ben marcato nella segatura, dice...
+[Il punteggio è appena salito di 1 punto.]
+
+
+  *** Hai vinto ***
+
+In questo gioco hai ottenuto 2 punti su un totale di 2, in 12 mosses.
+
+Ora RICOMINCIA il gioco, CARICA una partita o TERMINA il gioco.
+> termina
+
