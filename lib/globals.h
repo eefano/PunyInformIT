@@ -770,6 +770,8 @@ Object Directions
 			selected_direction_index = (_i % DIRECTION_COUNT) + 1;
 ._matched_and_have_set_dir_index;
 			selected_direction = direction_properties_array -> selected_direction_index;
+			! Specifico per la versione italiana: articolo con l'apostrofo per est e ovest
+			if(selected_direction == w_to or e_to) give self apostrofo; else give self ~apostrofo;
 			return 1;
 #Ifnot;
 			! This is V3
@@ -837,6 +839,8 @@ Object Directions
 
 			selected_direction_index = _i;
 			selected_direction = direction_properties_array -> selected_direction_index;
+			! Specifico per la versione italiana: articolo con l'apostrofo per est e ovest
+			if(selected_direction == w_to or e_to) give self apostrofo; else give self ~apostrofo;
 			return 1;
 #EndIf;
 		],
