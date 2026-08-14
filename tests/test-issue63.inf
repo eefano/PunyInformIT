@@ -1,3 +1,4 @@
+!% -Cu
 ! Testing that held and creature tokens parse all/all-but correctly
 ! Testing issue 60 (sentence splitting)
 ! 

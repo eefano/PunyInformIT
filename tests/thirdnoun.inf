@@ -1,3 +1,4 @@
+!% -Cu
 ! Testing what is/SopeWithin and custom meta
 !
 #Iftrue (#version_number == 8);

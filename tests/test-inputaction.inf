@@ -1,3 +1,4 @@
+!% -Cu
 !% -~S
 !% $OMIT_UNUSED_ROUTINES=1
 !% $ZCODE_LESS_DICT_DATA=1

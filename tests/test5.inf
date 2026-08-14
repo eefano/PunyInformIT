@@ -1,3 +1,4 @@
+!% -Cu
 ! this is a test of basic manipulation of multiple objects (balls etc)
 ! Bugs fixed/investigated using this test file
 ! - "drop cubes" when carrying no balls

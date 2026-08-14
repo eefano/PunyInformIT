@@ -1,3 +1,4 @@
+!% -Cu
 ! Testing _GrabIfNotHeld
 !
 #Iftrue (#version_number == 8);

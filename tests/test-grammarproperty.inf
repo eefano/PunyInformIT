@@ -1,3 +1,4 @@
+!% -Cu
 ! this code looks messy but it tests all return values from the 
 ! grammar property. -1, 0, 'verb' and -'verb'. See test-grammarproperty.cmd
 ! for example inputs.

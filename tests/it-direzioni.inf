@@ -1,3 +1,4 @@
+!% -Cu
 ! questo è un test per gli apostrofi
 !
 Constant Story      "Test del parser";

@@ -1,3 +1,4 @@
+!% -Cu
 !% -~S
 !% $OMIT_UNUSED_ROUTINES=1
 ! The very first lines of the main source code file for a game can

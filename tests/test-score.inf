@@ -1,3 +1,4 @@
+!% -Cu
 ! testing normal scoring
 !
 #Iftrue (#version_number == 8);
