@@ -1,0 +1,419 @@
+
+> john, prendi torcia e felpa
+Puoi riferirti a una sola cosa quando parli con altri.
+
+> dici test
+(supponendo a* John)
+Rule life, action Answer, noun 0, second John, consult 2 1, special_number 0
+John ignora la tua domanda.
+
+> dici test a john
+Rule life, action Answer, noun 0, second John, consult 2 1, special_number 0
+John ignora la tua domanda.
+
+> offri porta con torcia
+Non capisco questa frase.
+
+> offri felpa con la scala
+(prendendo prima la felpa)
+Non capisco questa frase.
+
+> offri felpa con la scala
+Ho capito solo fino a "offri felpa".
+
+> lascia tutto
+felpa: Lasciata.
+
+> guarda nord
+Non si vede nulla di nuovo da quella parte.
+
+> x nord
+Non si vede nulla di nuovo da quella parte.
+
+> apri
+(supponendo la porta del bagno)
+Hai aperto la porta del bagno.
+
+> siedi scala
+Ho capito solo fino a "siedi".
+
+> guarda verso la scala
+È molto robusta. Sopra la scala c'è un adesivo.
+
+> guarda scala
+È molto robusta. Sopra la scala c'è un adesivo.
+
+> ancora me
+Ho capito solo fino a "ancora".
+
+> n
+Non puoi andare da quella parte.
+
+> ancora
+Non puoi andare da quella parte.
+
+> ancora me
+Ho capito solo fino a "ancora".
+
+> metti felpa in o
+L'ovest non è un contenitore.
+
+> svuota felpa
+La felpa non è un contenitore.
+
+> lascia felpa
+Non la stai tenendo in mano.
+
+> metti scala su scala
+Non puoi mettere una cosa sopra sè stessa.
+
+> metti scala in scala
+Non puoi inserire una cosa dentro sé stessa.
+
+> john, prendi tutto
+Devi essere più specifico.
+
+> vai n
+Non puoi andare da quella parte.
+
+> vai felpa
+Non puoi entrarla.
+
+> vai
+Penso che tu volessi dire "vai (una direzione)". Per favore, prova ancora.
+
+> prendi
+Penso che tu volessi dire "prendi qualcosa". Per favore, prova ancora.
+
+> x sfera
+Non c'è nulla di speciale nella sfera.
+
+> smanaccia -la
+*Sto smanacciando la sfera come richiesto.
+> x scala
+È molto robusta. Sopra la scala c'è un adesivo.
+
+> smanaccia scala
+*******************Non puoi smanacciarla!
+> smanaccia -la
+*Non puoi smanacciarla!
+> pronouns
+lo: nulla
+la: scala
+li: nulla
+le: nulla
+
+> prendi scala e
+Ho capito solo fino a "prendi scala".
+
+> bacia scala
+Lo puoi fare solo con qualcosa di animato.
+
+> apri -la
+E come faresti ad aprire una scala?
+
+> digita abc su scala
+2
+> digita abc nella scala
+2
+> chiudi chiudi porta
+Non vedo nulla di tutto ciò.
+
+> apri chiudi porta
+Non vedo nulla di tutto ciò.
+
+> i.i
+Sei a mani vuote.
+
+Sei a mani vuote.
+
+> apri torcia e la scala
+Non puoi usare più di una cosa con questo verbo.
+
+> i blu
+Ho capito solo fino a "i".
+
+> apri tutto
+Non puoi usare più di una cosa con questo verbo.
+
+> metti tutto
+Non stai portando nulla.
+
+> prendi torcia
+Presa.
+
+> metti tutto
+Penso che tu volessi dire "metti all in qualcosa". Per favore, prova ancora.
+
+> prendi torcia e john
+torcia elettrica: Già la possiedi.
+John: Non credo che John gradirebbe.
+
+> apri scatola
+Hai aperto la scatola, rivelando un libro rosso.
+
+[Il punteggio è appena salito di 3 punti.]
+
+> prendi tutto da scatola
+libro rosso: Evviva, ci siamo disfati del libro rosso!
+
+[Il punteggio è appena sceso di 1 punto.]
+
+> i
+Stai portando un libro rosso e una torcia elettrica (brutta come la morte).
+
+> metti tutto
+Penso che tu volessi dire "metti all in qualcosa". Per favore, prova ancora.
+
+> metti tutto eccetto
+Non capisco questa frase.
+
+> metti tutto eccetto in scatola
+Ho capito solo fino a "metti tutto eccetto".
+
+> metti tutto eccetto libro nella scatola
+torcia elettrica: Hai messo la torcia elettrica nella scatola.
+
+[Il punteggio è appena salito di 1 punto.]
+
+> prendi tutto dalla scatola
+torcia elettrica: Evviva, ci siamo disfati della torcia elettrica!
+
+[Il punteggio è appena sceso di 1 punto.]
+
+> metti tutto eccetto libro rosso nella scatola
+torcia elettrica: Hai messo la torcia elettrica nella scatola.
+
+[Il punteggio è appena salito di 1 punto.]
+
+> i
+Stai portando un libro rosso.
+
+> lascia tutto
+libro rosso: Lasciato.
+
+> prendi libro rosso, xyzzy e torcia
+Scusa, non capisco cosa significhi "xyzzy".
+
+> prendi xyzzy e torcia
+Scusa, non capisco cosa significhi "xyzzy".
+
+> prendi xyzzy
+Scusa, non capisco cosa significhi "xyzzy".
+
+> x verde
+Non vedo nulla di tutto ciò.
+
+> prendi verde
+Non vedo nulla di tutto ciò.
+
+> leggi verde
+Non vedo nulla di tutto ciò.
+
+> purloin libro rosa
+Purloined.
+
+> i
+Stai portando quello stupido vecchio libro rosa.
+
+> prendi libro
+Preso.
+
+> lascia rosa
+Lasciato.
+
+> prendi tutto
+felpa: Presa.
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+sfera: Stai portando già troppe cose.
+torcia elettrica: Stai portando già troppe cose.
+scala: Stai portando già troppe cose.
+borsa infinita: Stai portando già troppe cose.
+
+> spingi dsdasdsa
+Scusa, non capisco cosa significhi "dsdasdsa".
+
+> ops john
+"Hey, non spingere!", grida John. 
+
+> r
+"Te ne farò pentire!", mormora John. 
+
+> spingi john
+"È il tuo ultimo avvertimento!", dice John. 
+
+> s
+Apperò, questo è un immenso parcheggio!
+
+Parcheggio
+Sei nel parcheggio di fronte alla libreria. Puoi entrare a nord. C'è un fiume a
+est.
+
+Ci sta un vecchio e consunto libro verde.
+
+Un libro blu riposa su uno scaffale. Guardare il libro blu ti disorienta.
+
+Una piccola auto rossa è parcheggiata qui.
+
+Puoi vedere anche una chiave e un peso di piombo qui.
+
+[Il punteggio è appena salito di 5 punti.]
+
+> lascia tutto
+libro rosa: Lasciato.
+felpa: Lasciata.
+libro rosso: Lasciato.
+
+> prendi auto e est
+piccola auto rossa: È inamovibile.
+est: Non puoi prenderlo su!
+
+> prendi blu e tutti i libri
+libro blu: Il libro blu comincia a ticchettare...
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+libro rosso: Il libro blu non vuole stare accanto al libro rosso e decide di
+sfuggirti, cadendo sul pavimento.Preso.
+libro verde: Preso.
+
+Il libro blu lampeggia in modo irritante.
+
+> lascia tutto
+libro rosa: Lasciato.
+libro rosso: Lasciato.
+libro verde: Lasciato.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi libro blu e tutti i libri tranne i blu
+libro blu: Il libro blu comincia a ticchettare...
+libro verde: Preso.
+libro rosso: Il libro blu non vuole stare accanto al libro rosso e decide di
+sfuggirti, cadendo sul pavimento.Preso.
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+
+Il libro blu lampeggia in modo irritante.
+
+> lascia tutto
+libro verde: Lasciato.
+libro rosso: Lasciato.
+libro rosa: Lasciato.
+
+La scatola esplode.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi libri
+libro verde: Preso.
+libro rosso: Preso.
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+libro blu: Stai portando già troppe cose.
+
+Il libro blu lampeggia in modo irritante.
+
+> lascia tutto
+libro verde: Lasciato.
+libro rosso: Lasciato.
+libro rosa: Lasciato.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi rosino
+libro verde: Preso.
+libro rosa: Hai avuto il coraggio di prenderlo. Bravo!
+
+Il libro blu lampeggia in modo irritante.
+
+> lascia tutto
+libro verde: Lasciato.
+libro rosa: Lasciato.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi blu e blu e blu
+Il libro blu comincia a ticchettare...
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi blu e blu
+Già lo possiedi.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi blu
+Già lo possiedi.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi libro
+Intendi dire il libro verde, il libro rosso o il libro rosa?
+
+> n
+
+Immensa libreria
+
+Puoi vedere anche una sfera, un interruttore della luce, un acquario (che è
+aperto ma vuoto), una scatola (che contiene una torcia elettrica (brutta come la
+morte)), una scala (su cui c'è un adesivo), John e una borsa infinita (che fa
+luce) (che è aperta ma vuota) qui.
+
+La scatola esplode.
+
+Il libro blu lampeggia in modo irritante.
+
+> prendi borsa
+Presa.
+
+Il libro blu lampeggia in modo irritante.
+
+> metti felpa in borsa
+Non vedo nulla di tutto ciò.
+
+> i
+Stai portando una borsa infinita (che fa luce) (che è aperta ma vuota) e un
+libro blu (che fa luce).
+
+Il libro blu lampeggia in modo irritante.
+
+> i alto
+Stai portando:
+  una borsa infinita (che fa luce) (che è aperta ma vuota)
+  un libro blu (che fa luce)
+
+Il libro blu lampeggia in modo irritante.
+
+> i largo
+Stai portando una borsa infinita (che fa luce) (che è aperta ma vuota) e un
+libro blu (che fa luce).
+
+Il libro blu lampeggia in modo irritante.
+
+> lascia tutto
+libro blu: Lasciato.
+borsa infinita: Lasciata.
+
+> offri
+(supponendo a* John)
+Penso che tu volessi dire "offri qualcosa a qualcuno/a". Per favore, prova
+ancora.
+
+> offri john
+Penso che tu volessi dire "offri John qualcosa". Per favore, prova ancora.
+
+> offri scala
+(prendendo prima la scala)
+(supponendo a* John)
+Rule life, action Give, noun la scala, second John, special_number 0
+John non sembra interessato.
+
+> x torcia
+La torcia elettrica è risulta spenta.
+
+> x torcia ora
+Ho capito solo fino a "x torcia".
+
+> x torcia torcia ora
+Ho capito solo fino a "x torcia torcia".
+
+> termina
+Non sei uno che si arrende, eh? si
+
