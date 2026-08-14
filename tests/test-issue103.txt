@@ -8,7 +8,7 @@ Libreria
 
 Puoi vedere un cappello qui.
 
-> metti cappello
+> indossa cappello
 (prendendo prima il cappello)
 Hai indossato il cappello.
 

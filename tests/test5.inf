@@ -84,7 +84,7 @@ Object -> Ball "palla"
 
 Object DarkRoom1 "Stanza Buia"
 	with
-		description "La luce arriva dal corridoio ad ovest.",
+		description "La luce arriva dal corridoio a ovest.",
 		w_to LitRoom;
 
 Object -> Chair "sedia"
@@ -94,7 +94,7 @@ Object -> Chair "sedia"
 
 Object DarkRoom2 "Stanza Buia"
 	with
-		description "La luce arriva dal corridoio ad est.",
+		description "La luce arriva dal corridoio a est.",
 		e_to LitRoom;
 
 Object -> Table "tavolo"

@@ -12,7 +12,7 @@ Questa è la traduzione in italiano della libreria PunyInform.
 
 PunyInform è una libreria scritta in Inform 6 che consente agli autori di creare giochi di avventura testuale / narrativa interattiva utilizzando la macchina virtuale Z-machine, giocabili sia su computer a 8 bit che su piattaforme più recenti. Fornisce un parser, implementazioni dei verbi più comuni e un framework per la scrittura di avventure testuali.
 
-I giochi che utilizzano PunyInform possono essere compilati nei formati z3, z4, z5, z6, z7 e z8. Ciò significa che rispetto ad Inform 6 standard non è supportato Glulx, ma sono supportati i formati z3 e z4 (che viceversa non sono supportati dalla Inform 6 standard). C'è anche un'estensione disponibile per supportare lo schermo grafico z6.
+I giochi che utilizzano PunyInform possono essere compilati nei formati z3, z4, z5, z6, z7 e z8. Ciò significa che rispetto a Inform 6 standard non è supportato Glulx, ma sono supportati i formati z3 e z4 (che viceversa non sono supportati dalla Inform 6 standard). C'è anche un'estensione disponibile per supportare lo schermo grafico z6.
 
 L'obiettivo principale di PunyInform è quello di consentire la realizzazione di giochi veloci e con un ingombro di memoria ridotto. Ciò dovrebbe garantire un buon funzionamento dei giochi su architetture meno recenti, come i computer a 8 bit degli anni '80. Il nostro obiettivo principale è renderlo adatto ai giochi per Commodore 64 utilizzando [Ozmoo](https://github.com/johanberntsson/ozmoo/).
 
@@ -73,9 +73,9 @@ L'italiano non ha una forma neutra, quindi ricordarsi di utilizzare l'attributo 
 
 L'attributo ```neuter``` è stato rimosso in favore di due nuovi attributi: ```apostrofo``` e ```logli```. Di conseguenza l'autore avrà a disposizione un attributo libero in meno rispetto a quelli indicati nella documentazione ufficiale.
 
-* ```apostrofo``` serve ad indicare quando il nome prevede un articolo o una preposizione articolata con l'apostrofo. Quando presente, nelle stampe trasforma ```LA ARANCIA``` in ```L'ARANCIA``` oppure ```SULLA INSEGNA``` in ```SULL'INSEGNA```.
+* ```apostrofo``` serve a indicare quando il nome prevede un articolo o una preposizione articolata con l'apostrofo. Quando presente, nelle stampe trasforma ```LA ARANCIA``` in ```L'ARANCIA``` oppure ```SULLA INSEGNA``` in ```SULL'INSEGNA```.
 
-* ```logli``` serve ad indicare quando il nome maschile prevede l'articolo ```LO / GLI``` al posto di ```IL / I```. Se presente, nelle stampe trasforma ```IL STRACCIO``` in ```LO STRACCIO``` oppure ```NEL SPORCO``` in ```NELLO SPORCO```
+* ```logli``` serve a indicare quando il nome maschile prevede l'articolo ```LO / GLI``` al posto di ```IL / I```. Se presente, nelle stampe trasforma ```IL STRACCIO``` in ```LO STRACCIO``` oppure ```NEL SPORCO``` in ```NELLO SPORCO```
 
 * Per i nomi maschili che iniziano per vocale o acca è sufficiente indicare ```apostrofo``` dato che l'uso di ```LO / GLI``` è implicito. L'articolo indefinito maschile singolare ```UN``` verrà comunque stampato senza apostrofo. 
 

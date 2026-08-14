@@ -370,7 +370,7 @@ Object CarPark "Parcheggio"
 		initial "Apperò, questo è un immenso parcheggio!",
 		description [;
 			"Sei nel parcheggio di fronte alla libreria.
-			Puoi entrare a nord. C'è un fiume ad est.
+			Puoi entrare a nord. C'è un fiume a est.
 			A sud vedi l'insegna di Alfa Riparazioni.
 			Un tavolo è inspiegabilmente messo nel bel mezzo del parcheggio.
 			Uno strano odore permea l'aria.";],
@@ -488,7 +488,7 @@ Object car "piccola auto rossa" CarPark
 		],
 	has female switchable enterable static container open;
 
-Object RiverBank "Riva di* fiume"
+Object RiverBank "Riva del fiume"
   with
 		description "Il fiume è molto largo qui. Il sole riflette l'acqua blu, 
 			gli uccelli volano alti.",
@@ -606,10 +606,10 @@ Object Toilet "Il bagno"
 		short_name [; print "Un bagno"; rtrue; ],
 		description[;
 			print "Questo bagno ha bisogno di una bella lavata. La porta
-			si trova ad ovest, e riporta alla libreria.
-				C'è un oscuro passaggio ad est.";
+			si trova a ovest, e riporta alla libreria.
+				C'è un oscuro passaggio a est.";
 			if(Faucet has on) {
-				"L'acqua scorre nel lavabo. ";
+				"L'acqua scorre dal rubinetto. ";
 			}
 			"";
 		],
@@ -621,7 +621,7 @@ Object Toilet "Il bagno"
 		e_to DarkChamber,
 	has ~light;
 
-Object -> ToiletDoor "porta di* bagno"
+Object -> ToiletDoor "porta del bagno"
 	with
 		name 'porta' 'di*' 'bagno',
 		describe [; rtrue; ],
@@ -711,7 +711,7 @@ Object Library "La Libreria"
 	with
 		name 'libreria', ! should create "you don't need to refer to ..."
 		short_name [; print "Immensa libreria"; rtrue; ],
-		description "Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è ad est.",
+		description "Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è a est.",
 		s_to CarPark,
 		se_to RiverBank,
 #IfDef USEINFORM;
@@ -759,7 +759,7 @@ Object -> Dial "manopola"
 	has female static;
 
 
-Object -> LightSwitch "interruttore di* luce"
+Object -> LightSwitch "interruttore della luce"
 	with
 		short_name "interruttore della luce",
 		description "È un interruttore vicino al bagno. ",
@@ -872,7 +872,7 @@ Object -> -> Gun "pistola"
 		name 'pistola',
 		before [;
 			Examine: rfalse;
-!			default: "It's very dangerous, better just leave it alone!";
+!			default: "È molto pericolosa, meglio lasciarla perdere!";
 		],
 	has female transparent;
 
@@ -911,7 +911,7 @@ Object -> -> Sticker "adesivo"
 		name 'adesivo',
 		each_turn [;
 #IfnDef USEINFORM;
-!		if(location ~= thedark) "The sticker looks oh so sticky.";
+!		if(location ~= thedark) "L'adesivo pare molto appiccicoso.";
 #Endif;
 		],
 		add_to_scope Key,
@@ -949,7 +949,7 @@ Object -> BlueBook "libro blu" class Book
 				print "Il libro blu comincia a ticchettare...^";
 				rtrue; ! stop normal printouts
 		],
-!		description "The book looks new and shiny.",
+!		description "Il libro sembra nuovo e lucido.",
         daemon [;
 			if(self.time_left < turns - 1) {
 				if(TestScope(self))
@@ -1085,7 +1085,7 @@ Book -> GreenBook "libro verde"
 			}
 			return i;
 	    ],
-		describe [; "^Un vecchio e consunto libro verde."; ],
+		describe [; "^Ci sta un vecchio e consunto libro verde."; ],
 		description "Il libro verde è bello intatto.",
 	has reactive;
 
@@ -1117,7 +1117,6 @@ Book -> PinkBook "libro rosa"
 Object -> Torch "torcia elettrica"
 	with
 		name 'torcia' 'elettrica',
-		article "una",
 		invent [;
 			if(inventory_stage == 2) {
 				print " (brutta come la morte)";
@@ -1298,7 +1297,7 @@ Object  Beard "La Barba di John"
 #Endif;
 	print "^^Benvenuto alla Testbench... Dove si provano tutte le funzionalità di 
 	PunyInformIT. Non è un gioco vero e proprio ma puoi 'vincere' mettendo cose
-	nella scatola, o perdere guardando il sole presso il fiume o provocando John.^";
+	nella scatola, o perdere guardando il sole presso il fiume o spingendo John.^";
 ];
 #Ifdef USEINFORM;
 Include "Grammar";

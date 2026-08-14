@@ -46,10 +46,10 @@ Verb 'attacca' 'rompi' 'crepa' 'distruggi'
 !!
 Verb 'sali' 'scala' 'arrampica'
   *                                 -> GoUp
-	* 'su'/'su*'/'sopra' noun            					-> Climb
+	* 'su'/'su*'/'sopra' noun         -> Climb
 	*  noun                           -> Climb
-	* 'in'/'in*'/'dentro' noun                    	-> Enter
-	* 'fuori' 'da'/'da*' noun							-> Exit;
+	* 'in'/'in*'/'dentro' noun        -> Enter
+	* 'fuori' 'da'/'da*' noun					-> Exit;
 !!
 Verb 'chiudi'
     * noun                            -> Close
@@ -121,13 +121,19 @@ Verb 'alza' 'solleva'
 ! Attenzione il verbo 'dai' diventa 'da*' per effetto collaterale
 ! della dearticolizzazione delle preposizioni
 Verb 'dà' 'dai' 'da*' 'offri' 'dona'
-	* held creature									-> Give
-  * held 'a//'/'a*' creature        		-> Give
-  * 'a//'/'a*' creature held        		-> Give reverse
+  * held 'a//'/'a*' creature      -> Give
+  * 'a//'/'a*' creature held      -> Give reverse
   * creature held            			-> Give reverse;
-Verb 'sfama' 'paga'
-    * 'con' held creature        		-> Give
-    * creature 'con' held        		-> Give reverse;
+Verb 'paga'
+  * held 'a//'/'a*' creature      -> Give
+  * 'con' held creature       		-> Give 
+  * 'a//'/'a*' creature held      -> Give reverse
+  * creature 'con' held        		-> Give reverse
+  * creature held            			-> Give reverse;
+Verb 'sfama' 'nutri'
+  * 'con' held creature       		-> Give 
+  * creature 'con' held        		-> Give reverse
+	* creature held									-> Give reverse;
 
 [ ADirection;
 	if (noun == Directions) rtrue;
@@ -170,10 +176,10 @@ Verb 'serra' 'blocca'
 	* noun 'con' held				-> Lock;
 !!
 Verb 'guarda' 'vedi' 'osserva' 'v//'
-    *                                    		-> Look
-    * noun                               		-> Examine
-    * 'in'/'in*'/'dentro' noun         			-> Search
-    * 'su'/'su*'/'sopra' noun         			-> Search;
+    *                                    					-> Look
+    * 'verso'/'a//'/'a*' noun               			-> Examine
+		* noun                                        -> Examine
+    * 'in'/'in*'/'dentro'/'su'/'su*'/'sopra' noun -> Search;
 !!
 Verb 'apri' 'schiudi'
 	* noun                                      -> Open
@@ -190,8 +196,7 @@ Verb 'spingi' 'sgombra' 'muovi' 'premi' 'sposta'
     * noun 'verso' noun=ADirection        -> PushDir
     * noun noun=ADirection                -> PushDir
     * noun 'a//'/'a*' noun         				-> Transfer
-    * noun 'su'/'su*'/'sopra' noun        -> Transfer
-    * noun 'in'/'in*'/'dentro' noun       -> Transfer
+    * noun 'su'/'su*'/'sopra'/'in'/'in*'/'dentro' noun -> Transfer
     * noun 'verso' noun                   -> Transfer;
 !!
 Verb 'piazza' 'posiziona' 'colloca'
@@ -200,8 +205,7 @@ Verb 'piazza' 'posiziona' 'colloca'
 Verb 'metti'
 	* multiexcept 'in'/'in*'/'dentro' noun	-> Insert
 	* multiexcept 'su'/'su*'/'sopra' noun		-> PutOn
-	* 'su' held                             -> Wear
-	*  held                                 -> Wear;
+	* 'su' held                             -> Wear;
 !!
 Verb 'leggi'
     * noun                               	-> Examine
@@ -238,15 +242,13 @@ Verb 'grida' 'urla' 'sbraita'
 	*                                     -> Shout;
 !!
 Verb 'mostra' 'presenta' 'sfoggia'
-    * held creature                     -> Show
+    * held 'a//'/'a*' creature        				-> Show
     * 'a//'/'a*' creature held        				-> Show reverse
-    * held 'a//'/'a*' creature        				-> Show;
+    * creature held                 					-> Show reverse;
 !!
 Verb 'siedi' 'sdraia' 'accomoda'
-    * SelfGpr 'su'/'su*'/'sopra' noun      -> Enter
-    * SelfGpr 'in'/'in*'/'dentro' noun      -> Enter
-    * 'su'/'su*'/'sopra' noun             	-> Enter
-    * 'in'/'in*'/'dentro' noun             	-> Enter;
+    * SelfGpr 'su'/'su*'/'sopra'/'in'/'in*'/'dentro' noun -> Enter
+    * 'su'/'su*'/'sopra'/'in'/'in*'/'dentro' noun         -> Enter;
 !!
 Verb 'annusa' 'odora'
     *                                    		-> Smell
@@ -272,12 +274,11 @@ Verb 'disattiva' 'spegni'
 !	* 'inventory'                               -> Inv;
 !!
 #Ifndef EXT_TALK_MENU;
-Verb 'informa' 'narra' 'spiega' 'rivela' 'parla' 'comunica' 'conversa'
+Verb 'parla' 'comunica' 'conversa' 'informa' 'narra' 'spiega' 'rivela'
     * creature topic                      -> Tell
     * 'con'/'a//'/'a*' creature topic     -> Tell
     * topic 'con'/'a//'/'a*' creature -> Tell reverse;
-#Endif;
-#Ifdef EXT_TALK_MENU;
+#Ifnot;
 Verb 'informa' 'narra' 'spiega' 'rivela'
     * creature topic                      -> Tell
     * 'a//'/'a*' creature topic        		      -> Tell
@@ -931,8 +932,7 @@ Verb 'consulta'
 !!
 Verb 'svuota' 'vuota' 'versa' 'riversa'
     * noun              							-> Empty
-    * noun 'su'/'su*'/'sopra' noun 								-> EmptyT
-    * noun 'in'/'in*'/'dentro' noun 								-> EmptyT;
+    * noun 'su'/'su*'/'sopra'/'in'/'in*'/'dentro' noun -> EmptyT;
 !!
 Verb 'penetra' 'dentro'
 	*                                           -> GoIn;
@@ -999,8 +999,7 @@ Verb 'pensa' 'rifletti' 'rimugina'
 !!
 Verb 'trasferisci' 'trasporta' 'travasa'
    * noun 'a//'/'a*' noun           							-> Transfer
-   * noun 'su'/'su*'/'sopra' noun 							          -> Transfer
-   * noun 'in'/'in*'/'dentro' noun           							-> Transfer
+   * noun 'su'/'su*'/'sopra'/'in'/'in*'/'dentro' noun -> Transfer
    * noun 'verso' noun           						-> Transfer;
 !!
 Verb 'sveglia' 'rinvieni'

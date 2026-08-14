@@ -88,8 +88,6 @@ InScope(Bob, PARSING, Give)
 InScope(Bob, PARSING, Give)
 
 InScope(Bob, PARSING, Give)
-
-InScope(Bob, PARSING, Give)
 Bob ha di meglio da fare.
 
 InScope(tu, EACH_TURN, Give)

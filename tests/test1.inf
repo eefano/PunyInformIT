@@ -56,7 +56,7 @@ Class Ball
 Object BallRoom "Stanza Delle Palle"
 	with
 		description [;
-			print "Sei nella stanza delle palle. La stanza della pendenza sta ad est.
+			print "Sei nella stanza delle palle. La stanza della pendenza sta a est.
 				La stanza bianca sta a sud.
 				C'è dell'aria nella stanza.";
 			if(BlackBall in self && BlackBall has concealed)

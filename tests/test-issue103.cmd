@@ -2,7 +2,7 @@ transcript
 
 entra
 esci
-metti cappello
+indossa cappello
 i                                                                     
 togli -ti cappello
 togli -ti cappello

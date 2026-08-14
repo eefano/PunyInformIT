@@ -79,7 +79,7 @@ Object Library "Library"
 		description "Sei in una grande splendida libreria. Puoi esaminare o prendere
 			i vecchi libri, i giornali, la libreria, l'aria, l'atmosfera,
 			il pulsante d'emergenza, 
-			i muri e il soffitto. La sala di lettura è ad est.",
+			i muri e il soffitto. La sala di lettura è a est.",
 		before [;
 		Push:
 			if(noun == CheapScenery && cs_match_id == 203) {

@@ -26,19 +26,19 @@ Sei sicuro di voler ricominciare il gioco? si
 
 Benvenuto alla Testbench... Dove si provano tutte le funzionalità di
 PunyInformIT. Non è un gioco vero e proprio ma puoi 'vincere' mettendo cose
-nella scatola, o perdere guardando il sole presso il fiume o provocando John.
+nella scatola, o perdere guardando il sole presso il fiume o spingendo John.
 
 Testbench
 Una sandbox per lo sviluppo di PunyInformIT
 
 Immensa libreria
-Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è ad est.
+Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è a est.
 
 C'è una manopola nera sul muro.
 
 Un libro blu riposa su uno scaffale. Guardare il libro blu ti disorienta.
 
-Un vecchio e consunto libro verde.
+Ci sta un vecchio e consunto libro verde.
 
 Puoi vedere anche un interruttore della luce, una felpa, un acquario (che è
 aperto ma vuoto), una scatola (chiusa), uno scaffale (su cui ci sono un paio di

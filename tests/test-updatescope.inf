@@ -56,7 +56,7 @@ Include "puny.h";
 
 Object NearLocation "Luogo Vicino"
 	with
-		description "Sei in un luogo vicino, Il luogo remoto sta ad est.",
+		description "Sei in un luogo vicino, Il luogo remoto sta a est.",
 		e_to RemoteLocation;
 
 Object -> Box "scatola"

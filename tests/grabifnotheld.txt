@@ -91,7 +91,7 @@ Al momento ogni domanda ti confonde.
 Al momento ogni domanda ti confonde.
 
 > mostra verde
-(supponendo Sally)
+(supponendo a* Sally)
 Sally non sembra interessata.
 
 > mostra verde a sally
@@ -104,7 +104,7 @@ Sally non sembra interessata.
 Lo puoi fare solo con qualcosa di animato.
 
 > mostra verde blu
-Lo puoi fare solo con qualcosa di animato.
+Ho capito solo fino a "mostra verde".
 
 > termina
 Sei sicuro di voler terminare il gioco? si
