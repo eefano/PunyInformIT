@@ -209,10 +209,10 @@ Verb 'metti'
 !!
 Verb 'leggi'
     * noun                               	-> Examine
-    * 'in'/'in*'/'dentro' noun 'su'/'su*'/'sopra'/'di'/'di*' topic            -> Consult
-    * 'in'/'in*'/'dentro' noun topic            				-> Consult
-    * 'su'/'su*'/'sopra'/'di'/'di*' topic 'in'/'in*'/'dentro' noun -> Consult reverse
-    * topic 'in'/'in*'/'dentro' noun -> Consult reverse;
+    * 'in'/'in*'/'dentro'/'su'/'su*'/'sopra' noun 'di'/'di*'/'su'/'su*'/'sopra' topic -> Consult
+    * 'in'/'in*'/'dentro'/'su'/'su*'/'sopra' noun topic  -> Consult
+    * 'di'/'di*'/'su'/'su*'/'sopra' topic 'in'/'in*'/'dentro'/'su'/'su*'/'sopra'/'di'/'di*' noun -> Consult reverse
+    * topic 'in'/'in*'/'dentro'/'su'/'su*'/'sopra'/'di'/'di*' noun -> Consult reverse;
 !!
 Verb 'togli' 'rimuovi'
   * 'di' 'dosso' noun           -> Disrobe
@@ -927,8 +927,9 @@ Verb 'compra' 'acquista'
     * noun                               		-> Buy;
 !!
 Verb 'consulta'
-    * noun 'su'/'su*'/'sopra'/'di'/'di*' topic            				-> Consult
-    * noun topic            								-> Consult;
+    * noun 'su'/'su*'/'sopra'/'riguardo' topic -> Consult
+    * noun 'riguardo' 'a//'/'a*' topic -> Consult
+    * noun topic -> Consult;
 !!
 Verb 'svuota' 'vuota' 'versa' 'riversa'
     * noun              							-> Empty
