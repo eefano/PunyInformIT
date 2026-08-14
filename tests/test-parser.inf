@@ -276,7 +276,7 @@ Object CarPark "Parcheggio"
 		!short_name [; print "In front of the library!"; rtrue; ],
 		initial "Apperò, questo è un immenso parcheggio!",
 		description [;
-			"Sei nel parcheggio di fronte alla libreria.
+			"Sei nel parcheggio di fronte alla biblioteca.
 			Puoi entrare a nord. C'è un fiume a est.";],
 		n_to Library,
 		sw_to [; "C'è un dragone arrabbiato che ti sbarra la via!"; ],
@@ -376,7 +376,7 @@ Object Toilet "Il bagno"
 	with
 		short_name [; print "Un bagno"; rtrue; ],
 		description[;
-			print "Questo bagno ha bisogno di una bella lavata. La porta si trova a ovest, e riporta alla libreria. ";
+			print "Questo bagno ha bisogno di una bella lavata. La porta si trova a ovest, e riporta alla biblioteca. ";
 			if(Faucet has open) {
 				"L'acqua scorre dal rubinetto. ";
 			}
@@ -468,11 +468,11 @@ Object -> Faucet "rubinetto"
 		],
 	has openable static scenery; !TODO: scenery objects still shown in room description
 
-Object Library "La Libreria"
+Object Library "La Biblioteca"
 	with
-		name 'libreria', ! should create "you don't need to refer to ..."
-		short_name [; print "Immensa libreria"; rtrue; ],
-		description "Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è a est.",
+		name 'biblioteca', ! should create "you don't need to refer to ..."
+		short_name [; print "Immensa biblioteca"; rtrue; ],
+		description "Sei in un'antica e desolata biblioteca. C'è un'uscita a sud. Il bagno è a est.",
 		s_to CarPark,
 		se_to RiverBank,
 #IfDef USEINFORM;
@@ -728,7 +728,7 @@ Object -> John "John"
 				2: "~Te ne farò pentire!~, mormora John. ";
 				3: "~È il tuo ultimo avvertimento!~, dice John. ";
 				4: deadflag=1;
-					"Oh mamma, chi poteva pensare che John portasse una doppietta in una libreria?.";
+					"Oh mamma, chi poteva pensare che John portasse una doppietta in una biblioteca?.";
 
 			}
 

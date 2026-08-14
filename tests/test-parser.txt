@@ -246,7 +246,7 @@ Scusa, non capisco cosa significhi "dsdasdsa".
 Apperò, questo è un immenso parcheggio!
 
 Parcheggio
-Sei nel parcheggio di fronte alla libreria. Puoi entrare a nord. C'è un fiume a
+Sei nel parcheggio di fronte alla biblioteca. Puoi entrare a nord. C'è un fiume a
 est.
 
 Ci sta un vecchio e consunto libro verde.
@@ -349,7 +349,7 @@ Intendi dire il libro verde, il libro rosso o il libro rosa?
 
 > n
 
-Immensa libreria
+Immensa biblioteca
 
 Puoi vedere anche una sfera, un interruttore della luce, un acquario (che è
 aperto ma vuoto), una scatola (che contiene una torcia elettrica (brutta come la

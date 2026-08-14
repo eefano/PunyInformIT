@@ -31,8 +31,8 @@ nella scatola, o perdere guardando il sole presso il fiume o spingendo John.
 Testbench
 Una sandbox per lo sviluppo di PunyInformIT
 
-Immensa libreria
-Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è a est.
+Immensa biblioteca
+Sei in un'antica e desolata biblioteca. C'è un'uscita a sud. Il bagno è a est.
 
 C'è una manopola nera sul muro.
 

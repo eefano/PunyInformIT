@@ -127,9 +127,9 @@ Verb 'mira'
 
 Class ProperObject;
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-		description "Solita libreria.";
+		description "Solita biblioteca.";
 
 ProperObject -> House "casa"
 	with

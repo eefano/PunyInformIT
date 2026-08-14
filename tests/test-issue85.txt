@@ -12,8 +12,8 @@ prendendo il limone
 Hai messo il limone nel scatola.
 
 > v
-Libreria
-Sei in libreria.
+Biblioteca
+Sei in biblioteca.
 
 Puoi vedere un scatola (che contiene un limone e una banana), degli Indiani
 Apache e John qui.

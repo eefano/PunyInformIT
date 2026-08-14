@@ -57,10 +57,10 @@ Include "puny.h";
 Include "Grammar";
 #Endif;
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with 
 	    name 'scenario' 'inutile',
-	    description "Sei in libreria."
+	    description "Sei in biblioteca."
 	has light;
 
 Object -> Box "scatola"

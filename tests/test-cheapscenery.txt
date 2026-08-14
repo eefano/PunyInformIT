@@ -14,11 +14,11 @@ Lascia in pace muri o giornali!
 > esamina -li
 I giornali sono polverosi.
 
-> x la grande libreria
+> x la grande biblioteca
 È veramente glorioso.
 
-> spingi la libreria
-La libreria è importantissima, meglio non vandalizzarla.
+> spingi la biblioteca
+La biblioteca è importantissima, meglio non vandalizzarla.
 
 > x aria
 L'aria è molto rarefatta qui.
@@ -69,7 +69,7 @@ I giornali sono polverosi.
 Sala Lettura
 È la sala lettura. L'atmosfera è differente qui. C'è un singolo libro su uno dei
 tavoli Puoi esaminare o provare a prendere i tavoli, la sala lettura, l'aria,
-l'atmosfera, i muri e il soffitto. La libreria sta a ovest.
+l'atmosfera, i muri e il soffitto. La biblioteca sta a ovest.
 
 > x quello
 Non saprei a cosa si riferisca "quello".
@@ -90,10 +90,10 @@ Molto robusto.
 È un posto molto tranquillo.
 
 > gira la sala lettura
-Ti ricordo che sei in una libreria, non c'è bisogno di toccare qualsiasi cosa.
+Ti ricordo che sei in una biblioteca, non c'è bisogno di toccare qualsiasi cosa.
 
 > x aria
-L'aria è più pesante qui che nella libreria.
+L'aria è più pesante qui che nella biblioteca.
 
 > spingi aria
 Ti serve l'aria per respirare.

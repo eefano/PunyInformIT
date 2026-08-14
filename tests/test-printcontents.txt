@@ -1,7 +1,7 @@
 
 > guarda
-Libreria
-Libreria Canaglia.
+Biblioteca
+Biblioteca Canaglia.
 
 Un tavolo sta in mezzo alla stanza.
 
@@ -79,8 +79,8 @@ giara di vetro: Hai messo la giara di vetro sul tavolo.
 cesta: Hai messo la cesta sul tavolo.
 
 > guarda
-Libreria
-Libreria Canaglia.
+Biblioteca
+Biblioteca Canaglia.
 
 Un tavolo sta in mezzo alla stanza. Sul tavolo ci sono una cesta (che contiene
 un libro), una giara di vetro (che è aperta e contiene un secchio (che contiene

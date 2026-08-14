@@ -370,7 +370,7 @@ Object CarPark "Parcheggio"
 		!short_name [; print "In front of the library!"; rtrue; ],
 		initial "Apperò, questo è un immenso parcheggio!",
 		description [;
-			"Sei nel parcheggio di fronte alla libreria.
+			"Sei nel parcheggio di fronte alla biblioteca.
 			Puoi entrare a nord. C'è un fiume a est.
 			A sud vedi l'insegna di Alfa Riparazioni.
 			Un tavolo è inspiegabilmente messo nel bel mezzo del parcheggio.
@@ -382,7 +382,7 @@ Object CarPark "Parcheggio"
 		each_turn [;
 			print (string) random(
 					"^Un gufo sta bubolando nei paraggi.",
-					"^Un urlo terribile proviene dalla libreria.",
+					"^Un urlo terribile proviene dalla biblioteca.",
 					"^Un suono di tanti uccelli proviene da est.");
 			"";
 		],
@@ -391,7 +391,7 @@ Object CarPark "Parcheggio"
             'soil' 'dirt' "La terra è umida dopo una notte di pioggia.",
 		cheap_scenery
 			CS_NO_ADJ 'library' [;
-				Examine: "È una libreria molto carina.";
+				Examine: "È una biblioteca molto carina.";
 				Burn: "Meglio di no!";
 			]
 			CS_PARSE_NAME [ i;
@@ -606,7 +606,7 @@ Object Toilet "Il bagno"
 		short_name [; print "Un bagno"; rtrue; ],
 		description[;
 			print "Questo bagno ha bisogno di una bella lavata. La porta
-			si trova a ovest, e riporta alla libreria.
+			si trova a ovest, e riporta alla biblioteca.
 				C'è un oscuro passaggio a est.";
 			if(Faucet has open) {
 				"L'acqua scorre dal rubinetto. ";
@@ -707,11 +707,11 @@ Object DarkChamber "Camera Oscura"
 		w_to Toilet
 		has female;
 
-Object Library "La Libreria"
+Object Library "La Biblioteca"
 	with
-		name 'libreria', ! should create "you don't need to refer to ..."
-		short_name [; print "Immensa libreria"; rtrue; ],
-		description "Sei in un'antica e desolata libreria. C'è un'uscita a sud. Il bagno è a est.",
+		name 'biblioteca', ! should create "you don't need to refer to ..."
+		short_name [; print "Immensa biblioteca"; rtrue; ],
+		description "Sei in un'antica e desolata biblioteca. C'è un'uscita a sud. Il bagno è a est.",
 		s_to CarPark,
 		se_to RiverBank,
 #IfDef USEINFORM;
@@ -1009,7 +1009,7 @@ Object -> John "John"
 				1: "~Te ne farò pentire!~, mormora John. ";
 				2: "~È il tuo ultimo avvertimento!~, dice John. ";
 				3: deadflag=1;
-					"Oh mamma, chi poteva pensare che John portasse una doppietta in una libreria?.";
+					"Oh mamma, chi poteva pensare che John portasse una doppietta in una biblioteca?.";
 
 			}
 

@@ -36,13 +36,13 @@ Constant CSP_LIBRARY 100;
 		word2 = 1;
 		"Ti serve l'aria per respirare.";
 	CSP_LIBRARY:
-		"La libreria è importantissima, meglio non vandalizzarla.";
+		"La biblioteca è importantissima, meglio non vandalizzarla.";
 	}
 	if(CSHasNoun('libro'))
 		"Lascia i libri a chi è veramente interessato.";
 	if(location == Library && word1 == 'scaffali')
 		"Non dovresti toccare gli scaffali.";
-	"Ti ricordo che sei in una libreria, non c'è bisogno di toccare qualsiasi cosa.";
+	"Ti ricordo che sei in una biblioteca, non c'è bisogno di toccare qualsiasi cosa.";
 ];
 
 Include "ext_cheap_scenery.h";
@@ -77,8 +77,8 @@ Constant BOOKDESC "Non sei interessato a leggere.";
 
 Object Library "Library"
 	with
-		description "Sei in una grande splendida libreria. Puoi esaminare o prendere
-			i vecchi libri, i giornali, la libreria, l'aria, l'atmosfera,
+		description "Sei in una grande splendida biblioteca. Puoi esaminare o prendere
+			i vecchi libri, i giornali, la biblioteca, l'aria, l'atmosfera,
 			il pulsante d'emergenza, 
 			i muri e il soffitto. La sala di lettura è a est.",
 		before [;
@@ -102,7 +102,7 @@ Object Library "Library"
 				_w = NextWord();
 				if(_w == 'grande') { _i++; _w = NextWord();}
 				if(_w == 'splendida') { _i++; _w = NextWord();}
-				if(_w == 'libreria') { _i++; return _i;}
+				if(_w == 'biblioteca') { _i++; return _i;}
 				if(_w == 'casa') { _i++; return _i;}
 				if(_w == 'case') { parser_action = ##PluralFound; _i++; return _i;}
 				return 0;
@@ -138,10 +138,10 @@ Object ReadingRoom "Sala Lettura"
 		description "È la sala lettura. L'atmosfera è differente qui.
 			C'è un singolo libro su uno dei tavoli
 			Puoi esaminare o provare a prendere i tavoli, la sala lettura, l'aria,
-			l'atmosfera, i muri e il soffitto. La libreria sta a ovest.",
+			l'atmosfera, i muri e il soffitto. La biblioteca sta a ovest.",
 		w_to Library,
 		cheap_scenery
-			CS_PARSE_NAME PARSE_NAME_AIR "L'aria è più pesante qui che nella libreria."
+			CS_PARSE_NAME PARSE_NAME_AIR "L'aria è più pesante qui che nella biblioteca."
 			'singolo' 'libro' "È il classico ~I Promessi Sposi~ di Manzoni."
 			'tavolo' 'tavoli//p' [;
 				Examine: "Molto robusto.";

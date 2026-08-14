@@ -58,10 +58,10 @@ Include "puny.h";
 Include "Grammar";
 #Endif;
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with 
 	    name 'library',
-	    description "In libreria.",
+	    description "In biblioteca.",
 	    in_to RestRoom
 	;
 

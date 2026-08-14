@@ -4,7 +4,7 @@ Bagno
 Sei nel bagno.
 
 > esci
-Libreria
+Biblioteca
 
 Puoi vedere un cappello qui.
 

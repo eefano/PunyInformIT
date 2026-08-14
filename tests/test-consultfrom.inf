@@ -65,8 +65,8 @@ Extend only 'dici' first
 !Include "ext_cheap_scenery.h";
 
 
-Object Library "Libreria"
-	with description "Solita libreria." has light;
+Object Library "Biblioteca"
+	with description "Solita biblioteca." has light;
 
 Object -> Box "scatola"
 	with name 'scatola',

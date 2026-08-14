@@ -66,9 +66,9 @@ Verb 'tuttosvuota'
 	"Sposti cose fuori da cose!";
 ];
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-        description "Libreria Canaglia.";
+        description "Biblioteca Canaglia.";
 
 Object -> Table "tavolo"
 	with

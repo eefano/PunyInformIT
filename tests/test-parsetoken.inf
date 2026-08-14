@@ -177,9 +177,9 @@ Verb 'scan4'
     LoopOverScope(_ScopeHelper, noun);
 ];
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-	    description "Sei in una libreria.",
+	    description "Sei in una biblioteca.",
 	    s_to CarPark,
 	has light;
 

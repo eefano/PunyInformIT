@@ -74,9 +74,9 @@ Include "puny.h";
 
 Object Dummy "pupazzo";
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-		description "Sei in libreria.";
+		description "Sei in biblioteca.";
 
 Object -> Box "scatola"
 	with

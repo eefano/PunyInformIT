@@ -6,8 +6,8 @@ prendi vecchio libro
 x giornale
 spingi giornali
 esamina -li
-x la grande libreria
-spingi la libreria
+x la grande biblioteca
+spingi la biblioteca
 x aria
 prendi aria
 x atmosfera

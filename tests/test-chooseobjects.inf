@@ -75,9 +75,9 @@ Include "puny.h";
 #Ifdef USEINFORM;
 Include "Grammar";
 #Endif;
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-	    description "Sei nella libreria.",
+	    description "Sei nella biblioteca.",
 	has light;
 
 Object -> John "John"

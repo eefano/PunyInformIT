@@ -26,9 +26,9 @@ Include "globals.h";
 
 Include "puny.h";
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-		description "Nella libreria.";
+		description "Nella biblioteca.";
 
 Object -> Box "scatola"
 	with

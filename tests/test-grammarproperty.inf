@@ -67,9 +67,9 @@ Include "Grammar";
 
 Verb 'bot,' * 'prendi' 'la' 'mira' -> TakeAim;
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-	    description "Nella libreria.",
+	    description "Nella biblioteca.",
 	has light;
 
 Object -> John "John"

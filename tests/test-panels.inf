@@ -85,9 +85,9 @@ Include "puny.h";
 ! Uncomment to add PunyLib extensions
 !Include "ext_waittime.h";
 
-Object Library "Libreria"
+Object Library "Biblioteca"
   with
-    description "Nella libreria.";
+    description "Nella biblioteca.";
 
 Object -> Box "scatola"
   with

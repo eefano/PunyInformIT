@@ -82,9 +82,9 @@ Include "ext_waittime.h";
 
 Array a1 --> 27700;   ! punyinformIT seems a little bigger than the original
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-		description "Sei in libreria, al solito. Uscita a sudest.",
+		description "Sei in biblioteca, al solito. Uscita a sudest.",
 		se_to Kitchen,
 		cheap_scenery
 			'libro' 'libri' "Solo libri."

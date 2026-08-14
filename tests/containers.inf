@@ -77,9 +77,9 @@ Include "Grammar";
 
 Include "ext_waittime.h";
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-		description "Sei Nella Libreria.",
+		description "Sei Nella Biblioteca.",
 		each_turn [;
 #Ifndef USEINFORM;
 		    print "L'orario è: ", status_field_1 ,":", status_field_2 ,"^";

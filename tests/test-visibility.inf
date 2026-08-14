@@ -77,9 +77,9 @@ Include "puny.h";
 ! Uncomment to add PunyLib extensions
 !Include "ext_waittime.h";
 
-Object Library "Libreria"
+Object Library "Biblioteca"
 	with
-		description "Sei in libreria.",
+		description "Sei in biblioteca.",
 		n_to Hall
 	;
 
