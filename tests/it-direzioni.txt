@@ -1,0 +1,51 @@
+
+> guarda
+Stanza
+Sei in una stanza.
+Puoi vedere un libro qui.
+
+> metti libro in n
+Il nord non è un contenitore.
+
+> metti libro in s
+Il sud non è un contenitore.
+
+> metti libro in e
+L'est non è un contenitore.
+
+> metti libro in o
+L'ovest non è un contenitore.
+
+> metti libro in ne
+Il nordest non è un contenitore.
+
+> metti libro in no
+Il nordovest non è un contenitore.
+
+> metti libro in se
+Il sudest non è un contenitore.
+
+> metti libro in so
+Il sudovest non è un contenitore.
+
+> metti libro in u
+Il su non è un contenitore.
+
+> metti libro in g
+Il giu non è un contenitore.
+
+> metti libro in po
+Scusa, non capisco cosa significhi "po".
+
+> metti libro in pr
+Scusa, non capisco cosa significhi "pr".
+
+> metti libro in tr
+Scusa, non capisco cosa significhi "tr".
+
+> metti libro in ba
+Scusa, non capisco cosa significhi "ba".
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+
