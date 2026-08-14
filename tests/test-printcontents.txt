@@ -1,7 +1,7 @@
 
 > guarda
 Biblioteca
-Biblioteca Canaglia.
+Biblioteca maledetta.
 
 Un tavolo sta in mezzo alla stanza.
 
@@ -80,7 +80,7 @@ cesta: Hai messo la cesta sul tavolo.
 
 > guarda
 Biblioteca
-Biblioteca Canaglia.
+Biblioteca maledetta.
 
 Un tavolo sta in mezzo alla stanza. Sul tavolo ci sono una cesta (che contiene
 un libro), una giara di vetro (che è aperta e contiene un secchio (che contiene

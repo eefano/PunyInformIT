@@ -68,7 +68,7 @@ Verb 'tuttosvuota'
 
 Object Library "Biblioteca"
 	with
-        description "Biblioteca Canaglia.";
+        description "Biblioteca maledetta.";
 
 Object -> Table "tavolo"
 	with

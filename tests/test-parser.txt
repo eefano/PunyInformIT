@@ -246,8 +246,8 @@ Scusa, non capisco cosa significhi "dsdasdsa".
 Apperò, questo è un immenso parcheggio!
 
 Parcheggio
-Sei nel parcheggio di fronte alla biblioteca. Puoi entrare a nord. C'è un fiume a
-est.
+Sei nel parcheggio di fronte alla biblioteca. Puoi entrare a nord. C'è un fiume
+a est.
 
 Ci sta un vecchio e consunto libro verde.
 
