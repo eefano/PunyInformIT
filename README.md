@@ -121,28 +121,30 @@ Verb 'tuffa'
 
 ### Routine di stampa
 
-Esistono routine per stampare la preposizione articolata corretta nelle vostre stringhe: ```(DiPrep)``` ```(APrep)``` ```(DaPrep)``` ```(InPrep)``` ```(SuPrep)```. 
+ ```(DiPrep)```, ```(APrep)```, ```(DaPrep)```, ```(InPrep)```, ```(SuPrep)```: stampano il nome dell'oggetto con davanti la preposizione articolata corretta. 
 
 Esempio: ```HAI MESSO LA PALLA NELLA SCATOLA / HAI MESSO LA PALLA NEI CESTI```
 ```
 print "Hai messo ", (the) noun, " ", (InPrep) second, ".";
 ```
 
-La routine di stampa ```(_o)``` serve per aggiungere i suffissi che declinano gli aggettivi nelle forme combinate maschile/femminile e singolare/plurale. 
+```(ArtCD)``` (Articolo Capitalizzato Determinativo),```(ArtD)``` (Articolo Determinativo), ```(ArtI)``` (articolo Indeterminativo): stampano solo l'articolo di un oggetto, con uno spazio in fondo se non prevede l'uso di un apostrofo.
+
+```(_o)```: serve per aggiungere i suffissi che declinano gli aggettivi nelle forme combinate maschile/femminile e singolare/plurale. 
 
 Esempio: ```IL NEGOZIO È CHIUSO / LE SERRANDE SONO CHIUSE / LA PORTA È CHIUSA / I PORTONI SONO CHIUSI```
 ```
 print (ObjIs) oggetto, " chius", (_o) oggetto;
 ``` 
 
-La routine di stampa ```(_e)``` serve se l'aggettivo ha solo la declinazione singolare/plurale.
+```(_e)```: serve se l'aggettivo ha solo la declinazione singolare/plurale.
 
 Esempio: ```L'ACQUA È POTABILE / LE ACQUE SONO POTABILI```
 ```
 print (ObjIs) oggetto, " potabil", (_e) oggetto;
 ```
 
-La routine di stampa ```(_no)``` serve per aggiungere il suffisso ai verbi riferiti a soggetti plurali.
+```(_no)```: serve per aggiungere il suffisso ai verbi riferiti a soggetti plurali.
 
 Esempio: ```IL CANE NON PARLA / I CANI NON PARLANO```
 ```

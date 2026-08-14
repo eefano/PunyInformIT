@@ -604,53 +604,60 @@ Constant ONE_SPACE_STRING = " ";
 	print (object) o;
 ];
 
+[ ArtCD p_obj;
+	if (p_obj has pluralname) {
+		if (p_obj has female) print "Le ";
+		else if (p_obj has apostrofo or logli) print "Gli ";
+		else print "I ";
+	} else {
+		if (p_obj has apostrofo) print "L'";
+		else if (p_obj has female) print "La ";
+		else if (p_obj has logli) print "Lo ";
+		else print "Il ";
+	}
+];
+
+[ ArtD p_obj;
+	if (p_obj has pluralname) {
+		if (p_obj has female) print "le ";
+		else if (p_obj has apostrofo or logli) print "gli ";
+		else print "i ";
+	} else {
+		if (p_obj has apostrofo) print "l'";
+		else if (p_obj has female) print "la ";
+		else if (p_obj has logli) print "lo ";
+		else print "il ";
+	}
+];
+
+[ ArtI p_obj; 
+	if(p_obj.&article) {
+		PrintOrRun(p_obj, article, true);
+		print " ";
+	} else if(p_obj has pluralname) {
+		if (p_obj has female) print "delle ";
+		else if (p_obj has apostrofo or logli) print "degli ";
+		else print "dei ";
+	} else {
+		if (p_obj has female) {
+			if(p_obj has apostrofo) print "un'";
+			else print "una ";
+		}
+		else {
+			if (p_obj has logli && p_obj hasnt apostrofo) print "uno ";
+			else print "un ";
+		}
+	}
+];
+
 [ _PrintObjName p_obj p_form;
 	caps_mode = false;
 	if(p_form == FORM_CDEF)
 		caps_mode = 2;
 	if(p_obj hasnt proper) {
-		if(p_form == FORM_CDEF) {
-			if (p_obj has pluralname) {
-				if (p_obj has female) print "Le ";
-				else if (p_obj has apostrofo or logli) print "Gli ";
-				else print "I ";
-			} else {
-				if (p_obj has apostrofo) print "L'";
-				else if (p_obj has female) print "La ";
-				else if (p_obj has logli) print "Lo ";
-				else print "Il ";
-			}
-		} else if(p_form == FORM_DEF) {
-			if (p_obj has pluralname) {
-				if (p_obj has female) print "le ";
-				else if (p_obj has apostrofo or logli) print "gli ";
-				else print "i ";
-			} else {
-				if (p_obj has apostrofo) print "l'";
-				else if (p_obj has female) print "la ";
-				else if (p_obj has logli) print "lo ";
-				else print "il ";
-			}
-		} else if(p_form == FORM_INDEF) {
-			if(p_obj.&article) {
-				PrintOrRun(p_obj, article, true);
-				print " ";
-			}
-			else if(p_obj has pluralname) {
-				if (p_obj has female) print "delle ";
-				else if (p_obj has apostrofo or logli) print "degli ";
-				else print "dei ";
-			} else {
-				if (p_obj has female) {
-					if(p_obj has apostrofo) print "un'";
-					else print "una ";
-				}
-				else {
-					if (p_obj has logli && p_obj hasnt apostrofo) print "uno ";
-					else print "un ";
-				}
-			}
-		}
+		if(p_form == FORM_CDEF) ArtCD(p_obj);
+		else if(p_form == FORM_DEF) ArtD(p_obj);
+		else if(p_form == FORM_INDEF) ArtI(p_obj);
 	}
 	PrintShortName(p_obj);
 ];

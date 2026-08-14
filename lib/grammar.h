@@ -175,7 +175,7 @@ Verb 'ascolta'
 Verb 'serra' 'blocca'
 	* noun 'con' held				-> Lock;
 !!
-Verb 'guarda' 'vedi' 'osserva' 'v//'
+Verb 'guarda' 'vedi' 'osserva' 'v//' 'l//'
     *                                    					-> Look
     * 'verso'/'a//'/'a*' noun               			-> Examine
 		* noun                                        -> Examine
