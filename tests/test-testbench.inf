@@ -422,8 +422,7 @@ Object -> Table "tavolo"
 
 Object -> -> "piatto palese"
 	with
-		name 'piatto' 'palese',
-		article "an";
+		name 'piatto' 'palese';
 
 Object -> -> "piatto occulto"
 	with
@@ -608,7 +607,7 @@ Object Toilet "Il bagno"
 			print "Questo bagno ha bisogno di una bella lavata. La porta
 			si trova a ovest, e riporta alla libreria.
 				C'è un oscuro passaggio a est.";
-			if(Faucet has on) {
+			if(Faucet has open) {
 				"L'acqua scorre dal rubinetto. ";
 			}
 			"";
@@ -806,7 +805,6 @@ Object -> Sweater "felpa"
 Object -> Aquarium "acquario"
 	with
 		name 'acquario',
-		article "un",
 		description "Un grosso acquario di vetro con un coperchio.",
 	has apostrofo container open openable transparent static enterable;
 
@@ -1077,7 +1075,7 @@ Book -> GreenBook "libro verde"
 				i++;
 				w = NextWord();
 				if(w == 'verde') i++;
-				else if(w == 'verdino') 
+				else if(w == 'rosino') 
 				{
 				 parser_action = ##PluralFound;
 				 i++;

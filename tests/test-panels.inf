@@ -117,7 +117,6 @@ has static;
 !----------------------------------------
 Object engine_panel "pannello motore" Library
 with
-  article "un",
   parse_name
   [ i;
     while (NextWord() == 'pannello' or 'pannelli' or 'motore' or 'motori'  or 'controllo' or 'controlli')

@@ -376,7 +376,7 @@ Object Toilet "Il bagno"
 		short_name [; print "Un bagno"; rtrue; ],
 		description[;
 			print "Questo bagno ha bisogno di una bella lavata. La porta si trova a ovest, e riporta alla libreria. ";
-			if(Faucet has on) {
+			if(Faucet has open) {
 				"L'acqua scorre dal rubinetto. ";
 			}
 			"";
