@@ -86,7 +86,7 @@ Mettiamo che in una stanza ci siano un secchio e una scala in vista. Dobbiamo pi
 ```
 PRENDI SECCHIO E SCALA
 ```
-Peccato però che il gioco interpreti ```SCALA`` come verbo, e quindi dopo aver preso il secchio, il gioco effettuerà il comando di scalare.
+Peccato però che il gioco interpreti ```SCALA``` come verbo, e quindi dopo aver preso il secchio, il gioco effettuerà il comando di scalare.
 
 Per risolvere il dilemma, basta semplicemente utilizzare l'articolo, così:
 ```
@@ -181,13 +181,19 @@ Esempio: ```L'ACQUA È POTABILE / LE ACQUE SONO POTABILI```
 print (ObjIs) oggetto, " potabil", (_e) oggetto;
 ```
 
-```(_no)```: serve per aggiungere il suffisso ai verbi riferiti a soggetti plurali.
+```(_ano)```: serve per coniugare il presente dei verbi regolari in -ARE, aggiungendo il suffisso ```a``` al singolare o ```ano``` al plurale.
 
 Esempio: ```IL CANE NON PARLA / I CANI NON PARLANO```
 ```
-print (the) oggetto, " non parla", (_no) oggetto;
+print (the) oggetto, " non parl", (_ano) oggetto;
 ```
 
+```(_ono)```: serve per coniugare il presente dei verbi regolari in -ERE e -IRE, aggiungendo il suffisso ```e``` al singolare o ```ono``` al plurale.
+
+Esempio: ```IL CANE NON MORDE / I CANI NON MORDONO```
+```
+print (the) oggetto, " non mord", (_ono) oggetto;
+```
 
 ## Crediti
 

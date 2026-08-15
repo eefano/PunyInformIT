@@ -828,7 +828,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #Endif;
 #Ifndef SKIP_MSG_GIVE_DEFAULT;
 	MSG_GIVE_DEFAULT, MSG_SHOW_DEFAULT:
-		print_ret (The) second, " non sembra", (_no) second, " interessat", (_o) second, ".";
+		print_ret (The) second, " non sembr", (_ano) second, " interessat", (_o) second, ".";
 #Endif;
 #Ifndef SKIP_MSG_ASKFOR_DEFAULT;
 	MSG_ASKFOR_DEFAULT, MSG_ASKTO_DEFAULT, MSG_ORDERS_WONT:
@@ -1015,7 +1015,7 @@ Constant SKIP_MSG_PARSER_NOSUCHTHING;
 #EndIf;
 #Ifndef SKIP_MSG_LOCK_KEY_DOESNT_FIT;
 	MSG_LOCK_KEY_DOESNT_FIT, MSG_UNLOCK_KEY_DOESNT_FIT:
-		print_ret (The) second, " non combacia", (_no) second, " con questa serratura.";
+		print_ret (The) second, " non combaci", (_ano) second, " con questa serratura.";
 #Endif;
 #IfTrue MSG_EXAMINE_CLOSED < 1000;
 	MSG_EXAMINE_CLOSED:
@@ -1071,12 +1071,12 @@ MSG_RUB_DEFAULT, MSG_SQUEEZE_DEFAULT:
 #IfTrue MSG_TAKE_BELONGS < 1000;
 	MSG_TAKE_BELONGS:
 		! p_arg_1 = the object that is held by p_arg_2
-		print_ret (The) p_arg_1, " sembra", (_no) p_arg_1, " appartenere ", (APrep) p_arg_2, ".";
+		print_ret (The) p_arg_1, " sembr", (_ano) p_arg_1, " appartenere ", (APrep) p_arg_2, ".";
 #EndIf;
 #IfTrue MSG_TAKE_PART_OF < 1000;
 	MSG_TAKE_PART_OF:
 		! p_arg_1 = the object that is part of p_arg_2
-		print_ret (The) p_arg_1, " sembra", (_no) p_arg_1, " essere parte ", (DiPrep) p_arg_2, ".";
+		print_ret (The) p_arg_1, " sembr", (_ano) p_arg_1, " essere parte ", (DiPrep) p_arg_2, ".";
 #EndIf;
 #IfTrue MSG_EAT_INEDIBLE < 1000;
 	MSG_EAT_INEDIBLE:
@@ -1339,18 +1339,21 @@ default:
 		if (p_obj has female) print "a";
 		else print "o";
 	}
-	return;
 ];
 
 [_e p_obj;
 	if (p_obj has pluralname) print "i";
 	else print "e";
-	return;
 ];
 
-[_no p_obj;
-	if (p_obj has pluralname) print "no";
-	return;
+[_ano p_obj;
+	if (p_obj has pluralname) print "ano";
+	else print "a";
+];
+
+[_ono p_obj;
+	if (p_obj has pluralname) print "ono";
+	else print "e";
 ];
 
 [_Articola p_obj;
@@ -1364,54 +1367,46 @@ default:
 		else if (p_obj has logli) print "llo "; 
 		else print "l ";
 	}
-	return;
 ];
 
 [DiPrep p_obj;
 	if (p_obj has proper) print "di ";
 	else print "de", (_Articola) p_obj;
 	print (name) p_obj;
-	return;
 ];
 
 [APrep p_obj;
 	if (p_obj has proper) print "a ";
 	else print "a", (_Articola) p_obj;
 	print (name) p_obj;
-	return;
 ];
 
 [DaPrep p_obj;
 	if (p_obj has proper) print "da ";
 	else print "da", (_Articola) p_obj;
 	print (name) p_obj;
-	return;
 ];
 
 [InPrep p_obj;
 	if (p_obj has proper) print "in ";
 	else print "ne", (_Articola) p_obj;
 	print (name) p_obj;
-	return;
 ];
 
 [SuPrep p_obj;
 	if (p_obj has proper) print "su ";
 	else print "su", (_Articola) p_obj;
 	print (name) p_obj;
-	return;
 ];
 
 [EnterSupp p_obj;
 	if (p_obj has supporter) print "Sei ", (SuPrep) p_obj;
 	else print "Sei ", (InPrep) p_obj;
-	return;
 ];
 
 [ExitSupp p_obj;
 	if (p_obj has supporter) print "Hai disceso ", (the) p_obj;
 	else print "Sei fuori ", (DaPrep) p_obj;
-	return;
 ];
 
 !
