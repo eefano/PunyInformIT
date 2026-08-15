@@ -53,8 +53,9 @@ Verb 'sali' 'scala' 'arrampica'
 !!
 Verb 'chiudi'
     * noun                            -> Close
-    * 'a//'/'a*' 'chiave' noun      				-> Lock
-    * noun 'con' held                 -> Lock;
+    * 'a//' 'chiave' noun      				-> Lock
+    * noun 'con' held                 -> Lock
+    * 'a//' 'chiave' noun 'con' held	-> Lock;
 Verb 'copri' 'richiudi'
 	* noun						-> Close;
 !!
@@ -151,7 +152,7 @@ Verb 'inserisci'
 	* multiexcept 'in'/'in*'/'dentro' noun -> Insert;
 !!
 #Ifdef OPTIONAL_FLEXIBLE_INVENTORY;
-Verb 'inventario' 'i//' 
+Verb 'inventario' 'i//' 'inv'
     *                                     		-> Inv
     * 'alto'/'largo'                     		-> Inv;
 #Ifnot;
@@ -299,13 +300,8 @@ Verb 'gira' 'ruota'
     * noun 'su' 'on'			-> SwitchOn
     * noun 'su' 'off'     -> SwitchOff;
 !!
-#Ifdef OPTIONAL_EXTENDED_VERBSET;
 Verb 'disserra' 'sblocca'
 	* noun 'con' held                          -> Unlock;
-#Ifnot;
-Verb 'disserra' 'sblocca' 'scassina'
-	* noun 'con' held                          -> Unlock;
-#Endif;
 !!
 Verb 'aspetta' 'attendi' 'z//'
 	*                                           -> Wait;
