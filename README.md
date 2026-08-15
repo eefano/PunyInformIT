@@ -8,7 +8,8 @@ The rest of this document is written in Italian language.
 
 ## Presentazione
 
-Questa è la traduzione in italiano della libreria PunyInform.
+Questa è la traduzione in italiano della libreria PunyInform, al momento
+allineata alle funzionalità della versione 6.8.
 
 PunyInform è una libreria scritta in Inform 6 che consente agli autori di creare giochi di avventura testuale / narrativa interattiva utilizzando la macchina virtuale Z-machine, giocabili sia su computer a 8 bit che su piattaforme più recenti. Fornisce un parser, implementazioni dei verbi più comuni e un framework per la scrittura di avventure testuali.
 
@@ -17,17 +18,29 @@ I giochi che utilizzano PunyInform possono essere compilati nei formati z3, z4, 
 L'obiettivo principale di PunyInform è quello di consentire la realizzazione di giochi veloci e con un ingombro di memoria ridotto. Ciò dovrebbe garantire un buon funzionamento dei giochi su architetture meno recenti, come i computer a 8 bit degli anni '80. Il nostro obiettivo principale è renderlo adatto ai giochi per Commodore 64 utilizzando [Ozmoo](https://github.com/johanberntsson/ozmoo/).
 
 
-### ATTENZIONE: IL PROGETTO È ANCORA IN FASE DI COMPLETAMENTO
+### Filosofia dell'edizione italiana
 
-Anche se allo stato attuale sono state effettuate tutte le traduzioni e implementate le grammatiche, non sono ancora stati completati abbastanza test
-per poter dichiarare il software completo e senza errori. 
+Il progetto non mira a stravolgere o rivoluzionare lo standard e la missione
+del progetto originale in inglese. L'obiettivo è poter pensare, progettare,
+scrivere, testare e giocare avventure nella nostra lingua madre, che poi possano essere tradotte in inglese (magari aiutandosi con strumenti automatici o semiautomatici) senza riscrivere le logiche del gioco. 
 
-Queste istruzioni sono specifiche per questa versione italiana e riflettono la situazione attuale del progetto, che potrebbe cambiare in futuro finchè non sarà rilasciata una prima versione stabile.
 
-Il progetto è allineato alle modifiche presenti nella release v6.8 di PunyInform.
+### Stato del progetto
+
+- [x] Traduzione messaggi libreria
+- [x] Scrittura regole grammaticali italiane, direzioni, numeri.
+- [x] Traduzione test suite completa
+- [x] Verifica passaggio di tutti i test
+- [x] Traduzione giochi di esempio: cloak e library of horror
+- [ ] Traduzione howto
+- [ ] Traduzione documentazione
+- [ ] Beta testing
 
 
 ## Istruzioni per i giocatori
+
+Queste istruzioni sono specifiche per questa versione italiana e riflettono la situazione attuale del progetto, che potrebbe cambiare in futuro finchè non sarà rilasciata una prima versione stabile.
+
 
 ### Verbi
 
@@ -65,7 +78,26 @@ Per brevità, i pronomi riflessivi si possono in genere omettere, tranne per i v
 L'apostrofo nei formati ```.z3``` e ```.z4``` non può essere attaccato alla parola successiva (scrivere invece ```L' APOSTROFO``` con lo spazio). I formati ```.z5``` e superiori lo separano in automatico.
 
 
+### Il dilemma della scala
+
+In alcune circostanze il programma potrebbe confondere il nome di un oggetto quando combacia con quello di un verbo.
+
+Mettiamo che in una stanza ci siano un secchio e una scala in vista. Dobbiamo pitturare un muro e ci servono gli attrezzi, quindi scriviamo:
+```
+PRENDI SECCHIO E SCALA
+```
+Peccato però che il gioco interpreti ```SCALA`` come verbo, e quindi dopo aver preso il secchio, il gioco effettuerà il comando di scalare.
+
+Per risolvere il dilemma, basta semplicemente utilizzare l'articolo, così:
+```
+PRENDI SECCHIO E LA SCALA
+```
+Con il risultato di trovarci in mano entrambi gli oggetti.
+
+
 ## Istruzioni per gli autori
+
+Queste istruzioni sono specifiche per questa versione italiana e riflettono la situazione attuale del progetto, che potrebbe cambiare in futuro finchè non sarà rilasciata una prima versione stabile.
 
 ### Attributi 
 
@@ -119,7 +151,12 @@ Verb 'tuffa'
     * SelfGpr -> Swim;
 ```
 
-### Routine di stampa
+### Funzioni interne utili
+
+```_IsArticle(parola)``` restituisce vero se la parola è un articolo. Può servire per il parsing dei topic. Se la costante ```OPTIONAL_ALLOW_WRITTEN_NUMBERS``` è definita, le parole ```uno```,```una```,```un'``` non sono considerate articoli da questa funzione.
+
+
+### Regole di stampa
 
  ```(DiPrep)```, ```(APrep)```, ```(DaPrep)```, ```(InPrep)```, ```(SuPrep)```: stampano il nome dell'oggetto con davanti la preposizione articolata corretta. 
 
