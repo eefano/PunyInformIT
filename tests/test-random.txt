@@ -1,0 +1,45 @@
+> random seed 5
+The random seed is set to 5.
+
+> z
+Non accade nulla.
+random 1
+
+> z
+Non accade nulla.
+random 2
+
+> z
+Non accade nulla.
+random 3
+
+> z
+Non accade nulla.
+random 4
+
+> z
+Non accade nulla.
+random 5
+
+> z
+Non accade nulla.
+random 1
+
+> random seed 1000
+The random seed is set to 1000.
+
+> z
+Non accade nulla.
+random 626
+
+> z
+Non accade nulla.
+random 63
+
+> z
+Non accade nulla.
+random 1796
+
+> termina
+Sei sicuro di voler terminare il gioco? si
+

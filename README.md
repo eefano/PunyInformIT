@@ -9,7 +9,7 @@ The rest of this document is written in Italian language.
 ## Presentazione
 
 Questa è la traduzione in italiano della libreria PunyInform, al momento
-allineata alle funzionalità della versione 6.8.
+allineata alle funzionalità della versione 6.9.
 
 PunyInform è una libreria scritta in Inform 6 che consente agli autori di creare giochi di avventura testuale / narrativa interattiva utilizzando la macchina virtuale Z-machine, giocabili sia su computer a 8 bit che su piattaforme più recenti. Fornisce un parser, implementazioni dei verbi più comuni e un framework per la scrittura di avventure testuali.
 
